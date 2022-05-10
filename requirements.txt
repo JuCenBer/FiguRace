@@ -1,3 +1,1 @@
-libreria==version
 PySimpleGUI==4.59.0
-pip install -r requirements.txt
