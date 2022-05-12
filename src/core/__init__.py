@@ -1,1 +1,1 @@
-__all__ = ['llamar_datasets','llamado_datos','menu_config','menu_juego','menu_principal','menu_puntajes','menu_perfiles']
+__all__ = ['llamar_datasets','menu_config','menu_juego','menu_principal','menu_puntajes','menu_perfiles']
