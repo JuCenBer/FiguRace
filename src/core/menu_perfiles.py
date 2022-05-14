@@ -19,12 +19,12 @@ def crear_ventana_nuevo_jugador():
 
 def crear_perfil(datos):
     jugador = {'nick': datos[0], 'edad': datos[1], 'genero': datos[2]}
-    with open(os.path.realpath(os.path.join('src', 'core', 'datos', 'perfiles.json')), "r", encoding='utf-8') as perfiles:
+    with open(os.path.realpath(os.path.join('src', 'datos', 'perfiles.json')), "r", encoding='utf-8') as perfiles:
         try:
             jugadores = json.load(perfiles)  # intento cargar el json
         except:
             jugadores = []  # si el json esta vacio, creo una lista vacia
-    with open(os.path.realpath(os.path.join('src', 'core', 'datos', 'perfiles.json')), "w", encoding='utf-8') as perfiles:
+    with open(os.path.realpath(os.path.join('src', 'datos', 'perfiles.json')), "w", encoding='utf-8') as perfiles:
         print(jugador)
         jugadores.append(jugador)
         print(jugadores)
@@ -33,10 +33,10 @@ def crear_perfil(datos):
 
 def crear_ventana_perfiles():
     try:
-        with open(os.path.realpath(os.path.join('src', 'core', 'datos', 'perfiles.json')), "r", encoding='utf-8') as perfiles:
+        with open(os.path.realpath(os.path.join('src', 'datos', 'perfiles.json')), "r", encoding='utf-8') as perfiles:
             jugadores = json.load(perfiles)  # intento cargar el json
     except:
-        with open(os.path.realpath(os.path.join('src', 'core', 'datos', 'perfiles.json')), "w", encoding='utf-8') as perfiles:
+        with open(os.path.realpath(os.path.join('src', 'datos', 'perfiles.json')), "w", encoding='utf-8') as perfiles:
             jugadores = []
 
     cabecera = ['Nickname', 'Edad', 'Genero Autopercibido']
