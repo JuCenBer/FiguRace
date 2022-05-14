@@ -1,5 +1,7 @@
 from ast import Nonlocal
 from cgitb import text
+from faulthandler import disable
+from sre_parse import State
 from time import sleep
 from tkinter import BROWSE, EXTENDED
 from turtle import width
@@ -15,6 +17,22 @@ def crear_ventana_nuevo_jugador():
               [sg.Button(button_text='Crear', key='-CONFIRMAR CREAR JUGADOR-')]
               ]
     return sg.Window('Nuevo Perfil', layout, finalize=True)
+
+
+def crear_ventana_editar_jugador(jugador_seleccionado):
+    layout = [[sg.Text(text='Ingrese los datos del nuevo perfil: ', size=50)], [sg.Text(text='Nickname '), sg.Input(default_text=jugador_seleccionado[0][0], readonly=True)],
+              [sg.Text(text='Edad '), sg.Input(
+                  default_text=jugador_seleccionado[0][1])],
+
+              [sg.Text(text='Genero autopercibido '), sg.Input(
+                  default_text=jugador_seleccionado[0][2])],
+
+              [sg.Button(button_text='Confirmar edición',
+                         key='-CONFIRMAR EDICION JUGADOR-')],
+
+              [sg.Button(button_text='Volver', key='-CANCELAR EDICION JUGADOR-')]
+              ]
+    return sg.Window('Editar Perfil', layout, finalize=True)
 
 
 def crear_perfil(datos):
@@ -44,9 +62,11 @@ def crear_ventana_perfiles():
     for jugador in jugadores:
         datos = [jugador['nick'], jugador['edad'], jugador['genero']]
         lista_jugadores.append(datos)
+
     layout = [[sg.Table(values=lista_jugadores, headings=cabecera,
                         auto_size_columns=True,
                         row_height=20,
+                        enable_events=True,
                         select_mode=EXTENDED,
                         num_rows=len(lista_jugadores), key='-EDITAR JUGADOR-')],
               [sg.Button('Crear Jugador', key='-CREAR JUGADOR-')],
@@ -61,6 +81,24 @@ while True:
     print(f"Evento: {event}, Valores: {values}")
     if (event == sg.WIN_CLOSED) or (event == '-VOLVER-'):
         break
+    elif event == '-EDITAR JUGADOR-':
+        with open(os.path.realpath(os.path.join('src', 'datos', 'perfiles.json')), "r", encoding='utf-8') as perfiles:
+            jugadores = json.load(perfiles)  # intento cargar el json
+            lista_jugadores = list()
+
+            for jugador in jugadores:
+                datos = [jugador['nick'], jugador['edad'], jugador['genero']]
+                lista_jugadores.append(datos)
+            jugador_seleccionado = [lista_jugadores[row]
+                                    for row in values[event]]
+            window = crear_ventana_editar_jugador(jugador_seleccionado)
+            current_window.close()
+    elif event == '-CONFIRMAR EDICION JUGADOR-':
+        window = crear_ventana_perfiles()
+        current_window.close()
+    elif event == '-CANCELAR EDICION JUGADOR-':
+        window = crear_ventana_perfiles()
+        current_window.close()
     elif event == '-CREAR JUGADOR-':
         window = crear_ventana_nuevo_jugador()
         current_window.close()
