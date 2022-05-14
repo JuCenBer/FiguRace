@@ -1,13 +1,8 @@
-from ast import Nonlocal
-from cgitb import text
-from faulthandler import disable
-from sre_parse import State
-from time import sleep
 from tkinter import BROWSE, EXTENDED
-from turtle import width
 import PySimpleGUI as sg
 import json
 import os
+from . import manejar_datos
 
 
 def crear_ventana_nuevo_jugador():
@@ -37,25 +32,13 @@ def crear_ventana_editar_jugador(jugador_seleccionado):
 
 def crear_perfil(datos):
     jugador = {'nick': datos[0], 'edad': datos[1], 'genero': datos[2]}
-    with open(os.path.realpath(os.path.join('src', 'datos', 'perfiles.json')), "r", encoding='utf-8') as perfiles:
-        try:
-            jugadores = json.load(perfiles)  # intento cargar el json
-        except:
-            jugadores = []  # si el json esta vacio, creo una lista vacia
-    with open(os.path.realpath(os.path.join('src', 'datos', 'perfiles.json')), "w", encoding='utf-8') as perfiles:
-        print(jugador)
-        jugadores.append(jugador)
-        print(jugadores)
-        json.dump(jugadores, perfiles)
+    jugadores = manejar_datos.obtener_perfiles()
+    jugadores.append(jugador)
+    manejar_datos.guardar_perfiles(jugadores)
 
 
 def crear_ventana_perfiles():
-    try:
-        with open(os.path.realpath(os.path.join('src', 'datos', 'perfiles.json')), "r", encoding='utf-8') as perfiles:
-            jugadores = json.load(perfiles)  # intento cargar el json
-    except:
-        with open(os.path.realpath(os.path.join('src', 'datos', 'perfiles.json')), "w", encoding='utf-8') as perfiles:
-            jugadores = []
+    jugadores = manejar_datos.obtener_perfiles()
 
     cabecera = ['Nickname', 'Edad', 'Genero Autopercibido']
     lista_jugadores = list()
@@ -82,17 +65,16 @@ while True:
     if (event == sg.WIN_CLOSED) or (event == '-VOLVER-'):
         break
     elif event == '-EDITAR JUGADOR-':
-        with open(os.path.realpath(os.path.join('src', 'datos', 'perfiles.json')), "r", encoding='utf-8') as perfiles:
-            jugadores = json.load(perfiles)  # intento cargar el json
-            lista_jugadores = list()
+        jugadores = manejar_datos.obtener_perfiles()
+        lista_jugadores = list()
 
-            for jugador in jugadores:
-                datos = [jugador['nick'], jugador['edad'], jugador['genero']]
-                lista_jugadores.append(datos)
-            jugador_seleccionado = [lista_jugadores[row]
-                                    for row in values[event]]
-            window = crear_ventana_editar_jugador(jugador_seleccionado)
-            current_window.close()
+        for jugador in jugadores:
+            datos = [jugador['nick'], jugador['edad'], jugador['genero']]
+            lista_jugadores.append(datos)
+        jugador_seleccionado = [lista_jugadores[row]
+                                for row in values[event]]
+        window = crear_ventana_editar_jugador(jugador_seleccionado)
+        current_window.close()
     elif event == '-CONFIRMAR EDICION JUGADOR-':
         window = crear_ventana_perfiles()
         current_window.close()
