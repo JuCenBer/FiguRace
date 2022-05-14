@@ -4,7 +4,7 @@ if __name__ == "__main__":
     print("Figurace")
 
 # Para probar el menu de perfiles
-# menu_perfiles.crear_ventana_perfiles()
+# menu_perfiles.iniciar_menu_perfiles()
 
 # Para probar el menu config
 # menu_config.iniciar_pantalla_config()
