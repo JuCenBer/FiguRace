@@ -1,7 +1,6 @@
 import os
 import json
 
-
 def obtener_perfiles():
     try:
         with open(os.path.join(os.getcwd(), "src", "datos", "perfiles.json"), "r", encoding='utf-8') as perfiles:
@@ -22,7 +21,8 @@ def obtener_nombres_datasets():
     try:
         with open(ruta, "r") as archivo:
             datos_archivo = json.load(archivo)
-            nombres = datos_archivo[0].values()
+            nombres = datos_archivo["nombres"]
+            print(nombres)
             return nombres
     except:
         return []
