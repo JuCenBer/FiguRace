@@ -9,12 +9,12 @@ def iniciar_menu_principal():
 
     def crear_ventana_principal():
         menu = [
-            [sg.Text("Figurace", justification="center", pad=((0, 0), (0, 10)))],
-            [sg.Button("Jugar", key="-JUGAR-")],
-            [sg.Button("Configuracion", key="-CONFIG-")],
-            [sg.Button("Puntajes", key="-PUNTAJES-")],
-            [sg.Button("Perfil", key="-PERFIL-")],
-            [sg.Button("Salir", key="-EXIT-")],
+            [sg.Text("Figurace", justification="center", font="Helvetica 15 bold", pad=((0, 0), (0, 10)))],
+            [sg.Button("Jugar", key="-JUGAR-", font="Helvetica 13")],
+            [sg.Button("Configuracion", key="-CONFIG-", font="Helvetica 13")],
+            [sg.Button("Puntajes", key="-PUNTAJES-", font="Helvetica 13")],
+            [sg.Button("Perfil", key="-PERFIL-", font="Helvetica 13")],
+            [sg.Button("Salir", key="-EXIT-", font="Helvetica 13")],
         ]
 
         #Consigo los jugadores y los guardo en el menu
