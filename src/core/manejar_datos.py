@@ -22,7 +22,6 @@ def obtener_nombres_datasets():
         with open(ruta, "r") as archivo:
             datos_archivo = json.load(archivo)
             nombres = datos_archivo["nombres"]
-            print(nombres)
             return nombres
     except:
         return []
