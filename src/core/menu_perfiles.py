@@ -88,4 +88,6 @@ def iniciar_menu_perfiles():
             crear_perfil(values)
             window = crear_ventana_perfiles()
             current_window.close()
+        elif event == '-VOLVER-':
+            current_window.close()
     window.close()
