@@ -31,6 +31,8 @@ layout = [
     #Popup mensaje final   
 ]
 
+#--------------------------------------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------------------------------------
 # FUNCIONES PARA INICIAR/ TERMINAR RONDAS
 def iniciar_ronda(num_ronda):
     ronda+=1
@@ -49,27 +51,9 @@ def salir_menu():
     
 
 
-
-
+#--------------------------------------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------------------------------------
 # SETEO DE OPCIONES DE UNA RONDA
-
-def definir_opciones(nomb_dataset, opcion_verdadera, vector_atributos = [], vector_falsas= [] ):
-    with open(nomb_dataset,'r')as dataset_seleccionado:
-        reader= csv.reader(nomb_dataset, delimiter=';')     
-        titulo, datos= next(reader), list(reader)       # abro archivo, guardo sus datos
-
-        linea_verdadera= datos[randint(0,len(datos))]    # selecciono una linea al azar
-        opcion_verdadera= linea_verdadera[len(opcion_verdadera)]    #Caracteristica a adivinar siempre va a estar al final
-        for x in range(0,4):
-            vector_atributos.append(linea_verdadera[x])  # Devuelvo cantidad de opciones en un vector segun la dificultad
-
-        for y in range(0, dificultad()):
-            opcion_falsa= datos[randint]
-            while( opcion_falsa== opcion_verdadera): #Busco una nueva linea falsa hastas
-                opcion_falsa= datos[randint]
-            
-
-
 
 def seleccion_dataset():
     nombres= obtener_nombres_datasets()     #Nombres datasets deberia devolver una lista de nombres
@@ -77,7 +61,23 @@ def seleccion_dataset():
     return elegido
 
 
+def definir_opciones(nomb_dataset, opcion_verdadera, vector_atributos = [], vector_falsas= [] ):
+    with open(nomb_dataset,'r')as dataset_seleccionado:
+        reader= csv.reader(nomb_dataset, delimiter=';')     
+        titulo, datos= next(reader), list(reader)       # abro archivo, guardo sus datos
 
+        linea_verdadera= datos[randint(0,len(datos))]    # selecciono una linea al azar
+        opcion_verdadera= linea_verdadera[6]    #Caracteristica a adivinar siempre va a estar al final (linea 6)
+        for x in range(0,4):
+            vector_atributos.append(linea_verdadera[x])  # Devuelvo cantidad de opciones en un vector segun la dificultad
+
+        for y in range(0, dificultad()):
+            opcion_falsa= datos[randint]
+            vector_falsas.append(opcion_falsa[6])
+            
+
+#--------------------------------------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------------------------------------
 #  VALIDADOR DE UNA OPCION
 
 def validador_opcion(vector_op, respuesta):
