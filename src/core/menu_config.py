@@ -3,11 +3,9 @@ import PySimpleGUI as sg
 from . import manejar_datos
 
 def iniciar_pantalla_config():
-    valores_tiempo_ronda = ["Opcion 1", "Opcion 2", "Opcion 3"] # Aca se llamaria a un archivo
     config_previa = manejar_datos.obtener_config()
 
     nombres_datasets = manejar_datos.obtener_nombres_datasets()
-    # SELECTORES CORRECTOS, MOSTRAR OPCIONES ACORDES
     
     elem_datasets = [sg.Text("Dataset ", font=("Arial", 12), justification="center"),
                 sg.Combo(nombres_datasets, key="-CONFIG_DATASET-", default_value=config_previa["dataset"], font=("Arial", 12), s = (18, 1), readonly=True)]
