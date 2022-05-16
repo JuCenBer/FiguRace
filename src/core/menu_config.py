@@ -30,9 +30,12 @@ def iniciar_pantalla_config():
     elem_guardar = [sg.Button("Guardar",key="-CONFIG_GUARDAR-", font=("Arial", 12),s=(10, 1)), 
                 sg.Button("Volver",key="-CONFIG_VOLVER-", font=("Arial", 12),s=(10, 1))]
 
-    estructura = [elem_datasets, elem_tiempo, elem_rondas, elem_puntos_bien, elem_puntos_mal, elem_carac_tarjeta, elem_guardar]
+    contenedor = [sg.Frame(title="Opciones de configuración",title_location="n", vertical_alignment="bottom", element_justification="center",expand_x=True, expand_y=True, layout=[elem_datasets, elem_tiempo, elem_rondas, elem_puntos_bien, elem_puntos_mal, elem_carac_tarjeta, [sg.HorizontalSeparator()], elem_guardar])]
 
-    window = sg.Window("Configuración",estructura,size=(1000, 500))
+    estructura = [contenedor]
+
+
+    window = sg.Window("Configuración",estructura,size=(1000, 600))
 
     while True:
     # Esperamos un evento
