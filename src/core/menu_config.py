@@ -1,3 +1,4 @@
+from multiprocessing import set_executable
 from tkinter import NONE
 import PySimpleGUI as sg
 from . import manejar_datos
@@ -39,7 +40,7 @@ def iniciar_pantalla_config():
     # Esperamos un evento
         event, values = window.read()
 
-        print(f"Evento: {event}, valores: {values}")
+        #print(f"Evento: {event}, valores: {values}")
         if event == sg.WIN_CLOSED:
             break
         elif event == "-CONFIG_GUARDAR-":

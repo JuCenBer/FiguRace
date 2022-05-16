@@ -53,6 +53,7 @@ def iniciar_menu_principal():
             print(values["-USER-"])
         elif event == "-MODE-":
             print(values)
+            # actualizar archivo config
 
     # Cerramos la ventana
     window.close()
