@@ -3,45 +3,29 @@ import PySimpleGUI as sg
 from . import manejar_datos
 
 
+# Metodos de creacion de ventanas
 def crear_ventana_nuevo_jugador():
-    layout = [[sg.Text(text='Ingrese los datos del nuevo perfil: ', size=50)], [sg.Text(text='Nickname '), sg.Input()],
-              [sg.Text(text='Edad '), sg.Input()],
-              [sg.Text(text='Genero autopercibido '), sg.Input()],
-              [sg.Button(button_text='Crear',
-                         key='-CONFIRMAR CREAR JUGADOR-')]
+    lista_edades = [i for i in range(5,131)]
+    lista_generos = ['Hombre','Mujer','No Binario']
+    layout = [[[sg.Text(text='Ingrese los datos del nuevo perfil: ', size=50)], [sg.Text(text='Nickname '), sg.Input()],
+    [sg.Text(text='Ya existe un perfil con ese Nickname. Pruebe ingresando otro distinto.',key='-TEXTO NICKNAME EXISTENTE-', visible=False, text_color='red')],
+    [sg.Text(text='No puede registrar un perfil con un Nickname vacio.', key='-TEXTO NICKNAME VACIO-', visible=False, text_color='red')]],
+              [sg.Text(text='Edad '), sg.Combo(lista_edades, readonly=True, default_value = lista_edades[0])],
+              [sg.Text(text='Genero autopercibido '), sg.Combo(lista_generos, readonly= True, default_value= lista_generos[0])],
+              [sg.Button(button_text='Crear', key='-CONFIRMAR CREAR JUGADOR-')],
+              [sg.Button(button_text='Cancelar', key='-CANCELAR CREAR JUGADOR-')],
               ]
     return sg.Window('Nuevo Perfil', layout, finalize=True)
 
 
 def crear_ventana_editar_jugador(jugador_seleccionado):
     layout = [[sg.Text(text='Ingrese los datos del nuevo perfil: ', size=50)], [sg.Text(text='Nickname '), sg.Input(default_text=jugador_seleccionado[0][0], readonly=True)],
-              [sg.Text(text='Edad '), sg.Input(
-                  default_text=jugador_seleccionado[0][1])],
-
-              [sg.Text(text='Genero autopercibido '), sg.Input(
-                  default_text=jugador_seleccionado[0][2])],
-
-              [sg.Button(button_text='Confirmar edición',
-                         key='-CONFIRMAR EDICION JUGADOR-')],
-
-              [sg.Button(button_text='Volver',
-                         key='-CANCELAR EDICION JUGADOR-')]
+              [sg.Text(text='Edad '), sg.Input(default_text=jugador_seleccionado[0][1])],
+              [sg.Text(text='Genero autopercibido '), sg.Input(default_text=jugador_seleccionado[0][2])],
+              [sg.Button(button_text='Confirmar edición',key='-CONFIRMAR EDICION JUGADOR-')],
+              [sg.Button(button_text='Cancelar edición', key='-CANCELAR EDICION JUGADOR-')]
               ]
     return sg.Window('Editar Perfil', layout, finalize=True)
-
-
-def crear_perfil(datos):
-    jugador = {'nick': datos[0], 'edad': datos[1], 'genero': datos[2]}
-    jugadores = manejar_datos.obtener_perfiles()
-    jugadores.append(jugador)
-    manejar_datos.guardar_perfiles(jugadores)
-
-
-def modificar_perfil(datos):
-    jugador = {'nick': datos[0], 'edad': datos[1], 'genero': datos[2]}
-    jugadores = manejar_datos.obtener_perfiles()
-
-    manejar_datos.guardar_perfiles(jugadores)
 
 
 def crear_ventana_perfiles():
@@ -59,8 +43,41 @@ def crear_ventana_perfiles():
                         enable_events=True,
                         num_rows=min(10, len(lista_jugadores)), key='-EDITAR JUGADOR-')],
               [sg.Button('Crear Jugador', key='-CREAR JUGADOR-')],
-              [sg.Button('Volver', key='-VOLVER-')]]
+              [sg.Button('Volver', key='-VOLVER-')],
+              ]
     return sg.Window("Perfil", layout, margins=(200, 150), finalize=True)
+
+
+# Metodos de creacion/modificacion de perfiles
+def crear_perfil(datos, window):
+    jugador = {'nick': datos[0].strip(" "), 'edad': datos[1], 'genero': datos[2].strip(" ")}
+    if (len(jugador['nick']) != 0):
+        jugadores = manejar_datos.obtener_perfiles()
+        #Busco en la lista de jugadores el nick del jugador que modifique
+        for i in range(len(jugadores)):
+            if jugadores[i]['nick'] == jugador['nick']:
+                window['-TEXTO NICKNAME EXISTENTE-'].Update(visible= True)
+                window['-TEXTO NICKNAME VACIO-'].Update(visible=False)
+                return False
+        jugadores.append(jugador)
+        manejar_datos.guardar_perfiles(jugadores)
+        return True
+    else:
+        window['-TEXTO NICKNAME VACIO-'].Update(visible=True)
+        window['-TEXTO NICKNAME EXISTENTE-'].Update(visible=False)
+        return False
+
+
+def modificar_perfil(datos):
+    jugador_editado = {'nick': datos[0], 'edad': datos[1], 'genero': datos[2]}
+    jugadores = manejar_datos.obtener_perfiles()
+    #Busco en la lista de jugadores el nick del jugador que modifique
+    for i in range(len(jugadores)):
+        #Cuando lo encuentro, le actualizo la informacion
+        if jugadores[i]['nick'] == jugador_editado['nick']:
+            jugadores[i] = jugador_editado
+            break
+    manejar_datos.guardar_perfiles(jugadores)
 
 
 def iniciar_menu_perfiles():
@@ -84,6 +101,7 @@ def iniciar_menu_perfiles():
             current_window.close()
 
         elif event == '-CONFIRMAR EDICION JUGADOR-':
+            modificar_perfil(values)
             window = crear_ventana_perfiles()
             current_window.close()
 
@@ -96,7 +114,11 @@ def iniciar_menu_perfiles():
             current_window.close()
 
         elif event == '-CONFIRMAR CREAR JUGADOR-':
-            crear_perfil(values)
+            if (crear_perfil(values, window)):
+                current_window.close()
+                window = crear_ventana_perfiles()
+
+        elif event == '-CANCELAR CREAR JUGADOR-':
             current_window.close()
             window = crear_ventana_perfiles()
 

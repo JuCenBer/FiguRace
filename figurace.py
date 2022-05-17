@@ -12,4 +12,4 @@ if __name__ == "__main__":
 # menu_config.iniciar_pantalla_config()
 
 # Para probar el menu principal
-# menu_principal.iniciar_menu_principal()
+menu_principal.iniciar_menu_principal()
