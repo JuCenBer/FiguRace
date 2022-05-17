@@ -1,40 +1,66 @@
+from asyncio import windows_events
 from random import randint
 import PySimpleGUI as sg
+from . import manejar_datos as cfg
 import csv
 ronda= 0
+def iniciar_pantalla_juego():
+    config = cfg.obtener_config()
+    cuenta_regresiva= config["tiempo_ronda"] #hacer cuenta elemento_contador
 
-# En layout armamos la ventana.
-# layout es una lista que contiene una lista por cada fila de la ventana.
-opciones = [[sg.Input("Opcion_1",key="-option1-")],[sg.Input("Opcion_2",key="-option2-")],[sg.Input("Opcion_3",key="-option3-")],
-[sg.Input("Opcion_4",key="-option4-")],[sg.Input("Opcion_5",key="-option5-")]]
+    # En layout armamos la ventana.
+    # layout es una lista que contiene una lista por cada fila de la ventana.
+    opciones = [[sg.Input("Opcion_1",key="-option1-")],[sg.Input("Opcion_2",key="-option2-")],[sg.Input("Opcion_3",key="-option3-")],
+    [sg.Input("Opcion_4",key="-option4-")],[sg.Input("Opcion_5",key="-option5-")]]
+    # SELECCIONAR OPCION Y GUARDAR
+    # CONFIRMAR CON OK  
+    elemento_contador= [sg.Text(cuenta_regresiva, key="-CONTADOR-")]
 
-regresiva= [sg.Text(var_regresiva, key="-regresiva-")]
+    caracteristicas=[sg.Text("Nombre", key="-name-")],[sg.Text("Ubicacion:", key="-UBICACION-")],[sg.Text("Elevacion", key="-ELEVACION-")],
+    [sg.Text("Tipo", key="-TIPO-")],[sg.Text("Estado", key="-NOMBRE-")]
 
-caracteristicas=[sg.Text("Nombre", key="-name-")],[sg.Text("Ubicacion:", key="-UBICACION-")],[sg.Text("Elevacion", key="-ELEVACION-")],
-[sg.Text("Tipo", key="-TIPO-")],[sg.Text("Estado", key="-NOMBRE-")]
+    puntajes= []  # Agregar 10 niveles y un true or false
 
-puntajes= []  # Agregar 10 niveles y un true or false
+    layout = [
+        #Caracteristicas
+        caracteristicas,
+        #Opciones a elegir para pasar (son 5)
+        opciones,
+        #Cuenta Regresiva
+        elemento_contador,
+        #Puntaje actual
+        puntajes,
+        #Boton pasar (se pierde la ronda)
+        [sg.Input("Pasar",key="-PASAR-")],
+        #Volver menu (Se pierde actual y restantes)
+        [sg.Input("Volver al Menu",key="ABANDONO")]
+        #Popup mensaje final   
+    ]
+    window = sg.Window("Contador", layout)
 
-layout = [
-    #Caracteristicas
-    caracteristicas,
-    #Opciones a elegir para pasar (son 5)
-    opciones,
-    #Cuenta Regresiva
-    regresiva,
-    #Puntaje actual
-    puntajes,
-    #Boton pasar (se pierde la ronda)
-    [sg.Input("Pasar",key="-PASAR-")]
-    #Volver menu (Se pierde actual y restantes)
-    [sg.Input("Volver al Menu",key="ABANDONO")]
-    #Popup mensaje final   
-]
+    while True:
+        event, values = window.read(timeout=1000)
+        print(f"{event} {values}")
 
+        if event == sg.WIN_CLOSED:
+            break
+
+        elif event == "__TIMEOUT__":
+            # Incrementamos el cuenta_regresiva
+            cuenta_regresiva -= 1
+            # Obtenemos el elemento "-CONTADOR-"
+            elemento_contador = window["-CONTADOR-"]
+            # Le enviamos un mensaje "update" con un nuevo valor
+            elemento_contador.update(cuenta_regresiva)
+
+    window.close()   
+
+    # Cerramos la ventana
+        
 #--------------------------------------------------------------------------------------------------------------------------------
 #--------------------------------------------------------------------------------------------------------------------------------
 # FUNCIONES PARA INICIAR/ TERMINAR RONDAS
-def iniciar_ronda(num_ronda):
+'''def iniciar_ronda(num_ronda):
     ronda+=1
     nombres_datasets=[]
     elegido= seleccion_dataset(nombres_datasets())
@@ -48,14 +74,14 @@ def salir_menu():
     for x in Range(ronda,cant_rondas):
         opcion_incorrecta()
         ronda+=1
-    
+    '''
 
 
 #--------------------------------------------------------------------------------------------------------------------------------
 #--------------------------------------------------------------------------------------------------------------------------------
 # SETEO DE OPCIONES DE UNA RONDA
 
-def seleccion_dataset():
+'''def seleccion_dataset():
     nombres= obtener_nombres_datasets()     #Nombres datasets deberia devolver una lista de nombres
     elegido= nombres[randint(0,4)]     #Selecciono un dataset al azar
     return elegido
@@ -95,4 +121,4 @@ def validador_opcion(vector_op, respuesta):
 
 
     
-#VARIABLES FALTANTES N PREGUNTA ACT, VECTOR, NRO CTA REGRESIVA
+#VARIABLES FALTANTES N PREGUNTA ACT, VECTOR, NRO CTA REGRESIVA'''

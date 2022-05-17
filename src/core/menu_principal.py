@@ -2,6 +2,7 @@ import PySimpleGUI as sg
 from . import manejar_datos
 from . import menu_perfiles
 from . import menu_config
+from . import menu_juego
 
 sg.theme('DarkAmber')
 
@@ -44,6 +45,10 @@ def iniciar_menu_principal():
         elif event == "-CONFIG-":
             current_window.close()
             window = menu_config.iniciar_pantalla_config()
+            window = crear_ventana_principal()
+        elif event == "-JUGAR-":
+            current_window.close()
+            window = menu_juego.iniciar_pantalla_juego()
             window = crear_ventana_principal()
         elif event == "-PERFIL-":
             window.close()
