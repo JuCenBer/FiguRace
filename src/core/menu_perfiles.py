@@ -19,9 +19,11 @@ def crear_ventana_nuevo_jugador():
 
 
 def crear_ventana_editar_jugador(jugador_seleccionado):
+    lista_edades = [i for i in range(5, 131)]
+    lista_generos = ['Hombre', 'Mujer', 'No Binario']
     layout = [[sg.Text(text='Ingrese los datos del nuevo perfil: ', size=50)], [sg.Text(text='Nickname '), sg.Input(default_text=jugador_seleccionado[0][0], readonly=True)],
-              [sg.Text(text='Edad '), sg.Input(default_text=jugador_seleccionado[0][1])],
-              [sg.Text(text='Genero autopercibido '), sg.Input(default_text=jugador_seleccionado[0][2])],
+              [sg.Text(text='Edad '), sg.Combo(lista_edades, readonly=True, default_value=jugador_seleccionado[0][1])],
+              [sg.Text(text='Genero autopercibido '), sg.Combo(lista_generos, readonly=True, default_value=jugador_seleccionado[0][2].title())],
               [sg.Button(button_text='Confirmar edición',key='-CONFIRMAR EDICION JUGADOR-')],
               [sg.Button(button_text='Cancelar edición', key='-CANCELAR EDICION JUGADOR-')]
               ]
@@ -29,13 +31,8 @@ def crear_ventana_editar_jugador(jugador_seleccionado):
 
 
 def crear_ventana_perfiles():
-    jugadores = manejar_datos.obtener_perfiles()
-
     cabecera = ['Nickname', 'Edad', 'Genero Autopercibido']
-    lista_jugadores = list()
-    for jugador in jugadores:
-        datos = [jugador['nick'], jugador['edad'], jugador['genero']]
-        lista_jugadores.append(datos)
+    lista_jugadores = crear_listado_jugadores()
 
     layout = [[sg.Table(values=lista_jugadores, headings=cabecera,
                         auto_size_columns=True,
@@ -79,6 +76,13 @@ def modificar_perfil(datos):
             break
     manejar_datos.guardar_perfiles(jugadores)
 
+def crear_listado_jugadores():
+    jugadores = manejar_datos.obtener_perfiles()
+    lista_jugadores = list()
+    for jugador in jugadores:
+        datos = [jugador['nick'], jugador['edad'], jugador['genero']]
+        lista_jugadores.append(datos)
+    return lista_jugadores
 
 def iniciar_menu_perfiles():
     # Principal
@@ -89,12 +93,7 @@ def iniciar_menu_perfiles():
         if (event == sg.WIN_CLOSED) or (event == '-VOLVER-'):
             break
         elif event == '-EDITAR JUGADOR-':
-            jugadores = manejar_datos.obtener_perfiles()
-            lista_jugadores = list()
-            # crear funcion de esto
-            for jugador in jugadores:
-                datos = [jugador['nick'], jugador['edad'], jugador['genero']]
-                lista_jugadores.append(datos)
+            lista_jugadores = crear_listado_jugadores()
             jugador_seleccionado = [lista_jugadores[row]
                                     for row in values[event]]
             window = crear_ventana_editar_jugador(jugador_seleccionado)
