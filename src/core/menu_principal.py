@@ -53,6 +53,10 @@ def iniciar_menu_principal():
             current_window.close()
             window = menu_config.iniciar_pantalla_config()
             window = crear_ventana_principal()
+        elif event == "-JUGAR-":
+            current_window.close()
+            window = menu_juego.iniciar_pantalla_juego()
+            window = crear_ventana_principal()
         elif event == "-PERFIL-":
             current_window.close()
             window = menu_perfiles.iniciar_menu_perfiles()
