@@ -14,4 +14,3 @@ if __name__ == "__main__":
 
 # Para probar el menu principal
 menu_principal.iniciar_menu_principal()
-

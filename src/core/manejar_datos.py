@@ -50,3 +50,8 @@ def guardar_config(dicc):
         dicc_json = []
         dicc_json.append(dicc)
         json.dump(dicc_json, archivo)
+
+def obtener_top_puntajes():
+    ruta = os.path.join(os.getcwd(), "src", "datos", "config.json")
+    
+    return []

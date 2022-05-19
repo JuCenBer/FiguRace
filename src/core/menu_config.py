@@ -26,10 +26,10 @@ def iniciar_pantalla_config():
     elem_carac_tarjeta = [sg.Text("Características a mostrar por tarjeta", font="Helvetica 13", justification="center"),
                 sg.Slider(range=(1,5), key="-CONFIG_CANT_CARAC-", orientation="h",border_width= 10, default_value=config_previa["cant_carac"], font="Helvetica 13", s = (18, 1))]
 
-    elem_guardar = [sg.Button("Guardar",key="-CONFIG_GUARDAR-", font="Helvetica 13",s=(10, 1)), 
+    elem_botones = [sg.Button("Guardar",key="-CONFIG_GUARDAR-", font="Helvetica 13",s=(10, 1)), 
                 sg.Button("Volver",key="-CONFIG_VOLVER-", font="Helvetica 13",s=(10, 1))]
 
-    contenedor = [sg.Frame(title="Opciones de configuración",title_location="n", vertical_alignment="center", element_justification="center",    expand_x=True, expand_y=True, layout=[elem_datasets, elem_tiempo, elem_rondas, elem_puntos_bien, elem_puntos_mal, elem_carac_tarjeta, [sg.HorizontalSeparator()], elem_guardar])]
+    contenedor = [sg.Frame(border_width=0, title="Opciones de configuración",title_location="n", vertical_alignment="center", element_justification="center",    expand_x=True, expand_y=True, layout=[elem_datasets, elem_tiempo, elem_rondas, elem_puntos_bien, elem_puntos_mal, elem_carac_tarjeta, [sg.HorizontalSeparator()], elem_botones])]
 
     estructura = [contenedor]
 
@@ -37,9 +37,7 @@ def iniciar_pantalla_config():
     window = sg.Window("Configuración",estructura,size=(1000, 600))
 
     while True:
-    # Esperamos un evento
         event, values = window.read()
-
         #print(f"Evento: {event}, valores: {values}")
         if event == sg.WIN_CLOSED:
             break
@@ -55,7 +53,6 @@ def iniciar_pantalla_config():
             #print("Guardar")
             #print(seleccionados)
         elif event == "-CONFIG_VOLVER-":
-            # Guardar config seleccionada en archivo
             #print("Volver")
             break
         
