@@ -1,6 +1,19 @@
 import os
 import json
 
+def obtener_ultima_sesion():
+    try:
+        with open(os.path.join(os.getcwd(), "src", "datos", "ultima_sesion.json"), "r", encoding='utf-8') as sesion:
+            sesion_actual = json.load(sesion)  # intento cargar el json
+    except:
+        with open(os.path.join(os.getcwd(), "src", "datos", "ultima_sesion.json"), "w", encoding='utf-8') as sesion:
+            sesion_actual = {"nick":"", "dificultad":"facil", "puntaje":0, "fecha":"-"}
+    return sesion_actual
+
+def guardar_ultima_sesion(sesion_actual):
+    with open(os.path.join(os.getcwd(), "src", "datos", "ultima_sesion.json"), "w", encoding='utf-8') as sesion:
+        json.dump(sesion_actual, sesion)
+
 def obtener_perfiles():
     try:
         with open(os.path.join(os.getcwd(), "src", "datos", "perfiles.json"), "r", encoding='utf-8') as perfiles:
