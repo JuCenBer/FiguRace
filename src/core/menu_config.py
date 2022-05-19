@@ -29,12 +29,9 @@ def iniciar_pantalla_config():
     elem_botones = [sg.Button("Guardar",key="-CONFIG_GUARDAR-", font="Helvetica 13",s=(10, 1)), 
                 sg.Button("Volver",key="-CONFIG_VOLVER-", font="Helvetica 13",s=(10, 1))]
 
-    contenedor = [sg.Frame(border_width=0, title="Opciones de configuración",title_location="n", vertical_alignment="center", element_justification="center",    expand_x=True, expand_y=True, layout=[elem_datasets, elem_tiempo, elem_rondas, elem_puntos_bien, elem_puntos_mal, elem_carac_tarjeta, [sg.HorizontalSeparator()], elem_botones])]
+    contenedor = [[sg.Frame(border_width=0, title="Opciones de configuración",title_location="n", vertical_alignment="center", element_justification="center",    expand_x=True, expand_y=True, layout=[elem_datasets, elem_tiempo, elem_rondas, elem_puntos_bien, elem_puntos_mal, elem_carac_tarjeta, [sg.HorizontalSeparator()], elem_botones])]]
 
-    estructura = [contenedor]
-
-
-    window = sg.Window("Configuración",estructura,size=(1000, 600))
+    window = sg.Window("Configuración",contenedor,size=(1000, 600))
 
     while True:
         event, values = window.read()

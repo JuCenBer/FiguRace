@@ -3,6 +3,7 @@ from . import manejar_datos
 from . import menu_perfiles
 from . import menu_config
 from . import menu_puntajes
+from . import menu_juego
 
 sg.theme('DarkAmber')
 
