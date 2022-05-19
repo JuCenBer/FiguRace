@@ -9,6 +9,8 @@ sg.theme('DarkAmber')
 
 def iniciar_menu_principal():
 
+    #sesion_actual = {"usuario": }
+
     def crear_ventana_principal():
         menu = [
             [sg.Text("FIGURACE", justification="center", font="Helvetica 15 bold", pad=((0, 0), (0, 10)))],

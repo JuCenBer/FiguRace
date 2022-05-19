@@ -27,10 +27,8 @@ def iniciar_pantalla_puntajes():
 
     while True:
         event, values = window.read()
-        #print(f"Evento: {event}, valores: {values}")
         if event == sg.WIN_CLOSED:
             break
         elif event == "-PUNTAJES_VOLVER-":
-            #print("Volver")
             break
     window.close()
