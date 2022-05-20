@@ -1,12 +1,14 @@
 
 
 import PySimpleGUI as sg
-from . import manejar_datos as cfg
+from numpy import size
+from . import manejar_datos
+from . import menu_principal as menu
 import csv
 
 ronda= 0
 def iniciar_pantalla_juego():
-    config = cfg.obtener_config()
+    config = manejar_datos.obtener_config()
     cuenta_regresiva= config["tiempo_ronda"] #hacer cuenta elemento_contador
 
     # En layout armamos la ventana.
@@ -34,7 +36,7 @@ def iniciar_pantalla_juego():
         #Boton pasar (se pierde la ronda)
         [sg.Button("Pasar",key="-PASAR-")],
         #Volver menu (Se pierde actual y restantes)
-        [sg.Button("Volver al Menu",key="-ABANDONO-")]
+        [sg.Button("Volver al Menu", key="-ABANDONO-")]
         #Popup mensaje final   
     ]
     window = sg.Window("Menu de juego", layout, size=(500, 500), finalize=True)
@@ -44,10 +46,12 @@ def iniciar_pantalla_juego():
         print(f"{event} {values}")
 
         if event == sg.WIN_CLOSED:
+            menu.crear_ventana_principal
             break
     
         if event == "-ABANDONO-":
-            print('intentaste abandonar')
+            menu.crear_ventana_principal
+            break
             
         elif event == "__TIMEOUT__":
             # Incrementamos el cuenta_regresiva
