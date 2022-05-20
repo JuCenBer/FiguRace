@@ -1,8 +1,9 @@
-from asyncio import windows_events
-from random import randint
+
+
 import PySimpleGUI as sg
 from . import manejar_datos as cfg
 import csv
+
 ronda= 0
 def iniciar_pantalla_juego():
     config = cfg.obtener_config()
@@ -10,8 +11,8 @@ def iniciar_pantalla_juego():
 
     # En layout armamos la ventana.
     # layout es una lista que contiene una lista por cada fila de la ventana.
-    opciones = [[sg.Input("Opcion_1",key="-option1-")],[sg.Input("Opcion_2",key="-option2-")],[sg.Input("Opcion_3",key="-option3-")],
-    [sg.Input("Opcion_4",key="-option4-")],[sg.Input("Opcion_5",key="-option5-")]]
+    opciones = [[sg.Button("Opcion 1",key="-option1-")],[sg.Button("Opcion 2",key="-option2-")],[sg.Button("Opcion 3",key="-option3-")],
+    [sg.Button("Opcion 4",key="-option4-")],[sg.Button("Opcion 5",key="-option5-")]]
     # SELECCIONAR OPCION Y GUARDAR
     # CONFIRMAR CON OK  
     elemento_contador= [sg.Text(cuenta_regresiva, key="-CONTADOR-")]
@@ -31,20 +32,23 @@ def iniciar_pantalla_juego():
         #Puntaje actual
         puntajes,
         #Boton pasar (se pierde la ronda)
-        [sg.Input("Pasar",key="-PASAR-")],
+        [sg.Button("Pasar",key="-PASAR-")],
         #Volver menu (Se pierde actual y restantes)
-        [sg.Input("Volver al Menu",key="ABANDONO")]
+        [sg.Button("Volver al Menu",key="-ABANDONO-")]
         #Popup mensaje final   
     ]
-    window = sg.Window("Contador", layout)
-
+    window = sg.Window("Menu de juego", layout, size=(500, 500), finalize=True)
     while True:
         event, values = window.read(timeout=1000)
+    
         print(f"{event} {values}")
 
         if event == sg.WIN_CLOSED:
             break
-
+    
+        if event == "-ABANDONO-":
+            print('intentaste abandonar')
+            
         elif event == "__TIMEOUT__":
             # Incrementamos el cuenta_regresiva
             cuenta_regresiva -= 1
