@@ -13,30 +13,36 @@ def iniciar_pantalla_juego():
 
     # En layout armamos la ventana.
     # layout es una lista que contiene una lista por cada fila de la ventana.
-    opciones = [[sg.Button("Opcion 1",key="-option1-")],[sg.Button("Opcion 2",key="-option2-")],[sg.Button("Opcion 3",key="-option3-")],
-    [sg.Button("Opcion 4",key="-option4-")],[sg.Button("Opcion 5",key="-option5-")]]
+    opciones = [[sg.Button("Opcion 1",button_color=('black', 'white'), size=(60, 1), font=("Helvetica", 10),key="-option1-")],
+    [sg.Button("Opcion 2",button_color=('black', 'white'), size=(60, 1), font=("Helvetica", 10),key="-option2-")],
+    [sg.Button("Opcion 3",button_color=('black', 'white'), size=(60, 1), font=("Helvetica", 10),key="-option3-")],
+    [sg.Button("Opcion 4",button_color=('black', 'white'), size=(60, 1), font=("Helvetica", 10),key="-option4-")],
+    [sg.Button("Opcion 5",button_color=('black', 'white'), size=(60, 1), font=("Helvetica", 10),key="-option5-")]]
     # SELECCIONAR OPCION Y GUARDAR
     # CONFIRMAR CON OK  
-    elemento_contador= [sg.Text(cuenta_regresiva, key="-CONTADOR-")]
+    elemento_contador= [[sg.Text("TIEMPO: ",font=("bold", 15), text_color= "white",justification = "right")],
+    [sg.Text(cuenta_regresiva,font=("bold", 15),justification = "left", text_color= "white",key="-CONTADOR-")]]
 
-    caracteristicas=[sg.Text("Nombre", key="-name-")],[sg.Text("Ubicacion:", key="-UBICACION-")],[sg.Text("Elevacion", key="-ELEVACION-")],
-    [sg.Text("Tipo", key="-TIPO-")],[sg.Text("Estado", key="-NOMBRE-")]
+    caracteristicas=[[sg.Text("Nombre:",font=("Helvetica", 10), key="-name-")],[sg.Text("Ubicacion:",font=("Helvetica", 10), key="-UBICACION-")],
+    [sg.Text("Elevacion: ", key="-ELEVACION-")],[sg.Text("Tipo:",font=("Helvetica", 10), key="-TIPO-")],[sg.Text("Estado:",font=("Helvetica", 10), key="-NOMBRE-")]]
 
     puntajes= []  # Agregar 10 niveles y un true or false
 
     layout = [
+       
+        #Cuenta Regresiva
+        elemento_contador,
         #Caracteristicas
         caracteristicas,
         #Opciones a elegir para pasar (son 5)
         opciones,
-        #Cuenta Regresiva
-        elemento_contador,
         #Puntaje actual
         puntajes,
         #Boton pasar (se pierde la ronda)
-        [sg.Button("Pasar",key="-PASAR-")],
+        [sg.Button("Pasar",button_color=('white', 'red'), size=(60, 1), font=("Helvetica", 10),key="-PASAR-")],
         #Volver menu (Se pierde actual y restantes)
-        [sg.Button("Volver al Menu", key="-ABANDONO-")]
+        #sg.Button('1', button_color=('white', 'blue'), size=(5, 1), font=("Helvetica", 20))
+        [sg.Button("Volver al Menu", button_color=('white', 'red'), size=(60, 1), font=("Helvetica", 10), key="-ABANDONO-")]
         #Popup mensaje final   
     ]
     window = sg.Window("Menu de juego", layout, size=(500, 500), finalize=True)
