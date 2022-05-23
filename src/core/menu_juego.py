@@ -8,6 +8,8 @@ def iniciar_pantalla_juego():
     config = manejar_datos.obtener_config()
     cuenta_regresiva= config["tiempo_ronda"] #hacer cuenta elemento_contador
 
+    dataset = manejar_datos.obtener_dataset(config["dataset"])
+
     # En layout armamos la ventana.
     # layout es una lista que contiene una lista por cada fila de la ventana.
     opciones = [[sg.Button("Opcion 1",button_color=('black', 'white'), size=(60, 1), font=("Helvetica", 10),key="-option1-")],

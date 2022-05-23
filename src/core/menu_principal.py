@@ -31,7 +31,7 @@ def crear_ventana_nuevo_jugador():
 
 
 def crear_ventana_principal():
-    ### Este menu es la ventana principal, obtiene los perfiles ya creados y la dificultad seleccionada ###
+    ### Este menu es la ventana principal, obtiene los perfiles ya creados y la dificultad seleccionada, se comunica ###
     menu = [
         [sg.Text("FIGURACE", justification="center",
                  font="Helvetica 15 bold", pad=((0, 0), (0, 10)))],
