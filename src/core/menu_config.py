@@ -6,7 +6,7 @@ from . import manejar_datos
 def iniciar_pantalla_config():
     config_previa = manejar_datos.obtener_config()
 
-    nombres_datasets = manejar_datos.obtener_nombres_datasets()
+    nombres_datasets = ["Aleatorio", "Erupciones volcanicas", "Lagos de Argentina", "Peliculas", "Jugadores FIFA 2021"]
     
     elem_datasets = [sg.Text("Dataset ", font="Helvetica 13", justification="center"),
                 sg.Combo(nombres_datasets, key="-CONFIG_DATASET-", default_value=config_previa["dataset"], font="Helvetica 13", s = (18, 1), readonly=True)]
@@ -39,6 +39,15 @@ def iniciar_pantalla_config():
         if event == sg.WIN_CLOSED:
             break
         elif event == "-CONFIG_GUARDAR-":
+            match values["-CONFIG_DATASET-"]:
+                case "Lagos de Argentina":
+                    nombre_dataset = "lagos_formateados.csv"
+                case "Erupciones volcanicas":
+                    nombre_dataset = "lagos_formateados.csv"
+                case "Peliculas":
+                    nombre_dataset = "lagos_formateados.csv"
+                case "Jugadores FIFA 2021":
+                    nombre_dataset = "lagos_formateados.csv"
             seleccionados = {"dataset": values["-CONFIG_DATASET-"],
                             "tiempo_ronda": values["-CONFIG_TIEMPO-"],
                             "cant_rondas" : values["-CONFIG_RONDAS-"],

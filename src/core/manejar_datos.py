@@ -68,3 +68,9 @@ def obtener_top_puntajes():
     ruta = os.path.join(os.getcwd(), "src", "datos", "config.json")
     
     return []
+
+def obtener_dataset(nombre_dataset):
+    nombre_dataset_csv += ".csv"
+    ruta = os.path.join(os.getcwd(), "src", "datasets", "nombre_dataset_csv")
+
+    return []
