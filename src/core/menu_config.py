@@ -39,25 +39,22 @@ def iniciar_pantalla_config():
         if event == sg.WIN_CLOSED:
             break
         elif event == "-CONFIG_GUARDAR-":
-            match values["-CONFIG_DATASET-"]:
-                case "Lagos de Argentina":
-                    nombre_dataset = "lagos_formateados.csv"
-                case "Erupciones volcanicas":
-                    nombre_dataset = "lagos_formateados.csv"
-                case "Peliculas":
-                    nombre_dataset = "lagos_formateados.csv"
-                case "Jugadores FIFA 2021":
-                    nombre_dataset = "lagos_formateados.csv"
-            seleccionados = {"dataset": values["-CONFIG_DATASET-"],
+            if values["-CONFIG_DATASET-"] == "Aleatorio":
+                nombre_dataset = "random"
+            else:
+                nombre_dataset = values["-CONFIG_DATASET-"].lower().split()[0] + "_formateado.csv"
+
+            seleccionados = {"dataset_formateado": nombre_dataset,
+                            "dataset": values["-CONFIG_DATASET-"],
                             "tiempo_ronda": values["-CONFIG_TIEMPO-"],
                             "cant_rondas" : values["-CONFIG_RONDAS-"],
                             "puntos_bien" : values["-CONFIG_PUNTOS_BIEN-"],
                             "puntos_mal" : values["-CONFIG_PUNTOS_MAL-"],
                             "cant_carac" : values["-CONFIG_CANT_CARAC-"] }
-            
+
             manejar_datos.guardar_config(seleccionados)
             #print("Guardar")
-            #print(seleccionados)
+            print(seleccionados)
         elif event == "-CONFIG_VOLVER-":
             #print("Volver")
             break
