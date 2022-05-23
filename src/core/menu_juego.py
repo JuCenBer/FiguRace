@@ -1,7 +1,4 @@
-
-
 import PySimpleGUI as sg
-from numpy import size
 from . import manejar_datos
 from . import menu_principal as menu
 import csv
