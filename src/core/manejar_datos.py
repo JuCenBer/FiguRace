@@ -1,5 +1,7 @@
 import os
 import json
+import csv
+from random import randint
 
 def obtener_ultima_sesion():
     try:
@@ -70,7 +72,16 @@ def obtener_top_puntajes():
     return []
 
 def obtener_dataset(nombre_dataset):
-    nombre_dataset_csv += ".csv"
-    ruta = os.path.join(os.getcwd(), "src", "datasets", "nombre_dataset_csv")
+    nombres_datasets = ["erupciones_formateado.csv", "lagos_formateado.csv", "peliculas_formateado.csv", "jugadores_formateado.csv"]
 
-    return []
+    if nombre_dataset == "Aleatorio":
+        nombre_dataset = nombres_datasets[randint(0,len(nombres_datasets)-1)]
+    else:
+        nombre_dataset = nombre_dataset.lower().split()[0] + "_formateado.csv"
+
+    ruta = os.path.join(os.getcwd(), "src", "datasets", nombre_dataset)
+
+    with open(ruta,'r',encoding='utf-8') as archivo:
+        reader = csv.reader(archivo)
+        lista = list(reader)
+    return lista

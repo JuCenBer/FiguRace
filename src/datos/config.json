@@ -1,1 +1,1 @@
-[{"dataset_formateado": "lagos_formateado.csv", "dataset": "Lagos de Argentina", "tiempo_ronda": 9.0, "cant_rondas": 8.0, "puntos_bien": 13.0, "puntos_mal": -9.0, "cant_carac": 5.0}]
+[{"dataset_formateado": "random", "dataset": "Aleatorio", "tiempo_ronda": 9.0, "cant_rondas": 8.0, "puntos_bien": 13.0, "puntos_mal": -9.0, "cant_carac": 5.0}]

@@ -43,7 +43,7 @@ def iniciar_pantalla_config():
                 nombre_dataset = "random"
             else:
                 nombre_dataset = values["-CONFIG_DATASET-"].lower().split()[0] + "_formateado.csv"
-
+            
             seleccionados = {"dataset_formateado": nombre_dataset,
                             "dataset": values["-CONFIG_DATASET-"],
                             "tiempo_ronda": values["-CONFIG_TIEMPO-"],
