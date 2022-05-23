@@ -10,10 +10,9 @@ sg.theme('DarkAmber')
 
 # sesion_actual = {"usuario": }
 
-"""Por si por primera vez, no hay perfiles creados"""
-
-
 def crear_ventana_nuevo_jugador():
+    """Por si por primera vez, no hay perfiles creados"""
+    ### El siguiente codigo es el menu de crear nuevo perfil modificado, se lanza cuando no hay perfiles creados y no permite al usuario salir ###
     lista_edades = [i for i in range(5, 131)]
     lista_generos = ['Hombre', 'Mujer', 'No Binario']
     layout = [[[sg.Text(text='Ingrese los datos del nuevo perfil: ', size=50)], [sg.Text(text='Nickname '), sg.Input()],
@@ -32,7 +31,7 @@ def crear_ventana_nuevo_jugador():
 
 
 def crear_ventana_principal():
-
+    ### Este menu es la ventana principal, obtiene los perfiles ya creados y la dificultad seleccionada ###
     menu = [
         [sg.Text("FIGURACE", justification="center",
                  font="Helvetica 15 bold", pad=((0, 0), (0, 10)))],
