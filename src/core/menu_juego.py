@@ -1,3 +1,4 @@
+from random import randrange, shuffle
 import PySimpleGUI as sg
 from . import manejar_datos
 from . import menu_principal as menu
@@ -11,22 +12,29 @@ def iniciar_pantalla_juego():
     dataset = manejar_datos.obtener_dataset(config["dataset"])
     encabezado = dataset[0]
 
+    caracteristicas = []
+    linea_correcta = dataset[randrange(1, len(dataset)-1)]
+    print(linea_correcta)
+    for i in range(int(config["cant_carac"])):
+        carac = [sg.Text(encabezado[i].title() + ": " + linea_correcta[i].title(),font=("Helvetica", 12))]
+        caracteristicas.append(carac)
+
     # En layout armamos la ventana.
     # layout es una lista que contiene una lista por cada fila de la ventana.
-    opciones = [[sg.Button("Opcion 1",button_color=('black', 'white'), size=(60, 1), font=("Helvetica", 10),key="-option1-")],
-    [sg.Button("Opcion 2",button_color=('black', 'white'), size=(60, 1), font=("Helvetica", 10),key="-option2-")],
-    [sg.Button("Opcion 3",button_color=('black', 'white'), size=(60, 1), font=("Helvetica", 10),key="-option3-")],
-    [sg.Button("Opcion 4",button_color=('black', 'white'), size=(60, 1), font=("Helvetica", 10),key="-option4-")],
-    [sg.Button("Opcion 5",button_color=('black', 'white'), size=(60, 1), font=("Helvetica", 10),key="-option5-")]]
+    opciones = [[sg.Button(linea_correcta[5].title(), button_color=('black', 'white'), size=(60, 1), font=("Helvetica", 10), key="-OPCION CORRECTA-")]]
+    for i in range(4):
+        linea_random = dataset[randrange(1, len(dataset)-1)]
+        while linea_correcta == linea_random:
+            linea_random = dataset[randrange(1, len(dataset)-1)]
+        boton_incorrecto = [sg.Button(linea_random[5].title(), button_color=('black', 'white'), size=(60, 1), font=("Helvetica", 10), key="-OPCION INCORRECTA "+str(i)+"-")]
+        opciones.append(boton_incorrecto)
+    shuffle(opciones)
+
     # SELECCIONAR OPCION Y GUARDAR
     # CONFIRMAR CON OK  
     elemento_contador= [[sg.Text("TIEMPO: ",font=("bold", 15), text_color= "white",justification = "right")],
     [sg.Text(cuenta_regresiva,font=("bold", 15),justification = "left", text_color= "white",key="-CONTADOR-")]]
 
-    caracteristicas = []
-    for i in range(int(config["cant_carac"])):
-        carac = [sg.Text(encabezado[i].title(),font=("Helvetica", 12))]
-        caracteristicas.append(carac)
 
     puntajes= []  # Agregar 10 niveles y un true or false
 
@@ -68,7 +76,10 @@ def iniciar_pantalla_juego():
             elemento_contador = window["-CONTADOR-"]
             # Le enviamos un mensaje "update" con un nuevo valor
             elemento_contador.update(cuenta_regresiva)
-
+        elif event == "-OPCION CORRECTA-":
+            print("COOOOORRRECCCCTOOOOOOO")
+        elif 'INCORRECTA' in event:
+            print("INCORRECTO...")
     window.close()   
 
     # Cerramos la ventana
