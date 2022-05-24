@@ -1,26 +1,11 @@
+from lib2to3.pgen2.pgen import generate_grammar
 from random import randrange, shuffle
 import PySimpleGUI as sg
 from . import manejar_datos
 from . import menu_principal as menu
 import csv
 
-ronda= 0
-def iniciar_pantalla_juego():
-    config = manejar_datos.obtener_config()
-    cuenta_regresiva= config["tiempo_ronda"] #hacer cuenta elemento_contador
-
-    dataset = manejar_datos.obtener_dataset(config["dataset"])
-    encabezado = dataset[0]
-
-    caracteristicas = []
-    linea_correcta = dataset[randrange(1, len(dataset)-1)]
-    print(linea_correcta)
-    for i in range(int(config["cant_carac"])):
-        carac = [sg.Text(encabezado[i].title() + ": " + linea_correcta[i].title(),font=("Helvetica", 12))]
-        caracteristicas.append(carac)
-
-    # En layout armamos la ventana.
-    # layout es una lista que contiene una lista por cada fila de la ventana.
+def generar_opciones(dataset,linea_correcta):
     opciones = [[sg.Button(linea_correcta[5].title(), button_color=('black', 'white'), size=(60, 1), font=("Helvetica", 10), key="-OPCION CORRECTA-")]]
     for i in range(4):
         linea_random = dataset[randrange(1, len(dataset)-1)]
@@ -29,17 +14,29 @@ def iniciar_pantalla_juego():
         boton_incorrecto = [sg.Button(linea_random[5].title(), button_color=('black', 'white'), size=(60, 1), font=("Helvetica", 10), key="-OPCION INCORRECTA "+str(i)+"-")]
         opciones.append(boton_incorrecto)
     shuffle(opciones)
+    return opciones
 
-    # SELECCIONAR OPCION Y GUARDAR
-    # CONFIRMAR CON OK  
+def obtener_caracteristicas(config,encabezado,linea_correcta):
+    caracteristicas = []
+    for i in range(int(config["cant_carac"])):
+        carac = [sg.Text(encabezado[i].title() + ": " + linea_correcta[i].title(),font=("Helvetica", 12))]
+        caracteristicas.append(carac)
+    return caracteristicas
+
+def generar_layout(config,dataset):
+    encabezado = dataset[0]
+    cuenta_regresiva= config["tiempo_ronda"] #hacer cuenta elemento_contador
+    linea_correcta = dataset[randrange(1, len(dataset)-1)]
+
     elemento_contador= [[sg.Text("TIEMPO: ",font=("bold", 15), text_color= "white",justification = "right")],
     [sg.Text(cuenta_regresiva,font=("bold", 15),justification = "left", text_color= "white",key="-CONTADOR-")]]
 
+    puntajes= []
 
-    puntajes= []  # Agregar 10 niveles y un true or false
+    caracteristicas = obtener_caracteristicas(config,encabezado,linea_correcta)
+    opciones = generar_opciones(dataset,linea_correcta)
 
     layout = [
-       
         #Cuenta Regresiva
         elemento_contador,
         #Caracteristicas
@@ -55,7 +52,15 @@ def iniciar_pantalla_juego():
         [sg.Button("Volver al Menu", button_color=('white', 'red'), size=(60, 1), font=("Helvetica", 10), key="-ABANDONO-")]
         #Popup mensaje final   
     ]
-    window = sg.Window("Menu de juego", layout, size=(500, 500), finalize=True)
+    return layout
+
+ronda= 0
+def iniciar_pantalla_juego():
+    config = manejar_datos.obtener_config()
+    cuenta_regresiva= config["tiempo_ronda"] #hacer cuenta elemento_contador
+    dataset = manejar_datos.obtener_dataset(config["dataset"])
+
+    window = sg.Window("Menu de juego", layout = generar_layout(config,dataset), size=(500, 500), finalize=True)
     while True:
         event, values = window.read(timeout=1000)
     
@@ -80,6 +85,8 @@ def iniciar_pantalla_juego():
             print("COOOOORRRECCCCTOOOOOOO")
         elif 'INCORRECTA' in event:
             print("INCORRECTO...")
+        elif event == "-PASAR-":
+            pass
     window.close()   
 
     # Cerramos la ventana

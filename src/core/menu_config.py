@@ -29,7 +29,7 @@ def iniciar_pantalla_config():
     elem_botones = [sg.Button("Guardar",key="-CONFIG_GUARDAR-", font="Helvetica 13",s=(10, 1)), 
                 sg.Button("Volver",key="-CONFIG_VOLVER-", font="Helvetica 13",s=(10, 1))]
 
-    contenedor = [[sg.Frame(border_width=0, title="Opciones de configuración",title_location="n", vertical_alignment="center", element_justification="center",    expand_x=True, expand_y=True, layout=[elem_datasets, elem_tiempo, elem_rondas, elem_puntos_bien, elem_puntos_mal, elem_carac_tarjeta, [sg.HorizontalSeparator()], elem_botones])]]
+    contenedor = [[sg.Frame(border_width=0, title="Opciones de configuración",title_location="n", vertical_alignment="center", element_justification="center", expand_x=True, expand_y=True, layout=[elem_datasets, elem_tiempo, elem_rondas, elem_puntos_bien, elem_puntos_mal, elem_carac_tarjeta, [sg.HorizontalSeparator()], elem_botones])]]
 
     window = sg.Window("Configuración",contenedor,size=(1000, 600))
 
@@ -39,11 +39,7 @@ def iniciar_pantalla_config():
         if event == sg.WIN_CLOSED:
             break
         elif event == "-CONFIG_GUARDAR-":
-            if values["-CONFIG_DATASET-"] == "Aleatorio":
-                nombre_dataset = "random"
-            else:
-                nombre_dataset = values["-CONFIG_DATASET-"].lower().split()[0] + "_formateado.csv"
-            
+
             seleccionados = {"dataset_formateado": nombre_dataset,
                             "dataset": values["-CONFIG_DATASET-"],
                             "tiempo_ronda": values["-CONFIG_TIEMPO-"],
