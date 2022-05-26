@@ -1,20 +1,21 @@
 from lib2to3.pgen2.pgen import generate_grammar
-from random import randrange, shuffle
+from random import randrange, shuffle, choices
 import PySimpleGUI as sg
 from . import manejar_datos
 from . import menu_principal as menu
 import csv
 
-def generar_opciones(dataset,linea_correcta):
-    opciones = [[sg.Button(linea_correcta[5].title(), button_color=('black', 'white'), size=(60, 1), font=("Helvetica", 10), key="-OPCION CORRECTA-")]]
-    for i in range(4):
-        linea_random = dataset[randrange(1, len(dataset)-1)]
-        while linea_correcta == linea_random:
-            linea_random = dataset[randrange(1, len(dataset)-1)]
-        boton_incorrecto = [sg.Button(linea_random[5].title(), button_color=('black', 'white'), size=(60, 1), font=("Helvetica", 10), key="-OPCION INCORRECTA "+str(i)+"-")]
+def generar_opciones(dataset):
+    lineas = choices(dataset, k=5)
+    opcion_correcta = [sg.Button(lineas[0][5].title(), button_color=('black', 'white'), size=(60, 1), font=("Helvetica", 10), key="-OPCION CORRECTA-")]
+    linea_correcta = lineas[0]
+    opciones = [opcion_correcta]
+    for i in range(1,5):
+        boton_incorrecto = [sg.Button(lineas[i][5].title(), button_color=('black', 'white'), size=(60, 1), font=("Helvetica", 10), key="-OPCION INCORRECTA "+str(i)+"-")]
         opciones.append(boton_incorrecto)
+        
     shuffle(opciones)
-    return opciones
+    return opciones, linea_correcta
 
 def obtener_caracteristicas(config,encabezado,linea_correcta):
     caracteristicas = []
@@ -33,8 +34,8 @@ def generar_layout(config,dataset):
 
     puntajes= []
 
+    opciones, linea_correcta = generar_opciones(dataset)
     caracteristicas = obtener_caracteristicas(config,encabezado,linea_correcta)
-    opciones = generar_opciones(dataset,linea_correcta)
 
     layout = [
         #Cuenta Regresiva
