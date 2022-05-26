@@ -39,8 +39,7 @@ def iniciar_pantalla_config():
         if event == sg.WIN_CLOSED:
             break
         elif event == "-CONFIG_GUARDAR-":
-
-            seleccionados = {"dataset_formateado": nombre_dataset,
+            seleccionados = {"dataset_formateado": values["-CONFIG_DATASET-"],
                             "dataset": values["-CONFIG_DATASET-"],
                             "tiempo_ronda": values["-CONFIG_TIEMPO-"],
                             "cant_rondas" : values["-CONFIG_RONDAS-"],
@@ -49,10 +48,6 @@ def iniciar_pantalla_config():
                             "cant_carac" : values["-CONFIG_CANT_CARAC-"] }
 
             manejar_datos.guardar_config(seleccionados)
-            #print("Guardar")
-            print(seleccionados)
         elif event == "-CONFIG_VOLVER-":
-            #print("Volver")
             break
-        
     window.close()
