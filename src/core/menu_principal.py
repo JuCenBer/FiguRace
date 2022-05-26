@@ -58,7 +58,7 @@ def crear_ventana_principal():
                   layout=[[sg.Combo(perfiles, key="-USER-", font="Helvetica 11", size=(20, 1), enable_events=True, readonly=True, default_value=ultima_sesion["nick"])]])],
 
         [sg.Frame(title="Dificultad", element_justification="center", title_location="n", pad=((50, 0), (0, 150)), border_width=0,
-                  layout=[[sg.Combo(["Facil", "Normal", "Dificil", "Einstein"], size=(20, 1), font="Helvetica 11", key="-MODE-", enable_events=True, readonly=True, default_value=ultima_sesion["dificultad"])]])],
+                  layout=[[sg.Combo(["Facil", "Normal", "Dificil", "Einstein"], size=(20, 1), font="Helvetica 11", key="-DIFICULTAD-", enable_events=True, readonly=True, default_value=ultima_sesion["dificultad"])]])],
         
         [sg.Frame(title="Última partida", title_location="n", border_width=1,
                                  layout=[[sg.Text(ultima_sesion["nick"], font="Helvetica 11")]])]
@@ -102,11 +102,11 @@ def iniciar_menu_principal():
             sesion = {
                 "nick": values["-USER-"], "dificultad": values["-MODE-"], "fecha": "-", "puntaje": 0}
             manejar_datos.guardar_ultima_sesion(sesion)
-        elif event == "-MODE-":
+        elif event == "-DIFICULTAD-":
             sesion = manejar_datos.obtener_ultima_sesion()
-            sesion["dificultad"] = values["-MODE-"]
+            sesion["dificultad"] = values["-DIFICULTAD-"]
             manejar_datos.guardar_ultima_sesion(sesion)
-            # actualizar archivo config
+            manejar_datos.seleccionar_dificultad(values["-DIFICULTAD-"])
         elif event == "-CONFIRMAR CREAR PRIMER JUGADOR-":
             sesion = {
                 "nick": values[0], "dificultad": "Facil", "fecha": "-", "puntaje": 0}

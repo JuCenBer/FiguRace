@@ -41,13 +41,9 @@ def generar_layout(config,dataset):
         caracteristicas,
         #Opciones a elegir para pasar (son 5)
         opciones,
-        #Puntaje actual
-        #puntajes,
-        
         #Boton pasar (se pierde la ronda)
         [sg.Button("Pasar",button_color=('white', 'red'), size=(60, 1), font=("Helvetica", 10),key="-PASAR-")],
         #Volver menu (Se pierde actual y restantes)
-        #sg.Button('1', button_color=('white', 'blue'), size=(5, 1), font=("Helvetica", 20))
         [sg.Button("Volver al Menu", button_color=('white', 'red'), size=(60, 1), font=("Helvetica", 10), key="-ABANDONO-")]
         #Popup mensaje final   
     ]
@@ -61,17 +57,13 @@ def iniciar_pantalla_juego():
     window = sg.Window("Menu de juego", layout = generar_layout(config,dataset), size=(500, 500), finalize=True)
     while True:
         event, values = window.read(timeout=1000)
-    
         print(f"{event} {values}")
-
         if event == sg.WIN_CLOSED:
             menu.crear_ventana_principal
             break
-    
         if event == "-ABANDONO-":
             menu.crear_ventana_principal
             break
-            
         elif event == "__TIMEOUT__":
             # Incrementamos el cuenta_regresiva
             if cuenta_regresiva > 0: cuenta_regresiva -= 1

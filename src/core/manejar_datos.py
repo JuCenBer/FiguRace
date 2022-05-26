@@ -3,10 +3,32 @@ import json
 import csv
 from random import randint
 
+def seleccionar_dificultad(dif_seleccionada):
+    dificultades = obtener_dificultades()
+    config = obtener_config()
+    for key in dificultades:
+        config[key] = dificultades[key][dif_seleccionada]
+    guardar_config(config)
+
+def obtener_dificultades():
+    try:
+        with open(os.path.join(os.getcwd(), "src", "datos", "dificultades.json"), "r", encoding='utf-8') as archivo:
+            dificultades = json.load(archivo)
+            return dificultades[0]
+    except:
+        with open(os.path.join(os.getcwd(), "src", "datos", "dificultades.json"), "w", encoding='utf-8') as archivo:
+            dificultades = {"tiempo_ronda": {"Facil":30.0, "Normal":20.0, "Dificil":10.0, "Einstein": 5.0},
+                            "cant_rondas": {"Facil":5.0, "Normal":10.0, "Dificil":20.0, "Einstein": 30.0},
+                            "puntos_bien": {"Facil":50.0, "Normal":50.0, "Dificil":50.0, "Einstein": 60.0},
+                            "puntos_mal": {"Facil":-10.0, "Normal":-25.0, "Dificil":-50.0, "Einstein": -100.0},
+                            "cant_carac": {"Facil":5.0, "Normal":4.0, "Dificil":3.0, "Einstein": 2.0}}
+            json.dump(dificultades)
+    return dificultades
+
 def obtener_ultima_sesion():
     try:
         with open(os.path.join(os.getcwd(), "src", "datos", "ultima_sesion.json"), "r", encoding='utf-8') as sesion:
-            sesion_actual = json.load(sesion)  # intento cargar el json
+            sesion_actual = json.load(sesion)
     except:
         with open(os.path.join(os.getcwd(), "src", "datos", "ultima_sesion.json"), "w", encoding='utf-8') as sesion:
             sesion_actual = {"nick":"", "dificultad":"facil", "puntaje":0, "fecha":"-"}
@@ -19,12 +41,11 @@ def guardar_ultima_sesion(sesion_actual):
 def obtener_perfiles():
     try:
         with open(os.path.join(os.getcwd(), "src", "datos", "perfiles.json"), "r", encoding='utf-8') as perfiles:
-            jugadores = json.load(perfiles)  # intento cargar el json
+            jugadores = json.load(perfiles)
     except:
         with open(os.path.join(os.getcwd(), "src", "datos", "perfiles.json"), "w", encoding='utf-8') as perfiles:
             jugadores = []
     return jugadores
-
 
 def guardar_perfiles(jugadores):
     with open(os.path.join(os.getcwd(), "src", "datos", "perfiles.json"), "w", encoding='utf-8') as perfiles:
@@ -47,8 +68,7 @@ def obtener_config():
     try:
         with open(ruta, "r") as archivo:
             datos_archivo = json.load(archivo)
-            config = datos_archivo[0]
-            return config
+            return datos_archivo[0]
     except:
         config_def = {"dataset": "Volcanes",
                       "tiempo_ronda": 10,
