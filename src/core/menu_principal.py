@@ -108,14 +108,12 @@ def iniciar_menu_principal():
             manejar_datos.guardar_ultima_sesion(sesion)
             # actualizar archivo config
         elif event == "-CONFIRMAR CREAR PRIMER JUGADOR-":
-            window.close()
-            jugador = {"nick": values[0],
-                       "edad": values[1], "genero": values[2]}
             sesion = {
                 "nick": values[0], "dificultad": "Facil", "fecha": "-", "puntaje": 0}
-            manejar_datos.guardar_perfiles([jugador])
-            manejar_datos.guardar_ultima_sesion(sesion)
-            window = crear_ventana_principal()
+            if(menu_perfiles.crear_perfil(values, window)):
+                window.close()
+                manejar_datos.guardar_ultima_sesion(sesion)
+                window = crear_ventana_principal()
 
     # Cerramos la ventana
     window.close()
