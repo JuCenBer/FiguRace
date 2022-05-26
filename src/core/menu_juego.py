@@ -27,8 +27,6 @@ def obtener_caracteristicas(config,encabezado,linea_correcta):
 def generar_layout(config,dataset):
     encabezado = dataset[0]
     cuenta_regresiva= config["tiempo_ronda"] #hacer cuenta elemento_contador
-    linea_correcta = dataset[randrange(1, len(dataset)-1)]
-
     elemento_contador= [[sg.Text("TIEMPO: ",font=("bold", 15), text_color= "white",justification = "right")],
     [sg.Text(cuenta_regresiva,font=("bold", 15),justification = "left", text_color= "white",key="-CONTADOR-")]]
 
