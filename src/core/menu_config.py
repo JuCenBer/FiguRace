@@ -46,7 +46,6 @@ def iniciar_pantalla_config():
                             "puntos_bien" : values["-CONFIG_PUNTOS_BIEN-"],
                             "puntos_mal" : values["-CONFIG_PUNTOS_MAL-"],
                             "cant_carac" : values["-CONFIG_CANT_CARAC-"] }
-
             manejar_datos.guardar_config(seleccionados)
         elif event == "-CONFIG_VOLVER-":
             break
