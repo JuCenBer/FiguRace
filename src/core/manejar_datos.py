@@ -39,6 +39,7 @@ def guardar_ultima_sesion(sesion_actual):
         json.dump(sesion_actual, sesion)
 
 def obtener_perfiles():
+    '''Abre el archivo json de perfiles y retorna el listado de perfiles. En caso de que no exista, se crea el archivo y se retorna una lista vacia'''
     try:
         with open(os.path.join(os.getcwd(), "src", "datos", "perfiles.json"), "r", encoding='utf-8') as perfiles:
             jugadores = json.load(perfiles)
@@ -48,6 +49,7 @@ def obtener_perfiles():
     return jugadores
 
 def guardar_perfiles(jugadores):
+    '''Recibe el listado de jugadores, abre el archivo json de perfiles y lo almacena ahi'''
     with open(os.path.join(os.getcwd(), "src", "datos", "perfiles.json"), "w", encoding='utf-8') as perfiles:
         json.dump(jugadores, perfiles)
 

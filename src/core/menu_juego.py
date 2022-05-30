@@ -40,12 +40,6 @@ def generar_layout(config,dataset):
         caracteristicas,
         #Opciones a elegir para pasar (son 5)
         opciones,
-<<<<<<< HEAD
-=======
-        #En esta linea se va a implementar los puntajes por rondas
-        #puntajes,
-    
->>>>>>> 8cd9af23fbacfc8f24744f3c71c446cff526e602
         #Boton pasar (se pierde la ronda)
         [sg.Button("Pasar",button_color=('white', 'red'), size=(60, 1), font=("Helvetica", 10),key="-PASAR-")],
         #Volver menu (Se pierde actual y restantes)

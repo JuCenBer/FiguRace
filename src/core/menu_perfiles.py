@@ -5,6 +5,8 @@ from . import manejar_datos
 
 # Metodos de creacion de ventanas
 def crear_ventana_nuevo_jugador():
+    '''Crea y retona la ventana que tomara la información para crear el nuevo perfil. Este incluye texto para advertir, de ser necesario, 
+    por que no puede ser creado el perfil con los datos ingresados'''
     lista_edades = [i for i in range(5,131)]
     lista_generos = ['Hombre','Mujer','No Binario']
     layout = [[[sg.Text(text='Ingrese los datos del nuevo perfil: ', size=50)], [sg.Text(text='Nickname '), sg.Input()],
@@ -19,6 +21,8 @@ def crear_ventana_nuevo_jugador():
 
 
 def crear_ventana_editar_jugador(jugador_seleccionado):
+    '''Recibe la información del perfil seleccionado para la edición del mismo y 
+    crea y retona la ventana para editar un jugador. Esta es creada con la información ya escrita del jugador seleccionado para la edición'''
     lista_edades = [i for i in range(5, 131)]
     lista_generos = ['Hombre', 'Mujer', 'No Binario']
     layout = [[sg.Text(text='Ingrese los datos del nuevo perfil: ', size=50)], [sg.Text(text='Nickname '), sg.Input(default_text=jugador_seleccionado[0][0], readonly=True)],
@@ -31,6 +35,8 @@ def crear_ventana_editar_jugador(jugador_seleccionado):
 
 
 def crear_ventana_perfiles():
+    '''Crea y retorna la ventana de perfiles. Esta incluye una tabla con perfiles seleccionables para su edición, y dos botones, tanto para volver
+    como para crear un nuevo perfil'''
     cabecera = ['Nickname', 'Edad', 'Genero Autopercibido']
     lista_jugadores = crear_listado_jugadores()
 
@@ -47,6 +53,10 @@ def crear_ventana_perfiles():
 
 # Metodos de creacion/modificacion de perfiles
 def crear_perfil(datos, window):
+    '''Recibe la información ingresada en la ventana de creacion de perfiles y verifica si el nickname ya existe o esta vacío. Modifica la visibilidad
+    de textos de la ventana de creacion de perfiles para advertir al usuario si el nickname ya existe o es vacío. 
+    De ser correcta la información, agrega el perfil al listado de jugadores y llama al metodo guardar_perfiles para almacenar la nueva lista en el
+    archivo json de perfiles'''
     jugador = {'nick': datos[0].strip(" "), 'edad': datos[1], 'genero': datos[2].strip(" ")}
     if (len(jugador['nick']) != 0):
         jugadores = manejar_datos.obtener_perfiles()
@@ -66,6 +76,8 @@ def crear_perfil(datos, window):
 
 
 def modificar_perfil(datos):
+    '''Recibe la informacion nueva del perfil editado, obtiene el listado de perfiles y busca la información del nickname del perfil editado
+    para sobreescribirlo con la nueva información'''
     jugador_editado = {'nick': datos[0], 'edad': datos[1], 'genero': datos[2]}
     jugadores = manejar_datos.obtener_perfiles()
     #Busco en la lista de jugadores el nick del jugador que modifique
@@ -77,6 +89,8 @@ def modificar_perfil(datos):
     manejar_datos.guardar_perfiles(jugadores)
 
 def crear_listado_jugadores():
+    '''Trae el diccionario de jugadores del archivo json de perfiles, y crea una lista de listas con los perfiles para mostrarlo 
+    en la tabla de perfiles de la ventana'''
     jugadores = manejar_datos.obtener_perfiles()
     lista_jugadores = list()
     for jugador in jugadores:
@@ -85,6 +99,7 @@ def crear_listado_jugadores():
     return lista_jugadores
 
 def iniciar_menu_perfiles():
+    '''Funcion que representa el cuerpo principal del modulo de la ventana de menu de perfiles'''
     # Principal
     window = crear_ventana_perfiles()
     while True:
