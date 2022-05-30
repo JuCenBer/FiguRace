@@ -4,18 +4,18 @@
 
 ### Integrantes:
 
-#### Aberastain Marzorati, Álvaro
-#### Beraún Centineo, Julián
-#### Bertón, Julián
-#### De La Vega, Gonzalo
+##### Aberastain Marzorati, Álvaro
+##### Beraún Centineo, Julián
+##### Bertón, Julián
+##### De La Vega, Gonzalo
 
-### Librerias usadas en el programa:
+## Librerías usadas en el programa:
 #### PySimpleGUI 4.60.0 
 
 ### Versión de Python utilizada:
 #### Python 3.10.4
 
-### Instrucciones para instalar las librerias:
+### Instrucciones para instalar las librerías:
 #### 1. Abrir la terminal en la raiz del programa
 #### 2. Ejectutar el comando: pip install -r requirements.txt
 
