@@ -6,8 +6,8 @@ from random import randint
 def seleccionar_dificultad(dif_seleccionada):
     dificultades = obtener_dificultades()
     config = obtener_config()
-    for key in dificultades:
-        config[key] = dificultades[key][dif_seleccionada]
+    for key in dificultades: config[key] = dificultades[key][dif_seleccionada]
+    config["dificultad"] = dif_seleccionada
     guardar_config(config)
 
 def obtener_dificultades():
@@ -72,12 +72,13 @@ def obtener_config():
             datos_archivo = json.load(archivo)
             return datos_archivo[0]
     except:
-        config_def = {"dataset": "Volcanes",
-                      "tiempo_ronda": 10,
+        config_def = {"dataset": "Aleatorio",
+                      "tiempo_ronda": 30,
                       "cant_rondas": 5,
-                      "puntos_bien": 2,
-                      "puntos_mal": -1,
-                      "cant_carac": 3}
+                      "puntos_bien": 50,
+                      "puntos_mal": -10,
+                      "cant_carac": 5,
+                      "dificultad": "Facil"}
         return config_def
 
 

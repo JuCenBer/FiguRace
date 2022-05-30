@@ -1,3 +1,4 @@
+import datetime
 import PySimpleGUI as sg
 #from datetime import datetime
 from . import manejar_datos
@@ -11,7 +12,7 @@ sg.theme('DarkAmber')
 # sesion_actual = {"usuario": }
 
 def crear_ventana_nuevo_jugador():
-    """Por si por primera vez, no hay perfiles creados"""
+    """Por si por primera vez, no hay perfiles creados, crea y retorna la ventana de creación de perfiles"""
     ### El siguiente codigo es el menu de crear nuevo perfil modificado, se lanza cuando no hay perfiles creados y no permite al usuario salir ###
     lista_edades = [i for i in range(5, 131)]
     lista_generos = ['Hombre', 'Mujer', 'No Binario']
@@ -31,7 +32,7 @@ def crear_ventana_nuevo_jugador():
 
 
 def crear_ventana_principal():
-    '''Este menu es la ventana principal, obtiene los perfiles ya creados y la dificultad seleccionada'''
+    '''Crea y retona la ventana principal, con los perfiles ya creados para seleccionar y las dificultades '''
     menu = [
         [sg.Text("FIGURACE", justification="center",
                  font="Helvetica 15 bold", pad=((0, 0), (0, 10)))],
@@ -44,6 +45,7 @@ def crear_ventana_principal():
 
     #Obtiene la ultima sesion abierta
     ultima_sesion = manejar_datos.obtener_ultima_sesion()
+    config = manejar_datos.obtener_config()
 
     # Consigo los jugadores y los guardo en el menu
     jugadores = manejar_datos.obtener_perfiles()
@@ -60,7 +62,7 @@ def crear_ventana_principal():
                   layout=[[sg.Combo(perfiles, key="-USER-", font="Helvetica 11", size=(20, 1), enable_events=True, readonly=True, default_value=ultima_sesion["nick"])]])],
 
         [sg.Frame(title="Dificultad", element_justification="center", title_location="n", pad=((50, 0), (0, 150)), border_width=0,
-                  layout=[[sg.Combo(["Facil", "Normal", "Dificil", "Einstein"], size=(20, 1), font="Helvetica 11", key="-DIFICULTAD-", enable_events=True, readonly=True, default_value=ultima_sesion["dificultad"])]])],
+                  layout=[[sg.Combo(["Facil", "Normal", "Dificil", "Einstein"], size=(20, 1), font="Helvetica 11", key="-DIFICULTAD-", enable_events=True, readonly=True, default_value=config["dificultad"])]])],
         
         [sg.Frame(title="Última partida", title_location="n", border_width=1,
                                  layout=[[sg.Text(ultima_sesion["nick"], font="Helvetica 11")]])]
@@ -75,7 +77,7 @@ def crear_ventana_principal():
 
 
 def iniciar_menu_principal():
-    """Crea la ventana del menu principal y se comunica con las ventanas, se selecciona el usuario y la dificultad"""
+    """Función principal del menu principal"""
     window = crear_ventana_principal()
     while True:
         event, values = window.read()
@@ -100,14 +102,12 @@ def iniciar_menu_principal():
             window = menu_perfiles.iniciar_menu_perfiles()
             window = crear_ventana_principal()
         elif event == "-USER-":
-            #format = datetime.now().strftime('%d/%m/%Y, %H:%M')
-            sesion = {
-                "nick": values["-USER-"], "dificultad": values["-MODE-"], "fecha": "-", "puntaje": 0}
+            sesion = manejar_datos.obtener_ultima_sesion()
+            sesion["nick"] = values["-USER-"]
             manejar_datos.guardar_ultima_sesion(sesion)
         elif event == "-DIFICULTAD-":
-            sesion = manejar_datos.obtener_ultima_sesion()
-            sesion["dificultad"] = values["-DIFICULTAD-"]
-            manejar_datos.guardar_ultima_sesion(sesion)
+            config = manejar_datos.obtener_config()
+            config["dificultad"] = values["-DIFICULTAD-"]
             manejar_datos.seleccionar_dificultad(values["-DIFICULTAD-"])
         elif event == "-CONFIRMAR CREAR PRIMER JUGADOR-":
             sesion = {
