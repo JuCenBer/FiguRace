@@ -1,5 +1,4 @@
 from multiprocessing import set_executable
-from tkinter import NONE
 import PySimpleGUI as sg
 from . import manejar_datos
 

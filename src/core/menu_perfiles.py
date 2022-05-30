@@ -1,4 +1,3 @@
-from tkinter import BROWSE, EXTENDED
 import PySimpleGUI as sg
 from . import manejar_datos
 
