@@ -31,7 +31,7 @@ def crear_ventana_nuevo_jugador():
 
 
 def crear_ventana_principal():
-    ### Este menu es la ventana principal, obtiene los perfiles ya creados y la dificultad seleccionada, se comunica ###
+    '''Este menu es la ventana principal, obtiene los perfiles ya creados y la dificultad seleccionada'''
     menu = [
         [sg.Text("FIGURACE", justification="center",
                  font="Helvetica 15 bold", pad=((0, 0), (0, 10)))],
@@ -44,6 +44,7 @@ def crear_ventana_principal():
 
     #Obtiene la ultima sesion abierta
     ultima_sesion = manejar_datos.obtener_ultima_sesion()
+
     # Consigo los jugadores y los guardo en el menu
     jugadores = manejar_datos.obtener_perfiles()
     if(len(jugadores)) == 0:
@@ -53,6 +54,7 @@ def crear_ventana_principal():
     for jugador in jugadores:
         perfiles.append(jugador["nick"])
 
+    """Usuario, configuracion y ultima sesion con su puntaje(a resolver)"""
     layout_configs = [
         [sg.Frame(title="Usuario", element_justification="center", title_location="n", pad=((50, 0), (0, 150)), border_width=0,
                   layout=[[sg.Combo(perfiles, key="-USER-", font="Helvetica 11", size=(20, 1), enable_events=True, readonly=True, default_value=ultima_sesion["nick"])]])],
@@ -73,7 +75,7 @@ def crear_ventana_principal():
 
 
 def iniciar_menu_principal():
-
+    """Crea la ventana del menu principal y se comunica con las ventanas, se selecciona el usuario y la dificultad"""
     window = crear_ventana_principal()
     while True:
         event, values = window.read()
