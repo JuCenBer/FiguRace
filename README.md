@@ -3,10 +3,10 @@
 ### **PROYECTO FINAL SEMINARIO DE LENGUAJES (PYTHON) Universidad Nacional de La Plata 2022**
 
 ### **Integrantes:**
-* Aberastain Marzorati, Álvaro
-* Beraún Centineo, Julián
-* Bertón, Julián
-* De La Vega, Gonzalo
+* Aberastain Marzorati, Álvaro ([Github](https://github.com/AberasT))
+* Beraún Centineo, Julián ([Github](https://github.com/JuCenBer))
+* Bertón, Julián ([Github](https://github.com/Chuliann))
+* De La Vega, Gonzalo ([Github](https://github.com/Gonzaloned))
 ---
 ### **Librerías usadas en el programa:** PySimpleGUI 4.60.0 
 ### **Versión de Python utilizada:** Python 3.10.4
