@@ -10,6 +10,9 @@
 ---
 ### **Librerías usadas en el programa:** PySimpleGUI 4.60.0 
 ### **Versión de Python utilizada:** Python 3.10.4
+### **Se requiere Tkinter** 
+* Para Windows, se instala incluido en el setup de Python
+* Para Linux, utilizar el comando `sudo apt-get install python3-tk`
 ---
 ### **Instrucciones para instalar las librerías:**
 1. Abrir la terminal en la raiz del programa
