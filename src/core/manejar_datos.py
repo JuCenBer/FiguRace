@@ -40,6 +40,7 @@ def obtener_ultima_sesion():
     return sesion_actual
 
 def guardar_ultima_sesion(sesion_actual):
+    '''Recibe la informacion de la ultima sesion y la guarda en el archivo de formato json'''
     with open(os.path.join(os.getcwd(), "src", "datos", "ultima_sesion.json"), "w", encoding='utf-8') as sesion:
         json.dump(sesion_actual, sesion)
 
@@ -60,6 +61,8 @@ def guardar_perfiles(jugadores):
 
 
 def obtener_config():
+    '''Abre el archivo json del config y retorna un diccionario con los valores de la configuracion. Si no existe, crea uno y retorna un diccionario
+    con valores por defecto equivalentes a la dificultad Facil y con dataset Aleatorio.'''
     ruta = os.path.join(os.getcwd(), "src", "datos", "config.json")
     try:
         with open(ruta, "r") as archivo:
@@ -77,18 +80,20 @@ def obtener_config():
 
 
 def guardar_config(dicc):
+    '''Recibe el diccionario con los valores de la configuracion y los guarda en el archivo json de configuracion'''
     ruta = os.path.join(os.getcwd(), "src", "datos", "config.json")
     with open(ruta, "w") as archivo:
         dicc_json = []
         dicc_json.append(dicc)
         json.dump(dicc_json, archivo)
 
-def obtener_top_puntajes():
-    ruta = os.path.join(os.getcwd(), "src", "datos", "config.json")
-    
-    return []
+#Se utilizara en la segunda entrega para la pantalla de puntajes 
+#def obtener_top_puntajes():
+#    ruta = os.path.join(os.getcwd(), "src", "datos", "config.json")   
+#    return []
 
 def obtener_dataset(nombre_dataset):
+    '''Recibe el nombre del dataset y'''
     nombres_datasets = ["erupciones_formateado.csv", "lagos_formateado.csv", "peliculas_formateado.csv", "jugadores_formateado.csv"]
 
     if nombre_dataset == "Aleatorio":
