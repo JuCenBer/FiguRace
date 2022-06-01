@@ -4,7 +4,7 @@ import PySimpleGUI as sg
 from . import manejar_datos
 
 def iniciar_pantalla_puntajes():
-
+    '''Crea la ventana de la pantalla de puntajes para visualizar los mejores 20 puntajes por cada dificultad '''
     # Seguramente se tengan que hacer distintas funciones para las distintas dificultades
     #tabla_top_usuarios = manejar_datos.obtener_top_puntajes()
 
