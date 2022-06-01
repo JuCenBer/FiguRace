@@ -30,6 +30,9 @@ def obtener_caracteristicas(config,encabezado,linea_correcta):
 def generar_layout(config,dataset):
     
     encabezado = dataset[0]
+    print(dataset)
+    dataset.pop(0)
+    print(dataset)
     cantidad_tiempo= config["tiempo_ronda"] #Busca cantidad de tiempo a utilizar en config  
 
     '''Se define contador con la cantidad de tiempo establecida por la dificultad'''

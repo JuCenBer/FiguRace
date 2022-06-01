@@ -4,6 +4,8 @@ import csv
 from random import randint
 
 def seleccionar_dificultad(dif_seleccionada):
+    '''Recibe la dificultad seleccionada, obtiene el listado de dificultades y la configuración, y establece los valores de la nueva configuracion
+    en base a los valores de la dificultad seleccionada'''
     dificultades = obtener_dificultades()
     config = obtener_config()
     for key in dificultades: config[key] = dificultades[key][dif_seleccionada]
@@ -11,6 +13,7 @@ def seleccionar_dificultad(dif_seleccionada):
     guardar_config(config)
 
 def obtener_dificultades():
+    '''Abre el archivo de formato json que contiene los valores de las dificultades predefinidas, y retorna un diccionario. En caso de no existir, lo crea'''
     try:
         with open(os.path.join(os.getcwd(), "src", "datos", "dificultades.json"), "r", encoding='utf-8') as archivo:
             dificultades = json.load(archivo)
@@ -26,6 +29,8 @@ def obtener_dificultades():
     return dificultades
 
 def obtener_ultima_sesion():
+    '''Abre el archivo json que contiene la información de la ultima sesion, y retorna un diccionario. En caso de no existir, lo crea con valores
+    por defecto'''
     try:
         with open(os.path.join(os.getcwd(), "src", "datos", "ultima_sesion.json"), "r", encoding='utf-8') as sesion:
             sesion_actual = json.load(sesion)
@@ -52,17 +57,6 @@ def guardar_perfiles(jugadores):
     '''Recibe el listado de jugadores, abre el archivo json de perfiles y lo almacena ahi'''
     with open(os.path.join(os.getcwd(), "src", "datos", "perfiles.json"), "w", encoding='utf-8') as perfiles:
         json.dump(jugadores, perfiles)
-
-
-def obtener_nombres_datasets():
-    ruta = os.path.join(os.getcwd(), "src", "datos", "nombres_datasets.json")
-    try:
-        with open(ruta, "r") as archivo:
-            datos_archivo = json.load(archivo)
-            nombres = datos_archivo["nombres"]
-            return nombres
-    except:
-        return []
 
 
 def obtener_config():
