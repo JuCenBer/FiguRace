@@ -1,6 +1,4 @@
-import datetime
 import PySimpleGUI as sg
-#from datetime import datetime
 from . import manejar_datos
 from . import menu_perfiles
 from . import menu_config
@@ -9,11 +7,9 @@ from . import menu_juego
 
 sg.theme('DarkAmber')
 
-# sesion_actual = {"usuario": }
 
 def crear_ventana_nuevo_jugador():
     """Por si por primera vez, no hay perfiles creados, crea y retorna la ventana de creación de perfiles"""
-    ### El siguiente codigo es el menu de crear nuevo perfil modificado, se lanza cuando no hay perfiles creados y no permite al usuario salir ###
     lista_edades = [i for i in range(5, 131)]
     lista_generos = ['Hombre', 'Mujer', 'No Binario']
     layout = [[[sg.Text(text='Ingrese los datos del nuevo perfil: ', size=50)], [sg.Text(text='Nickname '), sg.Input()],
@@ -43,11 +39,11 @@ def crear_ventana_principal():
         [sg.Button("Salir", key="-EXIT-", font="Helvetica 13")],
     ]
 
-    #Obtiene la ultima sesion abierta
+    """Obtiene la ultima sesion abierta"""
     ultima_sesion = manejar_datos.obtener_ultima_sesion()
     config = manejar_datos.obtener_config()
 
-    # Consigo los jugadores y los guardo en el menu
+    """Consigo los jugadores y los guardo en el menu"""
     jugadores = manejar_datos.obtener_perfiles()
     if(len(jugadores)) == 0:
         return crear_ventana_nuevo_jugador()
@@ -117,5 +113,5 @@ def iniciar_menu_principal():
                 manejar_datos.guardar_ultima_sesion(sesion)
                 window = crear_ventana_principal()
 
-    # Cerramos la ventana
+    """Cerramos la ventana"""
     window.close()
