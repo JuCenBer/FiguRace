@@ -4,8 +4,7 @@ import csv
 from random import randint
 
 def seleccionar_dificultad(dif_seleccionada):
-    '''Recibe la dificultad seleccionada, obtiene el listado de dificultades y la configuración, y establece los valores de la nueva configuracion
-    en base a los valores de la dificultad seleccionada'''
+    '''Recibe la dificultad seleccionada, obtiene el listado de dificultades y la configuración, y establece los valores de la nueva configuracion en base a los valores de la dificultad seleccionada'''
     dificultades = obtener_dificultades()
     config = obtener_config()
     for key in dificultades: config[key] = dificultades[key][dif_seleccionada]
@@ -29,8 +28,7 @@ def obtener_dificultades():
     return dificultades
 
 def obtener_ultima_sesion():
-    '''Abre el archivo json que contiene la información de la ultima sesion, y retorna un diccionario. En caso de no existir, lo crea con valores
-    por defecto'''
+    '''Abre el archivo json que contiene la información de la ultima sesion, y retorna un diccionario. En caso de no existir, lo crea con valores por defecto'''
     try:
         with open(os.path.join(os.getcwd(), "src", "datos", "ultima_sesion.json"), "r", encoding='utf-8') as sesion:
             sesion_actual = json.load(sesion)
@@ -61,8 +59,7 @@ def guardar_perfiles(jugadores):
 
 
 def obtener_config():
-    '''Abre el archivo json del config y retorna un diccionario con los valores de la configuracion. Si no existe, crea uno y retorna un diccionario
-    con valores por defecto equivalentes a la dificultad Facil y con dataset Aleatorio.'''
+    '''Abre el archivo json del config y retorna un diccionario con los valores de la configuracion. Si no existe, crea uno y retorna un diccionario con valores por defecto equivalentes a la dificultad Facil y con dataset Aleatorio.'''
     ruta = os.path.join(os.getcwd(), "src", "datos", "config.json")
     try:
         with open(ruta, "r") as archivo:
