@@ -3,6 +3,7 @@ import PySimpleGUI as sg
 from . import manejar_datos
 
 def iniciar_pantalla_config():
+    ''' Crea la ventana de la pantalla de configuración con sus respectivas opciones y funcionalidades '''
     config_previa = manejar_datos.obtener_config()
 
     nombres_datasets = ["Aleatorio", "Erupciones volcanicas", "Lagos de Argentina", "Peliculas", "Jugadores FIFA 2021"]
