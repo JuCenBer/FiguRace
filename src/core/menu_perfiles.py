@@ -2,7 +2,6 @@ import PySimpleGUI as sg
 from . import manejar_datos
 
 
-# Metodos de creacion de ventanas
 def crear_ventana_nuevo_jugador():
     '''Crea y retona la ventana que tomara la información para crear el nuevo perfil. Este incluye texto para advertir, de ser necesario, 
     por que no puede ser creado el perfil con los datos ingresados'''
@@ -99,7 +98,6 @@ def crear_listado_jugadores():
 
 def iniciar_menu_perfiles():
     '''Funcion que representa el cuerpo principal del modulo de la ventana de menu de perfiles'''
-    # Principal
     window = crear_ventana_perfiles()
     while True:
         current_window, event, values = sg.read_all_windows()

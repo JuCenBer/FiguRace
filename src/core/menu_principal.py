@@ -5,8 +5,8 @@ from . import menu_config
 from . import menu_puntajes
 from . import menu_juego
 
-sg.theme('DarkAmber')
 
+sg.theme('DarkAmber')
 
 def crear_ventana_nuevo_jugador():
     """Por si por primera vez, no hay perfiles creados, crea y retorna la ventana de creación de perfiles"""
@@ -39,11 +39,11 @@ def crear_ventana_principal():
         [sg.Button("Salir", key="-EXIT-", font="Helvetica 13")],
     ]
 
-    """Obtiene la ultima sesion abierta"""
+    #Obtiene la ultima sesion abierta
     ultima_sesion = manejar_datos.obtener_ultima_sesion()
     config = manejar_datos.obtener_config()
 
-    """Consigo los jugadores y los guardo en el menu"""
+    #Consigo los jugadores y los guardo en el menu
     jugadores = manejar_datos.obtener_perfiles()
     if(len(jugadores)) == 0:
         return crear_ventana_nuevo_jugador()
@@ -52,7 +52,7 @@ def crear_ventana_principal():
     for jugador in jugadores:
         perfiles.append(jugador["nick"])
 
-    """Usuario, configuracion y ultima sesion con su puntaje(a resolver)"""
+    #Usuario, configuracion y ultima sesion con su puntaje(a resolver)
     layout_configs = [
         [sg.Frame(title="Usuario", element_justification="center", title_location="n", pad=((50, 0), (0, 150)), border_width=0,
                   layout=[[sg.Combo(perfiles, key="-USER-", font="Helvetica 11", size=(20, 1), enable_events=True, readonly=True, default_value=ultima_sesion["nick"])]])],
@@ -113,5 +113,4 @@ def iniciar_menu_principal():
                 manejar_datos.guardar_ultima_sesion(sesion)
                 window = crear_ventana_principal()
 
-    """Cerramos la ventana"""
     window.close()
