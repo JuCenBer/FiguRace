@@ -103,8 +103,7 @@ def iniciar_menu_perfiles():
             break
         elif event == '-EDITAR JUGADOR-':
             lista_jugadores = crear_listado_jugadores()
-            jugador_seleccionado = [lista_jugadores[row]
-                                    for row in values[event]]
+            jugador_seleccionado = [lista_jugadores[row] for row in values[event]]
             window = crear_ventana_editar_jugador(jugador_seleccionado)
             current_window.close()
 

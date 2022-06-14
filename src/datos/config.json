@@ -1,1 +1,1 @@
-[{"dataset": "Lagos de Argentina", "tiempo_ronda": 20.0, "cant_rondas": 10.0, "puntos_bien": 50.0, "puntos_mal": -25.0, "cant_carac": 4.0, "dificultad": "Normal"}]
+[{"dataset": "Aleatorio", "tiempo_ronda": 30.0, "cant_rondas": 5.0, "puntos_bien": 50.0, "puntos_mal": -10.0, "cant_carac": 5.0, "dificultad": "Facil"}]
