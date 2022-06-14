@@ -1,1 +1,5 @@
+<<<<<<< HEAD
+[{"dataset": "Jugadores FIFA 2021", "tiempo_ronda": 30.0, "cant_rondas": 9.0, "puntos_bien": 50.0, "puntos_mal": -10.0, "cant_carac": 5.0, "dificultad": "Personalizada"}]
+=======
 [{"dataset": "Aleatorio", "tiempo_ronda": 30.0, "cant_rondas": 5.0, "puntos_bien": 50.0, "puntos_mal": -10.0, "cant_carac": 5.0, "dificultad": "Facil"}]
+>>>>>>> d942b409e610e5efd5ae38fae31b4f75d821a74b
