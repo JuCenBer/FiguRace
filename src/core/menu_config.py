@@ -46,7 +46,8 @@ def iniciar_pantalla_config():
                             "puntos_bien" : values["-CONFIG_PUNTOS_BIEN-"],
                             "puntos_mal" : values["-CONFIG_PUNTOS_MAL-"],
                             "cant_carac" : values["-CONFIG_CANT_CARAC-"],
-                            "dificultad": config_previa["dificultad"]}
+                            "dificultad": config_previa["dificultad"],
+                            "nick": config_previa["nick"]}
             if (flag_sliders):
                 seleccionados["dificultad"] = "Personalizada"
             manejar_datos.guardar_config(seleccionados)

@@ -12,19 +12,12 @@ def seleccionar_dificultad(dif_seleccionada):
     guardar_config(config)
 
 def obtener_dificultades():
-    '''Abre el archivo de formato json que contiene los valores de las dificultades predefinidas, y retorna un diccionario. En caso de no existir, lo crea'''
-    try:
-        with open(os.path.join(os.getcwd(), "src", "datos", "dificultades.json"), "r", encoding='utf-8') as archivo:
-            dificultades = json.load(archivo)
-            return dificultades[0]
-    except:
-        with open(os.path.join(os.getcwd(), "src", "datos", "dificultades.json"), "w", encoding='utf-8') as archivo:
-            dificultades = {"tiempo_ronda": {"Facil":30.0, "Normal":20.0, "Dificil":10.0, "Einstein": 5.0},
-                            "cant_rondas": {"Facil":5.0, "Normal":10.0, "Dificil":20.0, "Einstein": 30.0},
-                            "puntos_bien": {"Facil":50.0, "Normal":50.0, "Dificil":50.0, "Einstein": 60.0},
-                            "puntos_mal": {"Facil":-10.0, "Normal":-25.0, "Dificil":-50.0, "Einstein": -100.0},
-                            "cant_carac": {"Facil":5.0, "Normal":4.0, "Dificil":3.0, "Einstein": 2.0}}
-            json.dump(dificultades)
+    '''Retorna el listado de caracteristicas segun la dificultad'''
+    dificultades = {"tiempo_ronda": {"Facil":30.0, "Normal":20.0, "Dificil":10.0, "Einstein": 5.0},
+                    "cant_rondas": {"Facil":5.0, "Normal":10.0, "Dificil":20.0, "Einstein": 30.0},
+                    "puntos_bien": {"Facil":50.0, "Normal":50.0, "Dificil":50.0, "Einstein": 60.0},
+                    "puntos_mal": {"Facil":-10.0, "Normal":-25.0, "Dificil":-50.0, "Einstein": -100.0},
+                    "cant_carac": {"Facil":5.0, "Normal":4.0, "Dificil":3.0, "Einstein": 2.0}}
     return dificultades
 
 def obtener_ultima_sesion():
@@ -72,7 +65,8 @@ def obtener_config():
                       "puntos_bien": 50,
                       "puntos_mal": -10,
                       "cant_carac": 5,
-                      "dificultad": "Facil"}
+                      "dificultad": "Facil",
+                      "nick": ""}
         return config_def
 
 
@@ -104,3 +98,18 @@ def obtener_dataset(nombre_dataset):
         reader = csv.reader(archivo)
         lista = list(reader)
     return lista
+
+def guardar_evento(evento):
+    try:
+        with open(os.path.join(os.getcwd(), "src", "datos", "dificultades.json"), "r", encoding='utf-8') as archivo:
+            dificultades = json.load(archivo)
+            return dificultades[0]
+    except:
+        with open(os.path.join(os.getcwd(), "src", "datos", "dificultades.json"), "w", encoding='utf-8') as archivo:
+            dificultades = {"tiempo_ronda": {"Facil": 30.0, "Normal": 20.0, "Dificil": 10.0, "Einstein": 5.0},
+                            "cant_rondas": {"Facil": 5.0, "Normal": 10.0, "Dificil": 20.0, "Einstein": 30.0},
+                            "puntos_bien": {"Facil": 50.0, "Normal": 50.0, "Dificil": 50.0, "Einstein": 60.0},
+                            "puntos_mal": {"Facil": -10.0, "Normal": -25.0, "Dificil": -50.0, "Einstein": -100.0},
+                            "cant_carac": {"Facil": 5.0, "Normal": 4.0, "Dificil": 3.0, "Einstein": 2.0}}
+            json.dump(dificultades)
+    return dificultades

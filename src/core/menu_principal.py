@@ -24,6 +24,7 @@ def crear_ventana_nuevo_jugador():
                          key='-CONFIRMAR CREAR PRIMER JUGADOR-')],
               ]
 
+    
     return sg.Window('Nuevo Perfil', layout, finalize=True)
 
 
@@ -55,7 +56,7 @@ def crear_ventana_principal():
     #Usuario, configuracion y ultima sesion con su puntaje(a resolver)
     layout_configs = [
         [sg.Frame(title="Usuario", element_justification="center", title_location="n", pad=((50, 0), (0, 150)), border_width=0,
-                  layout=[[sg.Combo(perfiles, key="-USER-", font="Helvetica 11", size=(20, 1), enable_events=True, readonly=True, default_value=ultima_sesion["nick"])]])],
+                  layout=[[sg.Combo(perfiles, key="-USER-", font="Helvetica 11", size=(20, 1), enable_events=True, readonly=True, default_value=config["nick"])]])],
 
         [sg.Frame(title="Dificultad", element_justification="center", title_location="n", pad=((50, 0), (0, 150)), border_width=0,
                   layout=[[sg.Combo(["Facil", "Normal", "Dificil", "Einstein"], size=(20, 1), font="Helvetica 11", key="-DIFICULTAD-", enable_events=True, readonly=True, default_value=config["dificultad"])]])],
@@ -98,18 +99,21 @@ def iniciar_menu_principal():
             window = menu_perfiles.iniciar_menu_perfiles()
             window = crear_ventana_principal()
         elif event == "-USER-":
-            sesion = manejar_datos.obtener_ultima_sesion()
-            sesion["nick"] = values["-USER-"]
-            manejar_datos.guardar_ultima_sesion(sesion)
+            config = manejar_datos.obtener_config()
+            config["nick"] = values["-USER-"]
+            manejar_datos.guardar_config(config)
         elif event == "-DIFICULTAD-":
             config = manejar_datos.obtener_config()
             config["dificultad"] = values["-DIFICULTAD-"]
             manejar_datos.seleccionar_dificultad(values["-DIFICULTAD-"])
         elif event == "-CONFIRMAR CREAR PRIMER JUGADOR-":
+            config = manejar_datos.obtener_config()
             sesion = {
-                "nick": values[0], "dificultad": "Facil", "fecha": "-", "puntaje": 0}
+                "nick": "Sin datos", "dificultad": "Sin datos", "fecha": "Sin datos", "puntaje": "Sin datos"}
             if(menu_perfiles.crear_perfil(values, window)):
                 window.close()
+                config["nick"] = values[0]
+                manejar_datos.guardar_config(config)
                 manejar_datos.guardar_ultima_sesion(sesion)
                 window = crear_ventana_principal()
 

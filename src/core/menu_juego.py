@@ -66,6 +66,8 @@ def generar_layout(config,dataset):
 def iniciar_pantalla_juego():
     ''' Este modulo crea la pantalla de juego y inicia la ejecucion de menu de juego'''
    
+    eventos = dict()
+
     #A traves mis manejadores de datos, obtengo las configuraciones y el dataset de los archivos correspondientes para generar mi ventana
     config = manejar_datos.obtener_config()
     dataset = manejar_datos.obtener_dataset(config["dataset"])
