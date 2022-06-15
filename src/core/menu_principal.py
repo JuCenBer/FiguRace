@@ -16,10 +16,8 @@ def crear_ventana_nuevo_jugador():
                [sg.Text(text='Ya existe un perfil con ese Nickname. Pruebe ingresando otro distinto.',
                         key='-TEXTO NICKNAME EXISTENTE-', visible=False, text_color='red')],
                [sg.Text(text='No puede registrar un perfil con un Nickname vacio.', key='-TEXTO NICKNAME VACIO-', visible=False, text_color='red')]],
-              [sg.Text(text='Edad '), sg.Combo(lista_edades,
-                                               readonly=True, default_value=lista_edades[0])],
-              [sg.Text(text='Genero autopercibido '), sg.Combo(
-                  lista_generos, readonly=True, default_value=lista_generos[0])],
+              [sg.Text(text='Edad '), sg.Slider(range=(1, 120), orientation="h", border_width=8, default_value=20, font="Helvetica 13", s=(30, 5))],
+              [sg.Text(text='Genero autopercibido '), sg.Combo(lista_generos, readonly=True, default_value=lista_generos[0])],
               [sg.Button(button_text='Crear',
                          key='-CONFIRMAR CREAR PRIMER JUGADOR-')],
               ]
