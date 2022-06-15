@@ -1,6 +1,7 @@
 import os
 import json
 import csv
+import pandas as pd
 from random import randint
 
 def seleccionar_dificultad(dif_seleccionada):

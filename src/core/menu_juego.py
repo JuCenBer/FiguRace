@@ -1,5 +1,6 @@
 from random import shuffle, choices
 import PySimpleGUI as sg
+import datetime
 from . import manejar_datos
 from . import menu_principal as menu
 
@@ -65,36 +66,88 @@ def generar_layout(config,dataset):
 
 def iniciar_pantalla_juego():
     ''' Este modulo crea la pantalla de juego y inicia la ejecucion de menu de juego'''
-   
-    eventos = dict()
 
     #A traves mis manejadores de datos, obtengo las configuraciones y el dataset de los archivos correspondientes para generar mi ventana
     config = manejar_datos.obtener_config()
     dataset = manejar_datos.obtener_dataset(config["dataset"])
     cantidad_tiempo= config['tiempo_ronda'] #En esta variable guardo el tiempo disponible actual para actualizarlo cada seg
+    
+
+    eventos = list()
+    evento = {"timestamp": datetime.datetime.timestamp(datetime.datetime.now()),
+                "id": "",
+                "evento": "inicio_partida",
+                "usuarie": config["nick"],
+                "estado": "nueva",
+                "texto_ingresado": "-",
+                "respuesta": "-",
+                "nivel": config["dificultad"],
+            }
+    eventos.append(evento)
 
     #Creo mi ventana con generar_layout con los parametros correspondientes
     window = sg.Window("Menu de juego", layout = generar_layout(config,dataset), size=(500, 500), finalize=True)
     while True:
         event, values = window.read(timeout=1000)
-        print(f"{event} {values}")
+        if event != "__TIMEOUT__":
+          print(f"{event} {values}")
+
         if event == sg.WIN_CLOSED:
             menu.crear_ventana_principal
             break
+
         if event == "-ABANDONO-":
+            evento["timestamp"] = datetime.datetime.timestamp(datetime.datetime.now())
+            evento["evento"] = "fin"
+            evento["estado"] = "cancelada"
+            eventos.append(evento)
             menu.crear_ventana_principal
             break
+
         elif event == "__TIMEOUT__":
             # Incrementamos el cantidad_tiempo
-            if cantidad_tiempo > 0: cantidad_tiempo -= 1
-            # Obtenemos el elemento "-CONTADOR-"
-            elemento_contador = window["-CONTADOR-"]
-            # Le enviamos un mensaje "update" con un nuevo valor
-            elemento_contador.update(cantidad_tiempo)
+            if cantidad_tiempo > 0: 
+                cantidad_tiempo -= 1
+                elemento_contador = window["-CONTADOR-"]   
+                elemento_contador.update(cantidad_tiempo)
+            else:
+                evento["timestamp"] = datetime.datetime.timestamp(datetime.datetime.now())
+                evento["evento"] = "intento"
+                evento["estado"] = "timeout"
+                evento["texto_ingresado"] = "-"
+                evento["respuesta"] = "-"
+                print(evento)
+                eventos.append(evento)
+                #PASAR_DE_RONDA()
+
         elif event == "-OPCION CORRECTA-":
-            print("COOOOORRRECCCCTOOOOOOO")
+            evento["timestamp"] = datetime.datetime.timestamp(datetime.datetime.now())
+            evento["evento"] = "intento"
+            evento["estado"] = "ok"
+            evento["texto_ingresado"] = window[event].get_text()
+            evento["respuesta"] = window["-OPCION CORRECTA-"].get_text()
+            print(evento)
+            eventos.append(evento)
+            #PASAR_DE_RONDA()
+
         elif 'INCORRECTA' in event:
-            print("INCORRECTO...")
+            evento["timestamp"] = datetime.datetime.timestamp(datetime.datetime.now())
+            evento["evento"] = "intento"
+            evento["estado"] = "error"
+            evento["texto_ingresado"] = window[event].get_text()
+            evento["respuesta"] = window["-OPCION CORRECTA-"].get_text()
+            print(evento)
+            eventos.append(evento)
+            #PASAR_DE_RONDA()
+
         elif event == "-PASAR-":
-            pass 
+            evento["timestamp"] = datetime.datetime.timestamp(datetime.datetime.now())
+            evento["evento"] = "intento"
+            evento["estado"] = "pasar"
+            evento["texto_ingresado"] = "-"
+            evento["respuesta"] = window["-OPCION CORRECTA-"].get_text()
+            print(evento)
+            eventos.append(evento)
+            #PASAR_DE_RONDA()
+
     window.close()  
