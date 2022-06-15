@@ -32,7 +32,7 @@ def generar_layout(config,dataset):
     encabezado = dataset[0]
     dataset.pop(0)
     cantidad_tiempo = config["tiempo_ronda"] #Busca cantidad de tiempo a utilizar en config  
-    cantidad_puntaje = 0
+
 
     #Se define contador con la cantidad de tiempo establecida por la dificultad'''
     
@@ -40,7 +40,7 @@ def generar_layout(config,dataset):
                                  layout=[[sg.Text(cantidad_tiempo,font = ("bold", 15), text_color = "white",key="-CONTADOR-")]])]
     
     elemento_puntaje = [sg.Frame(title="PUNTAJE", title_location="n", border_width = 2,
-                                 layout=[[sg.Text(cantidad_puntaje,font = ("bold", 15), text_color = "white",key="-PUNTOS-")]])]
+                                 layout=[[sg.Text(0 ,font = ("bold", 15), text_color = "white",key="-PUNTOS-")]])]
                               
     #Genero opciones y caracteristicas a traves de los modulos definidos anteriormente'''
     opciones, linea_correcta = generar_opciones(dataset)
@@ -76,8 +76,10 @@ def iniciar_pantalla_juego():
     #A traves mis manejadores de datos, obtengo las configuraciones y el dataset de los archivos correspondientes para generar mi ventana
     config = manejar_datos.obtener_config()
     dataset = manejar_datos.obtener_dataset(config["dataset"])
-    cantidad_tiempo= config['tiempo_ronda'] #En esta variable guardo el tiempo disponible actual para actualizarlo cada seg
+    cantidad_tiempo = config['tiempo_ronda'] #En esta variable guardo el tiempo disponible actual para actualizarlo cada seg
     
+    cantidad_puntos = 0
+
     eventos = list()
     evento = {"timestamp": datetime.datetime.timestamp(datetime.datetime.now()),
                 "id": "",
@@ -91,7 +93,7 @@ def iniciar_pantalla_juego():
     eventos.append(evento)
 
     #Creo mi ventana con generar_layout con los parametros correspondientes
-    window = sg.Window("Menu de juego", layout = generar_layout(config,dataset), size=(500, 500), finalize=True)
+    window = sg.Window("Menu de juego", layout = generar_layout(config,dataset), size=(500, 550), finalize=True)
     while True:
         event, values = window.read(timeout=1000)
         if event != "__TIMEOUT__":
@@ -131,6 +133,10 @@ def iniciar_pantalla_juego():
             evento["estado"] = "ok"
             evento["texto_ingresado"] = window[event].get_text()
             evento["respuesta"] = window["-OPCION CORRECTA-"].get_text()
+
+            cantidad_puntos = cantidad_puntos + config["puntos_bien"]
+            elemento_puntaje = window["-PUNTOS-"]
+            elemento_puntaje.update(cantidad_puntos)
             print(evento)
             eventos.append(evento)
             #PASAR_DE_RONDA()
@@ -141,6 +147,11 @@ def iniciar_pantalla_juego():
             evento["estado"] = "error"
             evento["texto_ingresado"] = window[event].get_text()
             evento["respuesta"] = window["-OPCION CORRECTA-"].get_text()
+
+            cantidad_puntos = cantidad_puntos + config["puntos_mal"]
+            elemento_puntaje = window["-PUNTOS-"]
+            elemento_puntaje.update(cantidad_puntos)
+
             print(evento)
             eventos.append(evento)
             #PASAR_DE_RONDA()
