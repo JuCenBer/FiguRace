@@ -41,7 +41,7 @@ def crear_ventana_principal():
     ]
 
     #Obtiene la ultima sesion abierta
-    ultima_sesion = manejar_datos.obtener_ultima_sesion()
+    ultima_partida = manejar_datos.obtener_ultima_partida()
     config = manejar_datos.obtener_config()
 
     #Consigo los jugadores y los guardo en el menu
@@ -62,7 +62,7 @@ def crear_ventana_principal():
                   layout=[[sg.Combo(["Facil", "Normal", "Dificil", "Einstein"], size=(20, 1), font="Helvetica 11", key="-DIFICULTAD-", enable_events=True, readonly=True, default_value=config["dificultad"])]])],
         
         [sg.Frame(title="Última partida", title_location="n", border_width=1,
-                                 layout=[[sg.Text(ultima_sesion["nick"], font="Helvetica 11")]])]
+                                 layout=[[sg.Text(ultima_partida["nick"], font="Helvetica 11")]])]
     ]
 
     layout = [
@@ -101,20 +101,17 @@ def iniciar_menu_principal():
         elif event == "-USER-":
             config = manejar_datos.obtener_config()
             config["nick"] = values["-USER-"]
-            manejar_datos.guardar_config(config)
+            manejar_datos.guardar_config(config) #Para guardar que jugador quedo seleccionado
         elif event == "-DIFICULTAD-":
             config = manejar_datos.obtener_config()
             config["dificultad"] = values["-DIFICULTAD-"]
             manejar_datos.seleccionar_dificultad(values["-DIFICULTAD-"])
         elif event == "-CONFIRMAR CREAR PRIMER JUGADOR-":
             config = manejar_datos.obtener_config()
-            sesion = {
-                "nick": "Sin datos", "dificultad": "Sin datos", "fecha": "Sin datos", "puntaje": "Sin datos"}
             if(menu_perfiles.crear_perfil(values, window)):
                 window.close()
                 config["nick"] = values[0]
                 manejar_datos.guardar_config(config)
-                manejar_datos.guardar_ultima_sesion(sesion)
                 window = crear_ventana_principal()
 
     window.close()

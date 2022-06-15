@@ -20,20 +20,21 @@ def obtener_dificultades():
                     "cant_carac": {"Facil":5.0, "Normal":4.0, "Dificil":3.0, "Einstein": 2.0}}
     return dificultades
 
-def obtener_ultima_sesion():
+def obtener_ultima_partida():
     '''Abre el archivo json que contiene la información de la ultima sesion, y retorna un diccionario. En caso de no existir, lo crea con valores por defecto'''
     try:
-        with open(os.path.join(os.getcwd(), "src", "datos", "ultima_sesion.json"), "r", encoding='utf-8') as sesion:
-            sesion_actual = json.load(sesion)
+        with open(os.path.join(os.getcwd(), "src", "datos", "ultima_partida.json"), "r", encoding='utf-8') as partida:
+            ultima_partida = json.load(partida)
     except:
-        with open(os.path.join(os.getcwd(), "src", "datos", "ultima_sesion.json"), "w", encoding='utf-8') as sesion:
-            sesion_actual = {"nick":"", "dificultad":"facil", "puntaje":0, "fecha":"-"}
-    return sesion_actual
+        with open(os.path.join(os.getcwd(), "src", "datos", "ultima_partida.json"), "w", encoding='utf-8') as partida:
+            ultima_partida = {"nick": "Sin datos", "dificultad": "Sin datos", "fecha": "Sin datos", "puntaje": "Sin datos"}
+            json.dump(ultima_partida, partida)
+    return ultima_partida
 
-def guardar_ultima_sesion(sesion_actual):
+def guardar_ultima_partida(ultima_partida):
     '''Recibe la informacion de la ultima sesion y la guarda en el archivo de formato json'''
-    with open(os.path.join(os.getcwd(), "src", "datos", "ultima_sesion.json"), "w", encoding='utf-8') as sesion:
-        json.dump(sesion_actual, sesion)
+    with open(os.path.join(os.getcwd(), "src", "datos", "ultima_partida.json"), "w", encoding='utf-8') as partida:
+        json.dump(ultima_partida, partida)
 
 def obtener_perfiles():
     '''Abre el archivo json de perfiles y retorna el listado de perfiles. En caso de que no exista, se crea el archivo y se retorna una lista vacia'''
