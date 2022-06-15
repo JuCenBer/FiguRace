@@ -31,13 +31,17 @@ def generar_layout(config,dataset):
     
     encabezado = dataset[0]
     dataset.pop(0)
-    cantidad_tiempo= config["tiempo_ronda"] #Busca cantidad de tiempo a utilizar en config  
+    cantidad_tiempo = config["tiempo_ronda"] #Busca cantidad de tiempo a utilizar en config  
+    cantidad_puntaje = 0
 
     #Se define contador con la cantidad de tiempo establecida por la dificultad'''
     
-    elemento_contador= [sg.Frame(title="TIEMPO", title_location="n", border_width=2,
-                                 layout=[[sg.Text(cantidad_tiempo,font=("bold", 15), text_color= "white",key="-CONTADOR-")]])]
-
+    elemento_contador = [sg.Frame(title="TIEMPO", title_location="n", border_width = 2,
+                                 layout=[[sg.Text(cantidad_tiempo,font = ("bold", 15), text_color = "white",key="-CONTADOR-")]])]
+    
+    elemento_puntaje = [sg.Frame(title="PUNTAJE", title_location="n", border_width = 2,
+                                 layout=[[sg.Text(cantidad_puntaje,font = ("bold", 15), text_color = "white",key="-PUNTOS-")]])]
+                              
     #Genero opciones y caracteristicas a traves de los modulos definidos anteriormente'''
     opciones, linea_correcta = generar_opciones(dataset)
     caracteristicas = obtener_caracteristicas(config,encabezado,linea_correcta)
@@ -60,6 +64,8 @@ def generar_layout(config,dataset):
         [sg.Button("Volver al Menu", size=(60, 1), font=("Helvetica", 10),button_color=('black','gray'), key="-ABANDONO-")],
  
         #Cuenta Regresiva
+        elemento_puntaje,
+
         elemento_contador
     ]
     return layout
@@ -72,7 +78,6 @@ def iniciar_pantalla_juego():
     dataset = manejar_datos.obtener_dataset(config["dataset"])
     cantidad_tiempo= config['tiempo_ronda'] #En esta variable guardo el tiempo disponible actual para actualizarlo cada seg
     
-
     eventos = list()
     evento = {"timestamp": datetime.datetime.timestamp(datetime.datetime.now()),
                 "id": "",
