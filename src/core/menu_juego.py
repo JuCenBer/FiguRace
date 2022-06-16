@@ -10,6 +10,7 @@ def generar_opciones(dataset):
     lineas = choices(dataset, k=5)    #Guarda 5 lineas aleatorias del dataset, (se trae como lista de listas)
     opcion_correcta = [sg.Button(lineas[0][5].title(), size=(60, 1), font=("Helvetica", 10),key="-OPCION CORRECTA-")]
     linea_correcta = lineas[0] #Me guardo los datos de la linea correcta
+    dataset.remove(linea_correcta)
     opciones = [opcion_correcta] #Creo lista de elemento botones con la primera opcion V
     for i in range(1,5):
         boton_incorrecto = [sg.Button(lineas[i][5].title(), size=(60, 1), font=("Helvetica", 10),key="-OPCION INCORRECTA "+str(i)+"-")]
@@ -26,18 +27,15 @@ def obtener_caracteristicas(config,encabezado,linea_correcta):
         caracteristicas.append(nueva_carac) # Agrego nuevo elemento de texto a mi lista de caracteristicas
     return caracteristicas #Devuelvo lista de elementos
 
-def generar_layout(config,dataset):
+def generar_layout(config,dataset,encabezado):
     '''Genero lista de elementos para iniciar la pantalla'''
-    
-    encabezado = dataset[0]
-    dataset.pop(0)
-    cantidad_tiempo = config["valores"]["tiempo_ronda"] #Busca cantidad de tiempo a utilizar en config  
 
+    cant_tiempo = config["valores"]["tiempo_ronda"] #Busca cantidad de tiempo a utilizar en config  
 
     #Se define contador con la cantidad de tiempo establecida por la dificultad'''
     
     elemento_contador = [sg.Frame(title="TIEMPO", title_location="n", border_width = 2,
-                                 layout=[[sg.Text(cantidad_tiempo,font = ("bold", 15), text_color = "white",key="-CONTADOR-")]])]
+                                 layout=[[sg.Text(cant_tiempo,font = ("bold", 15), text_color = "white",key="-CONTADOR-")]])]
     
     elemento_puntaje = [sg.Frame(title="PUNTAJE", title_location="n", border_width = 2,
                                  layout=[[sg.Text(0 ,font = ("bold", 15), text_color = "white",key="-PUNTOS-")]])]
@@ -64,47 +62,53 @@ def generar_layout(config,dataset):
         [sg.Button("Volver al Menu", size=(60, 1), font=("Helvetica", 10),button_color=('black','gray'), key="-ABANDONO-")],
  
         #Cuenta Regresiva
-<<<<<<< HEAD
-        elemento_contador,
-        #[sg.Image(r'C:\Users\gon\Desktop\Integrador\CORRECTO.png')]
-=======
         elemento_puntaje,
-
         elemento_contador
->>>>>>> c4a092f00c9bf7db779f13230ab5289c57d22126
     ]
     return layout
 
+def pasar_ronda(cant_puntos,config,ronda_actual,cant_rondas,eventos,estado = "finalizado"):
+    if ronda_actual == cant_rondas:
+        generar_evento(config,eventos,"fin",estado,"-","-")
+        #guardar_datos : puntajes y ultima partida(no si cancelo) y eventos
+        sg.Popup("Fin de partida","Puntaje logrado: "+str(cant_puntos))
+        return True
+    else:
+        return False
 
+def generar_evento(config,eventos,evento,estado,texto_ingresado, respuesta):
+    log = { "timestamp": datetime.datetime.timestamp(datetime.datetime.now()),
+            "id": "",
+            "evento": evento,
+            "usuarie": config["nick"],
+            "estado": estado,
+            "texto_ingresado": texto_ingresado,
+            "respuesta": respuesta,
+            "nivel": config["dificultad"],
+            }
+    eventos.append(log)
 
 def iniciar_pantalla_juego():
     ''' Este modulo crea la pantalla de juego y inicia la ejecucion de menu de juego'''
-<<<<<<< HEAD
    
-=======
-
->>>>>>> c4a092f00c9bf7db779f13230ab5289c57d22126
     #A traves mis manejadores de datos, obtengo las configuraciones y el dataset de los archivos correspondientes para generar mi ventana
     config = manejar_datos.obtener_config()
     dataset = manejar_datos.obtener_dataset(config["dataset"])
-    cantidad_tiempo = config["valores"]["tiempo_ronda"] #En esta variable guardo el tiempo disponible actual para actualizarlo cada seg
-    
-    cantidad_puntos = 0
+    encabezado = dataset[0]
+    dataset.pop(0)
+
+    cant_tiempo = config["valores"]["tiempo_ronda"] #En esta variable guardo el tiempo disponible actual para actualizarlo cada seg
+
+    ronda_actual = 1
+    cant_rondas = config["valores"]["cant_rondas"]
+    cant_puntos = 0
 
     eventos = list()
-    evento = {"timestamp": datetime.datetime.timestamp(datetime.datetime.now()),
-                "id": "",
-                "evento": "inicio_partida",
-                "usuarie": config["nick"],
-                "estado": "nueva",
-                "texto_ingresado": "-",
-                "respuesta": "-",
-                "nivel": config["dificultad"],
-            }
-    eventos.append(evento)
+    generar_evento(config,eventos,"inicio_partida","nueva","-","-")
 
     #Creo mi ventana con generar_layout con los parametros correspondientes
-    window = sg.Window("Menu de juego", layout = generar_layout(config,dataset), size=(500, 550), finalize=True)
+    window = sg.Window("Menu de juego", layout = generar_layout(config,dataset,encabezado), size=(500, 550), finalize=True)
+
     while True:
         event, values = window.read(timeout=1000)
         if event != "__TIMEOUT__":
@@ -115,66 +119,68 @@ def iniciar_pantalla_juego():
             break
 
         if event == "-ABANDONO-":
-            evento["timestamp"] = datetime.datetime.timestamp(datetime.datetime.now())
-            evento["evento"] = "fin"
-            evento["estado"] = "cancelada"
-            eventos.append(evento)
+            ronda_actual = cant_rondas
+            pasar_ronda(config,ronda_actual,cant_rondas,eventos,"cancelada")
             menu.crear_ventana_principal
             break
 
         elif event == "__TIMEOUT__":
-            # Incrementamos el cantidad_tiempo
-            if cantidad_tiempo > 0: 
-                cantidad_tiempo -= 1
-                elemento_contador = window["-CONTADOR-"]   
-                elemento_contador.update(cantidad_tiempo)
+            # Incrementamos el cantidad tiempo
+            if cant_tiempo > 0: 
+                cant_tiempo -= 1
             else:
-                evento["timestamp"] = datetime.datetime.timestamp(datetime.datetime.now())
-                evento["evento"] = "intento"
-                evento["estado"] = "timeout"
-                evento["texto_ingresado"] = "-"
-                evento["respuesta"] = "-"
-                print(evento)
-                eventos.append(evento)
-                #PASAR_DE_RONDA()
+                generar_evento(config,eventos,"intento","timeout","-","-")
+                if pasar_ronda(cant_puntos,config,ronda_actual,cant_rondas,eventos): break
+                else: 
+                    ronda_actual += 1
+                    window.close()
+                    cant_tiempo = config["valores"]["tiempo_ronda"]
+                    window = sg.Window("Menu de juego", layout = generar_layout(config,dataset,encabezado), size=(500, 550), finalize=True)
+
+            elem = window["-CONTADOR-"]   
+            elem.update(cant_tiempo)
 
         elif event == "-OPCION CORRECTA-":
-            evento["timestamp"] = datetime.datetime.timestamp(datetime.datetime.now())
-            evento["evento"] = "intento"
-            evento["estado"] = "ok"
-            evento["texto_ingresado"] = window[event].get_text()
-            evento["respuesta"] = window["-OPCION CORRECTA-"].get_text()
+            generar_evento(config,eventos,"intento","ok",window[event].get_text(),window["-OPCION CORRECTA-"].get_text())
 
-            cantidad_puntos = cantidad_puntos + config["valores"]["puntos_bien"]
-            elemento_puntaje = window["-PUNTOS-"]
-            elemento_puntaje.update(cantidad_puntos)
-            print(evento)
-            eventos.append(evento)
-            #PASAR_DE_RONDA()
+            cant_puntos = cant_puntos + config["valores"]["puntos_bien"]
+
+            if pasar_ronda(cant_puntos,config,ronda_actual,cant_rondas,eventos): break
+            else: 
+                ronda_actual += 1
+                window.close()
+                window = sg.Window("Menu de juego", layout = generar_layout(config,dataset,encabezado), size=(500, 550), finalize=True)
+                elemento_puntaje = window["-PUNTOS-"]
+                elemento_puntaje.update(cant_puntos)
+            cant_tiempo = config["valores"]["tiempo_ronda"]
 
         elif 'INCORRECTA' in event:
-            evento["timestamp"] = datetime.datetime.timestamp(datetime.datetime.now())
-            evento["evento"] = "intento"
-            evento["estado"] = "error"
-            evento["texto_ingresado"] = window[event].get_text()
-            evento["respuesta"] = window["-OPCION CORRECTA-"].get_text()
-
-            cantidad_puntos = cantidad_puntos + config["valores"]["puntos_mal"]
+            cant_puntos = cant_puntos + config["valores"]["puntos_mal"]
             elemento_puntaje = window["-PUNTOS-"]
-            elemento_puntaje.update(cantidad_puntos)
+            elemento_puntaje.update(cant_puntos)
+            generar_evento(config,eventos,"intento","error",window[event].get_text(),window["-OPCION CORRECTA-"].get_text())
 
-            print(evento)
-            eventos.append(evento)
-            #PASAR_DE_RONDA()
+            if pasar_ronda(cant_puntos,config,ronda_actual,cant_rondas,eventos): 
+                break
+            else: 
+                ronda_actual += 1
+                window.close()
+                window = sg.Window("Menu de juego", layout = generar_layout(config,dataset,encabezado), size=(500, 550), finalize=True)
+                elemento_puntaje = window["-PUNTOS-"]
+                elemento_puntaje.update(cant_puntos)
+            cant_tiempo = config["valores"]["tiempo_ronda"]
 
         elif event == "-PASAR-":
-            evento["timestamp"] = datetime.datetime.timestamp(datetime.datetime.now())
-            evento["evento"] = "intento"
-            evento["estado"] = "pasar"
-            evento["texto_ingresado"] = "-"
-            evento["respuesta"] = window["-OPCION CORRECTA-"].get_text()
-            print(evento)
-            eventos.append(evento)
-            #PASAR_DE_RONDA()
-        
+            generar_evento(config,eventos,"intento","pasar","-",window["-OPCION CORRECTA-"].get_text())
+
+            if pasar_ronda(cant_puntos,config,ronda_actual,cant_rondas,eventos): break
+            else: 
+                ronda_actual += 1
+                window.close()
+                window = sg.Window("Menu de juego", layout = generar_layout(config,dataset,encabezado), size=(500, 550), finalize=True)
+                elemento_puntaje = window["-PUNTOS-"]
+                elemento_puntaje.update(cant_puntos)
+            cant_tiempo = config["valores"]["tiempo_ronda"]
+
+    print(eventos)
     window.close()  
