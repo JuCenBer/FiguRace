@@ -40,12 +40,14 @@ def iniciar_pantalla_config():
         if event == sg.WIN_CLOSED:
             break
         elif event == "-CONFIG_GUARDAR-":
-            seleccionados = {"dataset": values["-CONFIG_DATASET-"],
-                            "tiempo_ronda": values["-CONFIG_TIEMPO-"],
-                            "cant_rondas" : values["-CONFIG_RONDAS-"],
-                            "puntos_bien" : values["-CONFIG_PUNTOS_BIEN-"],
-                            "puntos_mal" : values["-CONFIG_PUNTOS_MAL-"],
-                            "cant_carac" : values["-CONFIG_CANT_CARAC-"],
+            seleccionados = {"valores": {
+                                "tiempo_ronda": values["-CONFIG_TIEMPO-"],
+                                "cant_rondas" : values["-CONFIG_RONDAS-"],
+                                "puntos_bien" : values["-CONFIG_PUNTOS_BIEN-"],
+                                "puntos_mal" : values["-CONFIG_PUNTOS_MAL-"],
+                                "cant_carac" : values["-CONFIG_CANT_CARAC-"],
+                            }, 
+                            "dataset": values["-CONFIG_DATASET-"],
                             "dificultad": config_previa["dificultad"],
                             "nick": config_previa["nick"]}
             if (flag_sliders):

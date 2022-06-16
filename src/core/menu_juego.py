@@ -165,5 +165,5 @@ def iniciar_pantalla_juego():
             print(evento)
             eventos.append(evento)
             #PASAR_DE_RONDA()
-
+        
     window.close()  

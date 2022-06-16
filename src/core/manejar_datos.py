@@ -8,17 +8,16 @@ def seleccionar_dificultad(dif_seleccionada):
     '''Recibe la dificultad seleccionada, obtiene el listado de dificultades y la configuración, y establece los valores de la nueva configuracion en base a los valores de la dificultad seleccionada'''
     dificultades = obtener_dificultades()
     config = obtener_config()
-    for key in dificultades: config[key] = dificultades[key][dif_seleccionada]
+    config["valores"] = dificultades[dif_seleccionada]
     config["dificultad"] = dif_seleccionada
     guardar_config(config)
 
 def obtener_dificultades():
     '''Retorna el listado de caracteristicas segun la dificultad'''
-    dificultades = {"tiempo_ronda": {"Facil":30.0, "Normal":20.0, "Dificil":10.0, "Einstein": 5.0},
-                    "cant_rondas": {"Facil":5.0, "Normal":10.0, "Dificil":20.0, "Einstein": 30.0},
-                    "puntos_bien": {"Facil":50.0, "Normal":50.0, "Dificil":50.0, "Einstein": 60.0},
-                    "puntos_mal": {"Facil":-10.0, "Normal":-25.0, "Dificil":-50.0, "Einstein": -100.0},
-                    "cant_carac": {"Facil":5.0, "Normal":4.0, "Dificil":3.0, "Einstein": 2.0}}
+    dificultades = {"Facil": {"tiempo_ronda": 30.0, "cant_rondas": 5.0, "puntos_bien": 50.0, "puntos_mal": -10.0, "cant_carac": 5.0},
+                    "Normal": {"tiempo_ronda": 20.0, "cant_rondas": 10.0, "puntos_bien": 50.0, "puntos_mal": -25.0, "cant_carac": 4.0}, 
+                    "Dificil": {"tiempo_ronda": 10.0, "cant_rondas": 20.0, "puntos_bien": 50.0, "puntos_mal": -50.0, "cant_carac": 3.0}, 
+                    "Einstein": {"tiempo_ronda": 5.0, "cant_rondas": 30.0, "puntos_bien": 60.0, "puntos_mal": -100.0, "cant_carac": 2.0}}
     return dificultades
 
 def obtener_ultima_partida():
@@ -61,12 +60,13 @@ def obtener_config():
             datos_archivo = json.load(archivo)
             return datos_archivo[0]
     except:
-        config_def = {"dataset": "Aleatorio",
-                      "tiempo_ronda": 30,
-                      "cant_rondas": 5,
-                      "puntos_bien": 50,
-                      "puntos_mal": -10,
-                      "cant_carac": 5,
+        config_def = {"valores" : {
+                        "tiempo_ronda": 30,
+                        "cant_rondas": 5,
+                        "puntos_bien": 50,
+                        "puntos_mal": -10,
+                        "cant_carac": 5},
+                      "dataset": "Aleatorio",
                       "dificultad": "Facil",
                       "nick": ""}
         return config_def
@@ -108,10 +108,10 @@ def guardar_evento(evento):
             return dificultades[0]
     except:
         with open(os.path.join(os.getcwd(), "src", "datos", "dificultades.json"), "w", encoding='utf-8') as archivo:
-            dificultades = {"tiempo_ronda": {"Facil": 30.0, "Normal": 20.0, "Dificil": 10.0, "Einstein": 5.0},
-                            "cant_rondas": {"Facil": 5.0, "Normal": 10.0, "Dificil": 20.0, "Einstein": 30.0},
-                            "puntos_bien": {"Facil": 50.0, "Normal": 50.0, "Dificil": 50.0, "Einstein": 60.0},
-                            "puntos_mal": {"Facil": -10.0, "Normal": -25.0, "Dificil": -50.0, "Einstein": -100.0},
-                            "cant_carac": {"Facil": 5.0, "Normal": 4.0, "Dificil": 3.0, "Einstein": 2.0}}
+            # dificultades = {"tiempo_ronda": {"Facil": 30.0, "Normal": 20.0, "Dificil": 10.0, "Einstein": 5.0},
+            #                 "cant_rondas": {"Facil": 5.0, "Normal": 10.0, "Dificil": 20.0, "Einstein": 30.0},
+            #                 "puntos_bien": {"Facil": 50.0, "Normal": 50.0, "Dificil": 50.0, "Einstein": 60.0},
+            #                 "puntos_mal": {"Facil": -10.0, "Normal": -25.0, "Dificil": -50.0, "Einstein": -100.0},
+            #                 "cant_carac": {"Facil": 5.0, "Normal": 4.0, "Dificil": 3.0, "Einstein": 2.0}}
             json.dump(dificultades)
     return dificultades
