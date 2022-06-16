@@ -10,7 +10,6 @@ sg.theme('DarkAmber')
 
 def crear_ventana_nuevo_jugador():
     """Por si por primera vez, no hay perfiles creados, crea y retorna la ventana de creación de perfiles"""
-    lista_edades = [i for i in range(5, 131)]
     lista_generos = ['Hombre', 'Mujer', 'No Binario']
     layout = [[[sg.Text(text='Ingrese los datos del nuevo perfil: ', size=50)], [sg.Text(text='Nickname '), sg.Input()],
                [sg.Text(text='Ya existe un perfil con ese Nickname. Pruebe ingresando otro distinto.',
