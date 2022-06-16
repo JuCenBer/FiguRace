@@ -40,7 +40,7 @@ def generar_layout(config,dataset):
     #Genero opciones y caracteristicas a traves de los modulos definidos anteriormente'''
     opciones, linea_correcta = generar_opciones(dataset)
     caracteristicas = obtener_caracteristicas(config,encabezado,linea_correcta)
-
+   
     #Se crea la lista de elementos
     layout = [
         #Caracteristicas
@@ -59,15 +59,14 @@ def generar_layout(config,dataset):
         [sg.Button("Volver al Menu", size=(60, 1), font=("Helvetica", 10),button_color=('black','gray'), key="-ABANDONO-")],
  
         #Cuenta Regresiva
-        elemento_contador
+        elemento_contador,
+        #[sg.Image(r'C:\Users\gon\Desktop\Integrador\CORRECTO.png')]
     ]
     return layout
 
 def iniciar_pantalla_juego():
     ''' Este modulo crea la pantalla de juego y inicia la ejecucion de menu de juego'''
    
-    eventos = dict()
-
     #A traves mis manejadores de datos, obtengo las configuraciones y el dataset de los archivos correspondientes para generar mi ventana
     config = manejar_datos.obtener_config()
     dataset = manejar_datos.obtener_dataset(config["dataset"])
