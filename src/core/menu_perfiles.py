@@ -10,7 +10,7 @@ def crear_ventana_nuevo_jugador():
     layout = [[[sg.Text(text='Ingrese los datos del nuevo perfil: ', size=50)], [sg.Text(text='Nickname '), sg.Input()],
     [sg.Text(text='Ya existe un perfil con ese Nickname. Pruebe ingresando otro distinto.',key='-TEXTO NICKNAME EXISTENTE-', visible=False, text_color='red')],
     [sg.Text(text='No puede registrar un perfil con un Nickname vacio.', key='-TEXTO NICKNAME VACIO-', visible=False, text_color='red')]],
-              [sg.Text(text='Edad '), sg.Combo(lista_edades, readonly=True, default_value = lista_edades[0])],
+        [sg.Text(text='Edad '), sg.Slider(range=(1, 120), orientation="h", border_width=8, default_value = 20, font="Helvetica 13", s=(30, 5))],
               [sg.Text(text='Genero autopercibido '), sg.Combo(lista_generos, readonly= True, default_value= lista_generos[0])],
               [sg.Button(button_text='Crear', key='-CONFIRMAR CREAR JUGADOR-')],
               [sg.Button(button_text='Cancelar', key='-CANCELAR CREAR JUGADOR-')],
@@ -24,7 +24,7 @@ def crear_ventana_editar_jugador(jugador_seleccionado):
     lista_edades = [i for i in range(5, 131)]
     lista_generos = ['Hombre', 'Mujer', 'No Binario']
     layout = [[sg.Text(text='Ingrese los datos del nuevo perfil: ', size=50)], [sg.Text(text='Nickname '), sg.Input(default_text=jugador_seleccionado[0][0], readonly=True)],
-              [sg.Text(text='Edad '), sg.Combo(lista_edades, readonly=True, default_value=jugador_seleccionado[0][1])],
+              [sg.Text(text='Edad '), sg.Slider(range=(1, 120), orientation="h", border_width=8, default_value=20, font="Helvetica 13", s=(30, 5))],
               [sg.Text(text='Genero autopercibido '), sg.Combo(lista_generos, readonly=True, default_value=jugador_seleccionado[0][2].title())],
               [sg.Button(button_text='Confirmar edición',key='-CONFIRMAR EDICION JUGADOR-')],
               [sg.Button(button_text='Cancelar edición', key='-CANCELAR EDICION JUGADOR-')]
