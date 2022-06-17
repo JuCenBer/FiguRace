@@ -70,8 +70,10 @@ def generar_layout(config,dataset,encabezado):
 def pasar_ronda(cant_puntos,config,ronda_actual,cant_rondas,eventos,estado = "finalizado"):
     if ronda_actual == cant_rondas:
         generar_evento(config,eventos,"fin",estado,"-","-")
-        #guardar_datos : puntajes y ultima partida(no si cancelo) y eventos
-        sg.Popup("Fin de partida","Puntaje logrado: "+str(cant_puntos))
+        if (estado == "finalizado"): 
+            id = manejar_datos.obtener_id_ultima_partida()
+            manejar_datos.guardar_partidas(eventos, id)
+            sg.Popup("Fin de partida","Puntaje logrado: "+str(cant_puntos))
         return True
     else:
         return False

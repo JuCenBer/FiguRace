@@ -1,0 +1,22 @@
+timestamp,id,evento,usuarie,estado,texto_ingresado,respuesta,nivel
+1655488197.174745,1,inicio_partida,usuarieUWU,nueva,-,-,Facil
+1655488197.475827,1,intento,usuarieUWU,error,Lago Aluminé,Lago Río Bueno,Facil
+1655488197.803788,1,intento,usuarieUWU,error,Lago Epuyén,Lago Meliquina,Facil
+1655488197.987493,1,intento,usuarieUWU,error,Lago Buenos Aires,Lago Cholila,Facil
+1655488198.156036,1,intento,usuarieUWU,error,Lago Puelo,Lago Rosario,Facil
+1655488198.506944,1,intento,usuarieUWU,error,Lago Mascardi,Lago Azara,Facil
+1655488198.506944,1,fin,usuarieUWU,finalizado,-,-,Facil
+1655488245.159476,2,inicio_partida,usuarieUWU,nueva,-,-,Facil
+1655488246.245039,2,intento,usuarieUWU,error,Lago Ghío,Lago Pueyrredón,Facil
+1655488246.541737,2,intento,usuarieUWU,error,Lago Fagnano,Lago Tromen,Facil
+1655488246.941679,2,intento,usuarieUWU,error,Lago Quiroga Chico,Lago Pellegrini,Facil
+1655488247.213238,2,intento,usuarieUWU,error,Lago Burmeister,Lago Menéndez,Facil
+1655488247.413438,2,intento,usuarieUWU,error,Lago Salitroso O Sucio,Lago Meliquina,Facil
+1655488247.413438,2,fin,usuarieUWU,finalizado,-,-,Facil
+1655488316.247482,3,inicio_partida,usuarieUWU,nueva,-,-,Facil
+1655488317.304047,3,intento,usuarieUWU,error,Lago Fagnano,Lago Moquehue,Facil
+1655488317.479122,3,intento,usuarieUWU,ok,Lago Huechulafquen,Lago Huechulafquen,Facil
+1655488317.655236,3,intento,usuarieUWU,ok,Lago Nahuel Huapi,Lago Nahuel Huapi,Facil
+1655488317.83251,3,intento,usuarieUWU,error,Lago Cardiel,Lago Aluminé,Facil
+1655488318.343205,3,intento,usuarieUWU,ok,Lago Menéndez,Lago Menéndez,Facil
+1655488318.343205,3,fin,usuarieUWU,finalizado,-,-,Facil

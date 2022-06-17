@@ -1,7 +1,6 @@
 import os
 import json
 import csv
-import pandas as pd
 from random import randint
 
 def seleccionar_dificultad(dif_seleccionada):
@@ -101,17 +100,36 @@ def obtener_dataset(nombre_dataset):
         lista = list(reader)
     return lista
 
-def guardar_evento(evento):
+def guardar_partidas(eventos, id):
+    with open(os.path.join(os.getcwd(), "src", "datos", "eventos_partidas.csv"), "a", encoding='utf-8') as archivo:
+        writer = csv.DictWriter(archivo, fieldnames=["timestamp","id","evento","usuarie","estado","texto_ingresado","respuesta","nivel"], lineterminator='\n')
+        for evento in eventos:
+            evento["id"] = id
+            writer.writerow(evento)
+                
+def obtener_id_ultima_partida():
+    ruta = os.path.join(os.getcwd(), "src", "datos", "eventos_partidas.csv")
     try:
-        with open(os.path.join(os.getcwd(), "src", "datos", "dificultades.json"), "r", encoding='utf-8') as archivo:
+        with open(ruta, "r") as archivo:
+            reader = csv.reader(archivo, delimiter=",")
+            lista_partidas = list(reader)
+            id = int(lista_partidas[len(lista_partidas)-1][1]) + 1
+    except:
+        with open(ruta, "w", encoding='utf-8') as archivo:
+            writer = csv.writer(archivo, lineterminator="\n")
+            encabezado = ["timestamp", "id","evento", "usuarie", "estado", "texto_ingresado", "respuesta", "nivel"]
+            writer.writerow(encabezado)
+            id = 1
+    return id
+
+
+def obtener_puntajes():
+    try:
+        with open(os.path.join(os.getcwd(), "src", "datos", "eventos_partidas.json"), "r", encoding='utf-8') as archivo:
             dificultades = json.load(archivo)
             return dificultades[0]
     except:
-        with open(os.path.join(os.getcwd(), "src", "datos", "dificultades.json"), "w", encoding='utf-8') as archivo:
-            # dificultades = {"tiempo_ronda": {"Facil": 30.0, "Normal": 20.0, "Dificil": 10.0, "Einstein": 5.0},
-            #                 "cant_rondas": {"Facil": 5.0, "Normal": 10.0, "Dificil": 20.0, "Einstein": 30.0},
-            #                 "puntos_bien": {"Facil": 50.0, "Normal": 50.0, "Dificil": 50.0, "Einstein": 60.0},
-            #                 "puntos_mal": {"Facil": -10.0, "Normal": -25.0, "Dificil": -50.0, "Einstein": -100.0},
-            #                 "cant_carac": {"Facil": 5.0, "Normal": 4.0, "Dificil": 3.0, "Einstein": 2.0}}
+        with open(os.path.join(os.getcwd(), "src", "datos", "eventos_partidas.json"), "w", encoding='utf-8') as archivo:
+            #partidas = {usuario: {dificultad: partidas_por_dificultad[]}
+
             json.dump(dificultades)
-    return dificultades
