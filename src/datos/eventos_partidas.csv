@@ -167,3 +167,52 @@ timestamp,id,evento,usuarie,estado,texto_ingresado,respuesta,nivel
 1655490485.369474,24,intento,usuarieUWU,error,Lago Cholila,Lago Nahuel Huapi,Facil
 1655490485.529018,24,intento,usuarieUWU,error,Lago Menéndez,Lago Río Chico,Facil
 1655490485.529018,24,fin,usuarieUWU,finalizado,-,-,Facil
+1655490885.778268,25,inicio_partida,UWU,nueva,-,-,Facil
+1655490887.037595,25,intento,UWU,error,Lago Quillén,Lago Ghío,Facil
+1655490888.085346,25,intento,UWU,error,Lago Tromen,Lago Cardiel,Facil
+1655490896.652874,25,intento,UWU,error,Lago Onelli,Lago Falkner,Facil
+1655490897.357427,25,intento,UWU,error,Lago Burmeister,Lago Nahuel Huapi,Facil
+1655490899.421389,25,intento,UWU,ok,Lago Menéndez,Lago Menéndez,Facil
+1655490899.421389,25,fin,UWU,finalizado,-,-,Facil
+1655491162.013213,26,inicio_partida,UWU,nueva,-,-,Facil
+1655491162.726844,26,intento,UWU,error,Lago Chepelmut,Lago Lácar,Facil
+1655491163.493503,26,intento,UWU,error,Lago Fontana,Lago Currhué,Facil
+1655491164.05463,26,intento,UWU,error,Lago Argentino,Lago Gutiérrez,Facil
+1655491164.748949,26,intento,UWU,error,Lago Mascardi,Lago Paimún,Facil
+1655491165.334017,26,intento,UWU,error,Lago Meliquina,Lago Burmeister,Facil
+1655491165.334017,26,fin,UWU,finalizado,-,-,Facil
+1655491331.850979,27,inicio_partida,UWU,nueva,-,-,Facil
+1655491332.951146,27,intento,UWU,ok,Julian Pollersbeck,Julian Pollersbeck,Facil
+1655491333.55823,27,intento,UWU,ok,Isi,Isi,Facil
+1655491334.11661,27,intento,UWU,error,Raúl García,Jannis Nikolaou,Facil
+1655491334.693952,27,intento,UWU,error,Callum Hudson-Odoi,Vyacheslav Karavaev,Facil
+1655491335.390806,27,intento,UWU,error,Diego Moreno,Fabian Holland,Facil
+1655491335.390806,27,fin,UWU,finalizado,-,-,Facil
+1655491366.028168,28,inicio_partida,UWU,nueva,-,-,Facil
+1655491366.630441,28,intento,UWU,error,Pago (Papua New Guinea),Tungurahua (Ecuador),Facil
+1655491367.232078,28,intento,UWU,error,Kilauea (United States),Vesuvius (Italy),Facil
+1655491367.935812,28,intento,UWU,error,Kuchinoerabu-Jima (Japan),Mayon (Philippines),Facil
+1655491369.013187,28,intento,UWU,error,Santorini (Greece),White Island (New Zealand),Facil
+1655491369.629313,28,intento,UWU,error,Kirishima (Japan),Kilauea (United States),Facil
+1655491369.629313,28,fin,UWU,finalizado,-,-,Facil
+1655491479.699913,29,inicio_partida,UWU,nueva,-,-,Facil
+1655491480.699787,29,intento,UWU,error,Lago Ghío,Lago Rosario,Facil
+1655491481.318981,29,intento,UWU,error,Lago Pellegrini,Lago Burmeister,Facil
+1655491481.909044,29,intento,UWU,ok,Lago Gutiérrez,Lago Gutiérrez,Facil
+1655491482.517569,29,intento,UWU,error,Lago Nahuel Huapi,Lago Asador O Guitarra,Facil
+1655491483.124507,29,intento,UWU,ok,Lago Aluminé,Lago Aluminé,Facil
+1655491483.124507,29,fin,UWU,finalizado,-,-,Facil
+1655491531.474805,30,inicio_partida,UWU,nueva,-,-,Facil
+1655491532.973422,30,intento,UWU,error,Lago Viedma,Lago Moquehue,Facil
+1655491533.493232,30,intento,UWU,error,Lago Viedma,Lago Nansen,Facil
+1655491534.005832,30,intento,UWU,ok,Lago Aluminé,Lago Aluminé,Facil
+1655491534.509321,30,intento,UWU,error,Lago Rivadavia,Lago Asador O Guitarra,Facil
+1655491535.119321,30,intento,UWU,error,Lago Currhué,Lago Lolog,Facil
+1655491535.119321,30,fin,UWU,finalizado,-,-,Facil
+1655491651.423893,31,inicio_partida,algo,nueva,-,-,Facil
+1655491656.549491,31,intento,algo,error,Lago Gutiérrez,Lago Cholila,Facil
+1655491657.077772,31,intento,algo,error,Lago Lolog,Lago Cardiel,Facil
+1655491657.620997,31,intento,algo,error,Lago Nahuel Huapi,Lago Nansen,Facil
+1655491658.517515,31,intento,algo,error,Lago Perito Moreno,Lago Fagnano,Facil
+1655491659.149267,31,intento,algo,error,Lago Rivadavia,Lago Menéndez,Facil
+1655491659.149267,31,fin,algo,finalizado,-,-,Facil

@@ -191,5 +191,4 @@ def iniciar_pantalla_juego():
                 elemento_puntaje.update(cant_puntos)
             cant_tiempo = config["valores"]["tiempo_ronda"]
 
-    print(eventos)
     window.close()  

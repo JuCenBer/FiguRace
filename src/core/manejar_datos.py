@@ -132,10 +132,10 @@ def obtener_puntajes():
         with open(os.path.join(os.getcwd(), "src", "datos", "puntajes.json"), "r", encoding='utf-8') as archivo:
             puntajes = json.load(archivo)
     except:
-        with open(os.path.join(os.getcwd(), "src", "datos", "eventos_partidas.json"), "w", encoding='utf-8') as archivo:
-            puntajes = {"Facil": {},
-                        "Normal": {},
-                        "Dificil": {},
-                        "Einstein": {}
+        with open(os.path.join(os.getcwd(), "src", "datos", "puntajes.json"), "w", encoding='utf-8') as archivo:
+            puntajes = {"Facil": [],
+                        "Normal": [],
+                        "Dificil": [],
+                        "Einstein": []
                         }
-        return puntajes
+    return puntajes
