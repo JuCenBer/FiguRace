@@ -167,3 +167,15 @@ timestamp,id,evento,usuarie,estado,texto_ingresado,respuesta,nivel
 1655490485.369474,24,intento,usuarieUWU,error,Lago Cholila,Lago Nahuel Huapi,Facil
 1655490485.529018,24,intento,usuarieUWU,error,Lago Menéndez,Lago Río Chico,Facil
 1655490485.529018,24,fin,usuarieUWU,finalizado,-,-,Facil
+1655491666.747263,25,inicio_partida,un_nick,nueva,-,-,Normal
+1655491675.621017,25,intento,un_nick,error,The Jurassic Games,The Scorpion King,Normal
+1655491685.815951,25,intento,un_nick,ok,Addams Family Reunion,Addams Family Reunion,Normal
+1655491695.572401,25,intento,un_nick,ok,The Net,The Net,Normal
+1655491704.509185,25,intento,un_nick,error,Mr. & Mrs. Smith,Middle School: The Worst Years Of My Life,Normal
+1655491717.35072,25,intento,un_nick,error,Five Nights At Freddy'S: The Fan Film,The Alamo,Normal
+1655491729.751837,25,intento,un_nick,error,Impetigore,Wish Upon,Normal
+1655491746.655675,25,intento,un_nick,error,Appleseed,Happily,Normal
+1655491757.578563,25,intento,un_nick,error,Zombies! Zombies! Zombies!,Triangle,Normal
+1655491773.275659,25,intento,un_nick,error,Clash Of The Titans,Batman & Robin,Normal
+1655491785.392764,25,intento,un_nick,error,Pacto De Fuga,Baaghi,Normal
+1655491785.392764,25,fin,un_nick,finalizado,-,-,Normal
