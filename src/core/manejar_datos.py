@@ -123,7 +123,12 @@ def obtener_id_ultima_partida():
             id = 1
     return id
 
-def guardar_puntajes(puntajes):
+def guardar_puntajes(puntajes, dificultad, nick, puntaje):
+    try:
+        puntajes[dificultad][nick].append(puntaje)
+    except:
+        puntajes[dificultad].update({nick:[puntaje]})
+    
     with open(os.path.join(os.getcwd(), "src", "datos", "puntajes.json"), "w", encoding='utf-8') as archivo:
         json.dump(puntajes, archivo)
 

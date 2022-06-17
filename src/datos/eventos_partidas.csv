@@ -216,3 +216,10 @@ timestamp,id,evento,usuarie,estado,texto_ingresado,respuesta,nivel
 1655491658.517515,31,intento,algo,error,Lago Perito Moreno,Lago Fagnano,Facil
 1655491659.149267,31,intento,algo,error,Lago Rivadavia,Lago Menéndez,Facil
 1655491659.149267,31,fin,algo,finalizado,-,-,Facil
+1655492049.646943,32,inicio_partida,algo,nueva,-,-,Facil
+1655492050.348947,32,intento,algo,error,We Need To Talk About Kevin,The Joy Luck Club,Facil
+1655492051.117393,32,intento,algo,ok,Save The Last Dance,Save The Last Dance,Facil
+1655492051.708812,32,intento,algo,error,Texas Killing Fields,Memento,Facil
+1655492052.30888,32,intento,algo,error,Leprechaun: Origins,Ms .45,Facil
+1655492053.405614,32,intento,algo,error,Paradox,The 9Th Life Of Louis Drax,Facil
+1655492053.405614,32,fin,algo,finalizado,-,-,Facil
