@@ -1,3 +1,4 @@
+from http.client import PROXY_AUTHENTICATION_REQUIRED
 import os
 import json
 import csv
@@ -122,14 +123,19 @@ def obtener_id_ultima_partida():
             id = 1
     return id
 
+def guardar_puntajes(puntajes):
+    with open(os.path.join(os.getcwd(), "src", "datos", "puntajes.json"), "w", encoding='utf-8') as archivo:
+        json.dump(puntajes, archivo)
 
 def obtener_puntajes():
     try:
-        with open(os.path.join(os.getcwd(), "src", "datos", "eventos_partidas.json"), "r", encoding='utf-8') as archivo:
-            dificultades = json.load(archivo)
-            return dificultades[0]
+        with open(os.path.join(os.getcwd(), "src", "datos", "puntajes.json"), "r", encoding='utf-8') as archivo:
+            puntajes = json.load(archivo)
     except:
         with open(os.path.join(os.getcwd(), "src", "datos", "eventos_partidas.json"), "w", encoding='utf-8') as archivo:
-            #partidas = {usuario: {dificultad: partidas_por_dificultad[]}
-
-            json.dump(dificultades)
+            puntajes = {"Facil": {},
+                        "Normal": {},
+                        "Dificil": {},
+                        "Einstein": {}
+                        }
+        return puntajes

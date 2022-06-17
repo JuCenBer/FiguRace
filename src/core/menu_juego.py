@@ -73,6 +73,13 @@ def pasar_ronda(cant_puntos,config,ronda_actual,cant_rondas,eventos,estado = "fi
         if (estado == "finalizado"): 
             id = manejar_datos.obtener_id_ultima_partida()
             manejar_datos.guardar_partidas(eventos, id)
+            puntajes = manejar_datos.obtener_puntajes()
+            print(puntajes)
+            try:
+                puntajes[config["dificultad"]][config["nick"]].append([id, cant_puntos])
+            except:
+                puntajes[config["dificultad"]].update({config["nick"]:[[id,cant_puntos]]})
+            manejar_datos.guardar_puntajes(puntajes)
             sg.Popup("Fin de partida","Puntaje logrado: "+str(cant_puntos))
         return True
     else:
