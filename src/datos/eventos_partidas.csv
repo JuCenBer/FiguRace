@@ -41,3 +41,38 @@ timestamp,id,evento,usuarie,estado,texto_ingresado,respuesta,nivel
 1655767318.017715,6,intento,algo,timeout,-,-,Facil
 1655767349.605323,6,intento,algo,timeout,-,-,Facil
 1655767349.605323,6,fin,algo,finalizado,-,-,Facil
+1655767902.989393,7,inicio_partida,,nueva,-,-,Facil
+1655767904.688002,7,intento,,error,Rabaul (Papua New Guinea),Santa Maria (Guatemala),Facil
+1655767905.648571,7,intento,,error,Shishaldin (United States),Novarupta (United States),Facil
+1655767906.734889,7,intento,,ok,Westdahl (United States),Westdahl (United States),Facil
+1655767907.484945,7,intento,,ok,Izalco (El Salvador),Izalco (El Salvador),Facil
+1655767908.387399,7,intento,,error,Ischia (Italy),Manam (Papua New Guinea),Facil
+1655767908.387399,7,fin,,finalizado,-,-,Facil
+1655768158.936439,8,inicio_partida,GON,nueva,-,-,Facil
+1655768160.182492,8,intento,GON,error,Lago Quillén,Lago Currhué,Facil
+1655768161.555462,8,intento,GON,error,Lago Epuyén,Lago Azara,Facil
+1655768162.327463,8,intento,GON,error,Lago Nahuel Huapi,Lago Meliquina,Facil
+1655768163.189642,8,intento,GON,error,Lago Rivadavia,Lago Salitroso O Sucio,Facil
+1655768164.010087,8,intento,GON,error,Lago Lolog,Lago Quiroga Chico,Facil
+1655768164.010087,8,fin,GON,finalizado,-,-,Facil
+1655768168.590498,9,inicio_partida,GON,nueva,-,-,Facil
+1655768169.570544,9,intento,GON,error,The Host,The Choice,Facil
+1655768170.080474,9,intento,GON,error,Beasts Clawing At Straws,Pokémon: Mewtwo Strikes Back - Evolution,Facil
+1655768170.62943,9,intento,GON,error,Safety Not Guaranteed,Mobile Suit Gundam Narrative,Facil
+1655768171.762459,9,intento,GON,error,Awake,Kidnapped,Facil
+1655768173.537627,9,intento,GON,error,The World'S Fastest Indian,Captain America,Facil
+1655768173.537627,9,fin,GON,finalizado,-,-,Facil
+1655768176.525903,10,inicio_partida,GON,nueva,-,-,Facil
+1655768177.121416,10,intento,GON,error,Who'S Harry Crumb?,Jack The Giant Slayer,Facil
+1655768177.469411,10,intento,GON,ok,Mean Machine,Mean Machine,Facil
+1655768177.705383,10,intento,GON,error,13 Assassins,Ooops! Noah Is Gone...,Facil
+1655768177.914573,10,intento,GON,ok,Taking Lives,Taking Lives,Facil
+1655768178.148469,10,intento,GON,error,Goon: Last Of The Enforcers,The Notebook,Facil
+1655768178.148469,10,fin,GON,finalizado,-,-,Facil
+1655768219.041488,11,inicio_partida,MAX,nueva,-,-,Facil
+1655768220.402947,11,intento,MAX,error,Oshima (Japan),Krakatau (Indonesia),Facil
+1655768220.938383,11,intento,MAX,error,Huaynaputina (Peru),Alayta (Ethiopia),Facil
+1655768221.072025,11,intento,MAX,error,Manam (Papua New Guinea),Semeru (Indonesia),Facil
+1655768221.208679,11,intento,MAX,error,Santorini (Greece),Oku Volc Field (Cameroon),Facil
+1655768221.535047,11,intento,MAX,error,Raung (Indonesia),Kilauea (United States),Facil
+1655768221.535047,11,fin,MAX,finalizado,-,-,Facil

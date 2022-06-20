@@ -1,6 +1,6 @@
 vscode
 .vscode
-*.json
+datos/
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
