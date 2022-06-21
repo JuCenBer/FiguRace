@@ -95,7 +95,8 @@ def generar_evento(config,eventos,evento,estado,texto_ingresado, respuesta):
     eventos.append(log)
 
 def iniciar_pantalla_juego():
-    ''' Este modulo crea la pantalla de juego y inicia la ejecucion de menu de juego'''
+    ''' Este modulo inicia una partida en su primera caratula y con los valores traidos de config 
+    luego, a traves de pasar ronda, actualizando el puntaje y reiniciando el tiempo se va pasando cada nivel hasta terminar'''
    
     #A traves mis manejadores de datos, obtengo las configuraciones y el dataset de los archivos correspondientes para generar mi ventana
     config = manejar_datos.obtener_config()
@@ -103,17 +104,19 @@ def iniciar_pantalla_juego():
     encabezado = dataset[0]
     dataset.pop(0)
 
-    cant_tiempo = config["valores"]["tiempo_ronda"] #En esta variable guardo el tiempo disponible actual para actualizarlo cada seg
+    #En esta variable guardo el tiempo disponible actual para actualizarlo cada seg
+    cant_tiempo = config["valores"]["tiempo_ronda"]
 
+    # Inicio cantidad de rondas de la partida y puntos en 0
     ronda_actual = 1
     cant_rondas = config["valores"]["cant_rondas"]
     cant_puntos = 0
 
-    #Creo mi primer evento inicio_partida
+    # Creo mi lista de eventos y el primer evento inicio_partida
     eventos = list()
     generar_evento(config,eventos,"inicio_partida","nueva","-","-")
 
-    #Creo mi ventana con generar_layout con los parametros correspondientes
+    #Creo mi primera ventana con generar_layout con los parametros correspondientes
     window = sg.Window("Menu de juego", layout = generar_layout(config,dataset,encabezado), size=(500, 550), finalize=True)
 
     while True:
