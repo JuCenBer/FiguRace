@@ -70,11 +70,17 @@ def generar_layout(config,dataset,encabezado):
 def pasar_ronda(cant_puntos,config,ronda_actual,cant_rondas,eventos,estado = "finalizado"):
     if ronda_actual == cant_rondas:
         generar_evento(config,eventos,"fin",estado,"-","-")
+        
         if (estado == "finalizado"): 
             id = manejar_datos.obtener_id_ultima_partida()
             manejar_datos.guardar_partidas(eventos, id)
             puntajes = manejar_datos.obtener_puntajes()
             manejar_datos.guardar_puntajes(puntajes, config["dificultad"], config["nick"], cant_puntos)
+            
+            #Al finalizar guardo ultima partida
+            manejar_datos.guardar_ultima_partida({"nick": config["nick"],"dificultad": config["dificultad"],
+            "fecha": datetime.datetime.now().strftime('%d/%m/%Y'),"puntaje": cant_puntos})
+
             sg.Popup("Fin de partida","Puntaje logrado: "+str(cant_puntos))
         elif (estado == "cancelada"):
             sg.Popup("Partida abandonada... ", "Puntaje logrado: "+str(cant_puntos))
