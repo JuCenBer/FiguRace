@@ -70,6 +70,7 @@ def generar_layout(config,dataset,encabezado):
 def pasar_ronda(cant_puntos,config,ronda_actual,cant_rondas,eventos,estado = "finalizado"):
     if ronda_actual == cant_rondas:
         generar_evento(config,eventos,"fin",estado,"-","-")
+        print("ESTADO:" + estado)
         if (estado == "finalizado"): 
             id = manejar_datos.obtener_id_ultima_partida()
             manejar_datos.guardar_partidas(eventos, id)
@@ -77,6 +78,8 @@ def pasar_ronda(cant_puntos,config,ronda_actual,cant_rondas,eventos,estado = "fi
             puntaje = [id, cant_puntos]
             manejar_datos.guardar_puntajes(puntajes, config["dificultad"], config["nick"], puntaje)
             sg.Popup("Fin de partida","Puntaje logrado: "+str(cant_puntos))
+        elif (estado == "cancelada"):
+            sg.Popup("Partida abandonada... ", "Puntaje logrado: "+str(cant_puntos))
         return True
     else:
         return False
@@ -125,7 +128,7 @@ def iniciar_pantalla_juego():
 
         if event == "-ABANDONO-":
             ronda_actual = cant_rondas
-            pasar_ronda(config,ronda_actual,cant_rondas,eventos,"cancelada")
+            pasar_ronda(cant_puntos,config,ronda_actual,cant_rondas,eventos,"cancelada")
             menu.crear_ventana_principal
             break
 
@@ -135,12 +138,14 @@ def iniciar_pantalla_juego():
                 cant_tiempo -= 1
             else:
                 generar_evento(config,eventos,"intento","timeout","-","-")
-                if pasar_ronda(cant_puntos,config,ronda_actual,cant_rondas,eventos): break
+                if pasar_ronda(cant_puntos,config,ronda_actual,cant_rondas,eventos,"timeout"): break
                 else: 
                     ronda_actual += 1
                     window.close()
                     cant_tiempo = config["valores"]["tiempo_ronda"]
                     window = sg.Window("Menu de juego", layout = generar_layout(config,dataset,encabezado), size=(500, 550), finalize=True)
+                    elemento_puntaje = window["-PUNTOS-"]
+                    elemento_puntaje.update(cant_puntos)
 
             elem = window["-CONTADOR-"]   
             elem.update(cant_tiempo)
@@ -165,7 +170,7 @@ def iniciar_pantalla_juego():
             elemento_puntaje.update(cant_puntos)
             generar_evento(config,eventos,"intento","error",window[event].get_text(),window["-OPCION CORRECTA-"].get_text())
 
-            if pasar_ronda(cant_puntos,config,ronda_actual,cant_rondas,eventos): 
+            if pasar_ronda(cant_puntos,config,ronda_actual,cant_rondas,eventos,"error"): 
                 break
             else: 
                 ronda_actual += 1

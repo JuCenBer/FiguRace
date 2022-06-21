@@ -76,3 +76,10 @@ timestamp,id,evento,usuarie,estado,texto_ingresado,respuesta,nivel
 1655768221.208679,11,intento,MAX,error,Santorini (Greece),Oku Volc Field (Cameroon),Facil
 1655768221.535047,11,intento,MAX,error,Raung (Indonesia),Kilauea (United States),Facil
 1655768221.535047,11,fin,MAX,finalizado,-,-,Facil
+1655769649.603348,12,inicio_partida,usuarieUWU,nueva,-,-,Facil
+1655769650.297965,12,intento,usuarieUWU,error,Lago Chepelmut,Lago Currhué,Facil
+1655769681.697944,12,intento,usuarieUWU,timeout,-,-,Facil
+1655769685.026876,12,intento,usuarieUWU,error,Lago Fagnano,Lago Musters,Facil
+1655769686.291549,12,intento,usuarieUWU,error,Lago Aluminé,Lago Quiroga,Facil
+1655769688.507157,12,intento,usuarieUWU,pasar,-,Lago Nansen,Facil
+1655769688.507157,12,fin,usuarieUWU,finalizado,-,-,Facil
