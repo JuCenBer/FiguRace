@@ -109,6 +109,7 @@ def iniciar_pantalla_juego():
     cant_rondas = config["valores"]["cant_rondas"]
     cant_puntos = 0
 
+    #Creo mi primer evento inicio_partida
     eventos = list()
     generar_evento(config,eventos,"inicio_partida","nueva","-","-")
 
@@ -135,8 +136,7 @@ def iniciar_pantalla_juego():
                     window.close()
                     cant_tiempo = config["valores"]["tiempo_ronda"]
                     window = sg.Window("Menu de juego", layout = generar_layout(config,dataset,encabezado), size=(500, 550), finalize=True)
-                    elemento_puntaje = window["-PUNTOS-"]
-                    elemento_puntaje.update(cant_puntos)
+                    window["-PUNTOS-"].update(cant_puntos)
 
             elem = window["-CONTADOR-"]   
             elem.update(cant_tiempo)
@@ -151,14 +151,12 @@ def iniciar_pantalla_juego():
                 ronda_actual += 1
                 window.close()
                 window = sg.Window("Menu de juego", layout = generar_layout(config,dataset,encabezado), size=(500, 550), finalize=True)
-                elemento_puntaje = window["-PUNTOS-"]
-                elemento_puntaje.update(cant_puntos)
+                window["-PUNTOS-"].update(cant_puntos)
             cant_tiempo = config["valores"]["tiempo_ronda"]
 
         elif 'INCORRECTA' in event:
             cant_puntos = cant_puntos + config["valores"]["puntos_mal"]
-            elemento_puntaje = window["-PUNTOS-"]
-            elemento_puntaje.update(cant_puntos)
+            window["-PUNTOS-"].update(cant_puntos)
             generar_evento(config,eventos,"intento","error",window[event].get_text(),window["-OPCION CORRECTA-"].get_text())
 
             if pasar_ronda(cant_puntos,config,ronda_actual,cant_rondas,eventos): 
@@ -167,8 +165,7 @@ def iniciar_pantalla_juego():
                 ronda_actual += 1
                 window.close()
                 window = sg.Window("Menu de juego", layout = generar_layout(config,dataset,encabezado), size=(500, 550), finalize=True)
-                elemento_puntaje = window["-PUNTOS-"]
-                elemento_puntaje.update(cant_puntos)
+                window["-PUNTOS-"].update(cant_puntos)
             cant_tiempo = config["valores"]["tiempo_ronda"]
 
         elif event == "-PASAR-":
@@ -179,8 +176,7 @@ def iniciar_pantalla_juego():
                 ronda_actual += 1
                 window.close()
                 window = sg.Window("Menu de juego", layout = generar_layout(config,dataset,encabezado), size=(500, 550), finalize=True)
-                elemento_puntaje = window["-PUNTOS-"]
-                elemento_puntaje.update(cant_puntos)
+                window["-PUNTOS-"].update(cant_puntos)
             cant_tiempo = config["valores"]["tiempo_ronda"]
 
     window.close()  
