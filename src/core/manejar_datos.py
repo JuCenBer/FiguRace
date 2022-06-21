@@ -133,9 +133,36 @@ def obtener_puntajes():
             puntajes = json.load(archivo)
     except:
         with open(os.path.join(os.getcwd(), "src", "datos", "puntajes.json"), "w", encoding='utf-8') as archivo:
-            puntajes = {"Facil": [],
-                        "Normal": [],
-                        "Dificil": [],
-                        "Einstein": []
+            puntajes = {"Facil": {},
+                        "Normal": {},
+                        "Dificil": {},
+                        "Einstein": {}
                         }
     return puntajes
+
+def obtener_mejores_puntajes():
+    puntajes = obtener_puntajes()
+    lista_facil = [(usuario, puntaje) for usuario in puntajes["Facil"] for puntaje in puntajes["Facil"][usuario]]
+    lista_normal = [(usuario, puntaje) for usuario in puntajes["Normal"] for puntaje in puntajes["Normal"][usuario]]
+    lista_dificil = [(usuario, puntaje) for usuario in puntajes["Dificil"] for puntaje in puntajes["Dificil"][usuario]]
+    lista_einstein = [(usuario, puntaje) for usuario in puntajes["Einstein"] for puntaje in puntajes["Einstein"][usuario]]
+
+    listas_puntajes= list()
+
+    lista_facil.sort(key= lambda x: x[1], reverse= True)
+    listas_puntajes.append(lista_facil[:20])
+
+    lista_normal.sort(key=lambda x: x[1], reverse=True)
+    listas_puntajes.append(lista_normal[:20])
+
+    lista_dificil.sort(key=lambda x: x[1], reverse=True)
+    listas_puntajes.append(lista_dificil[:20])
+
+    lista_einstein.sort(key=lambda x: x[1], reverse=True)
+    listas_puntajes.append(lista_einstein[:20])
+
+    listas_promedios = list()
+
+    print(listas_puntajes)
+    return listas_puntajes
+    

@@ -74,9 +74,10 @@ def pasar_ronda(cant_puntos,config,ronda_actual,cant_rondas,eventos,estado = "fi
             id = manejar_datos.obtener_id_ultima_partida()
             manejar_datos.guardar_partidas(eventos, id)
             puntajes = manejar_datos.obtener_puntajes()
-            puntaje = [id, cant_puntos]
-            manejar_datos.guardar_puntajes(puntajes, config["dificultad"], config["nick"], puntaje)
+            manejar_datos.guardar_puntajes(puntajes, config["dificultad"], config["nick"], cant_puntos)
             sg.Popup("Fin de partida","Puntaje logrado: "+str(cant_puntos))
+        elif (estado == "cancelada"):
+            sg.Popup("Partida abandonada... ", "Puntaje logrado: "+str(cant_puntos))
         return True
     else:
         return False
@@ -116,16 +117,9 @@ def iniciar_pantalla_juego():
 
     while True:
         event, values = window.read(timeout=1000)
-        if event != "__TIMEOUT__":
-          print(f"{event} {values}")
-
-        if event == sg.WIN_CLOSED:
-            menu.crear_ventana_principal
-            break
-
-        if event == "-ABANDONO-":
+        if event == "-ABANDONO-" or event == sg.WIN_CLOSED:
             ronda_actual = cant_rondas
-            pasar_ronda(config,ronda_actual,cant_rondas,eventos,"cancelada")
+            pasar_ronda(cant_puntos,config,ronda_actual,cant_rondas,eventos,"cancelada")
             menu.crear_ventana_principal
             break
 
@@ -141,6 +135,8 @@ def iniciar_pantalla_juego():
                     window.close()
                     cant_tiempo = config["valores"]["tiempo_ronda"]
                     window = sg.Window("Menu de juego", layout = generar_layout(config,dataset,encabezado), size=(500, 550), finalize=True)
+                    elemento_puntaje = window["-PUNTOS-"]
+                    elemento_puntaje.update(cant_puntos)
 
             elem = window["-CONTADOR-"]   
             elem.update(cant_tiempo)
