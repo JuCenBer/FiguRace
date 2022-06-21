@@ -80,11 +80,6 @@ def guardar_config(dicc):
         dicc_json.append(dicc)
         json.dump(dicc_json, archivo)
 
-#Se utilizara en la segunda entrega para la pantalla de puntajes 
-#def obtener_top_puntajes():
-#    ruta = os.path.join(os.getcwd(), "src", "datos", "config.json")   
-#    return []
-
 def obtener_dataset(nombre_dataset):
     '''Recibe el nombre del dataset y chequea si es aleatorio o no. Retorna el dataset elegido, ya sea al azar o no, en forma de lista'''
     nombres_datasets = ["erupciones_formateado.csv", "lagos_formateado.csv", "peliculas_formateado.csv", "jugadores_formateado.csv"]
