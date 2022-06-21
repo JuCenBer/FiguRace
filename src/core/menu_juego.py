@@ -117,14 +117,7 @@ def iniciar_pantalla_juego():
 
     while True:
         event, values = window.read(timeout=1000)
-        if event != "__TIMEOUT__":
-          print(f"{event} {values}")
-
-        if event == sg.WIN_CLOSED:
-            menu.crear_ventana_principal
-            break
-
-        if event == "-ABANDONO-":
+        if event == "-ABANDONO-" or event == sg.WIN_CLOSED:
             ronda_actual = cant_rondas
             pasar_ronda(cant_puntos,config,ronda_actual,cant_rondas,eventos,"cancelada")
             menu.crear_ventana_principal
@@ -136,7 +129,7 @@ def iniciar_pantalla_juego():
                 cant_tiempo -= 1
             else:
                 generar_evento(config,eventos,"intento","timeout","-","-")
-                if pasar_ronda(cant_puntos,config,ronda_actual,cant_rondas,eventos,"timeout"): break
+                if pasar_ronda(cant_puntos,config,ronda_actual,cant_rondas,eventos): break
                 else: 
                     ronda_actual += 1
                     window.close()

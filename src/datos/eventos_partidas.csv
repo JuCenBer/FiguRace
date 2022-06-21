@@ -125,3 +125,38 @@ timestamp,id,evento,usuarie,estado,texto_ingresado,respuesta,nivel
 1655772492.116196,18,intento,usuarieUWU,error,Lago San Martín,Lago Aluminé,Facil
 1655772492.316189,18,intento,usuarieUWU,error,Lago Fontana,Lago Blanco,Facil
 1655772492.316189,18,fin,usuarieUWU,finalizado,-,-,Facil
+1655815463.767147,19,inicio_partida,usuarieUWU,nueva,-,-,Facil
+1655815464.135221,19,intento,usuarieUWU,error,Lago Puelo,Lago Buenos Aires,Facil
+1655815464.447585,19,intento,usuarieUWU,error,Lago Pico Nº 1,Lago Pico Nº 1,Facil
+1655815464.767114,19,intento,usuarieUWU,error,Lago Lácar,Lago Belgrano,Facil
+1655815465.135365,19,intento,usuarieUWU,error,Lago Chepelmut,Lago Rosario,Facil
+1655815465.536108,19,intento,usuarieUWU,error,Lago Aluminé,Lago Fontana,Facil
+1655815465.536108,19,fin,usuarieUWU,finalizado,-,-,Facil
+1655815467.096168,20,inicio_partida,usuarieUWU,nueva,-,-,Facil
+1655815467.383699,20,intento,usuarieUWU,error,Lago Menéndez,Lago Belgrano,Facil
+1655815467.576537,20,intento,usuarieUWU,error,Lago Rivadavia,Lago Blanco,Facil
+1655815469.352163,20,intento,usuarieUWU,error,Lago Mascardi,Lago Yehuin,Facil
+1655815469.631286,20,intento,usuarieUWU,error,Lago Moquehue,Lago Quiroga,Facil
+1655815469.807363,20,intento,usuarieUWU,error,Lago Strobel,Lago Pueyrredón,Facil
+1655815469.807363,20,fin,usuarieUWU,finalizado,-,-,Facil
+1655815472.295828,21,inicio_partida,usuarieUWU,nueva,-,-,Facil
+1655815472.632361,21,intento,usuarieUWU,error,Lago Salitroso O Sucio,Lago Belgrano,Facil
+1655815472.928453,21,intento,usuarieUWU,error,Lago Currhué,Lago Tar,Facil
+1655815473.216257,21,intento,usuarieUWU,error,Lago Strobel,Lago Cardiel,Facil
+1655815474.15212,21,intento,usuarieUWU,error,Lago Viedma,Lago Río Chico,Facil
+1655815474.479415,21,intento,usuarieUWU,ok,Lago Río Bueno,Lago Río Bueno,Facil
+1655815474.479415,21,fin,usuarieUWU,finalizado,-,-,Facil
+1655815478.270369,22,inicio_partida,otro_Usuarie,nueva,-,-,Facil
+1655815479.20837,22,intento,otro_Usuarie,error,Lago Lolog,Lago Menéndez,Facil
+1655815479.511986,22,intento,otro_Usuarie,ok,Lago Cholila,Lago Cholila,Facil
+1655815479.872343,22,intento,otro_Usuarie,ok,Lago Salitroso O Sucio,Lago Salitroso O Sucio,Facil
+1655815480.512345,22,intento,otro_Usuarie,error,Lago Tromen,Lago Currhué,Facil
+1655815481.239765,22,intento,otro_Usuarie,error,Lago Mascardi,Lago Mascardi,Facil
+1655815481.239765,22,fin,otro_Usuarie,finalizado,-,-,Facil
+1655815482.503358,23,inicio_partida,otro_Usuarie,nueva,-,-,Facil
+1655815482.912469,23,intento,otro_Usuarie,ok,Lago Chepelmut,Lago Chepelmut,Facil
+1655815483.264722,23,intento,otro_Usuarie,error,Lago Fontana,Lago Huechulafquen,Facil
+1655815483.632166,23,intento,otro_Usuarie,error,Lago Belgrano,Lago Moquehue,Facil
+1655815484.280335,23,intento,otro_Usuarie,error,Lago Falkner,Lago Salitroso O Sucio,Facil
+1655815484.608312,23,intento,otro_Usuarie,error,Lago Cholila,Lago Argentino,Facil
+1655815484.608312,23,fin,otro_Usuarie,finalizado,-,-,Facil

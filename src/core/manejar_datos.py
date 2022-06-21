@@ -167,5 +167,5 @@ def obtener_mejores_puntajes():
     listas.append(lista_einstein[:20])
 
     print(listas)
-    return lista_facil,lista_normal,lista_dificil,lista_einstein
+    return listas
     
