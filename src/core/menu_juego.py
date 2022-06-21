@@ -83,7 +83,7 @@ def pasar_ronda(cant_puntos,config,ronda_actual,cant_rondas,eventos,estado = "fi
         return False
 
 def generar_evento(config,eventos,evento,estado,texto_ingresado, respuesta):
-    log = { "timestamp": datetime.datetime.timestamp(datetime.datetime.now()),
+    log = { "timestamp": int(datetime.datetime.timestamp(datetime.datetime.now())),
             "id": "",
             "evento": evento,
             "usuarie": config["nick"],

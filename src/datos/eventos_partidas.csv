@@ -160,3 +160,44 @@ timestamp,id,evento,usuarie,estado,texto_ingresado,respuesta,nivel
 1655815484.280335,23,intento,otro_Usuarie,error,Lago Falkner,Lago Salitroso O Sucio,Facil
 1655815484.608312,23,intento,otro_Usuarie,error,Lago Cholila,Lago Argentino,Facil
 1655815484.608312,23,fin,otro_Usuarie,finalizado,-,-,Facil
+1655819442,24,inicio_partida,whatsername,nueva,-,-,Facil
+1655819443,24,intento,whatsername,error,Izalco (El Salvador),Pinatubo (Philippines),Facil
+1655819443,24,intento,whatsername,error,Semeru (Indonesia),Aso (Japan),Facil
+1655819444,24,intento,whatsername,error,Kadovar (Papua New Guinea),Colima (Mexico),Facil
+1655819444,24,intento,whatsername,error,Tinakula (Solomon Is.),Mayon (Philippines),Facil
+1655819444,24,intento,whatsername,error,Vesuvius (Italy),Arenal (Costa Rica),Facil
+1655819444,24,fin,whatsername,finalizado,-,-,Facil
+1655819450,25,inicio_partida,whatsername,nueva,-,-,Dificil
+1655819451,25,intento,whatsername,error,Damian Oko,Paulo Da Silva,Dificil
+1655819451,25,intento,whatsername,error,Joe Abrigo,Yacine Bammou,Dificil
+1655819451,25,intento,whatsername,error,Camilo Mayada,Jack Hingert,Dificil
+1655819451,25,intento,whatsername,error,Vetle Dragsnes,Shi Ke,Dificil
+1655819452,25,intento,whatsername,error,Jorge Aguirre,Nicholas Allievi,Dificil
+1655819452,25,intento,whatsername,error,Joona Toivio,Robert Leipertz,Dificil
+1655819452,25,intento,whatsername,ok,Sebastián Sáez,Sebastián Sáez,Dificil
+1655819452,25,intento,whatsername,error,Cédric,Michael Schultz,Dificil
+1655819453,25,intento,whatsername,error,Frank Arhin,Niklas Dorsch,Dificil
+1655819453,25,intento,whatsername,error,Adam Gnezda Cerin,Ramalho,Dificil
+1655819453,25,intento,whatsername,error,Jason Mbock,Mathias Jensen,Dificil
+1655819453,25,intento,whatsername,error,Farid Díaz,Ibrahim Amadou,Dificil
+1655819454,25,intento,whatsername,ok,Wilson Mena,Wilson Mena,Dificil
+1655819454,25,intento,whatsername,error,Kevin Wimmer,Efrain Alvarez,Dificil
+1655819454,25,intento,whatsername,error,Alberto Benito,Razvan Marin,Dificil
+1655819454,25,intento,whatsername,error,Tomohiko Miyazaki,Florian Lejeune,Dificil
+1655819455,25,intento,whatsername,error,Birger Meling,Václav Drchal,Dificil
+1655819455,25,intento,whatsername,error,Sebastián Sosa,Juan Carlos,Dificil
+1655819456,25,intento,whatsername,error,John Yeboah,Nicke Kabamba,Dificil
+1655819456,25,intento,whatsername,error,Luke Waterfall,Filip Bednarek,Dificil
+1655819456,25,fin,whatsername,finalizado,-,-,Dificil
+1655819460,26,inicio_partida,whatsername,nueva,-,-,Normal
+1655819460,26,intento,whatsername,error,Lago Lácar,Lago Falkner,Normal
+1655819460,26,intento,whatsername,error,Lago Azara,Lago General Vintter,Normal
+1655819461,26,intento,whatsername,error,Lago Epecuén,Lago Correntoso,Normal
+1655819461,26,intento,whatsername,error,Lago Strobel,Lago Pueyrredón,Normal
+1655819462,26,intento,whatsername,error,Lago San Martín,Lago Cardiel,Normal
+1655819462,26,intento,whatsername,error,Lago Salitroso O Sucio,Lago Aluminé,Normal
+1655819462,26,intento,whatsername,error,Lago Nansen,Lago Lácar,Normal
+1655819463,26,intento,whatsername,error,Lago Musters,Lago Onelli,Normal
+1655819463,26,intento,whatsername,error,Lago Cholila,Lago Pellegrini,Normal
+1655819463,26,intento,whatsername,error,Lago Gutiérrez,Lago Meliquina,Normal
+1655819463,26,fin,whatsername,finalizado,-,-,Normal

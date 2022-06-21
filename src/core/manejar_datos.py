@@ -161,8 +161,14 @@ def obtener_mejores_puntajes():
     lista_einstein.sort(key=lambda x: x[1], reverse=True)
     listas_puntajes.append(lista_einstein[:20])
 
-    listas_promedios = list()
+    listas_promedios = []
+    for key in puntajes:
+        lista_dif = []
+        for usuario in puntajes[key]:
+            prom = sum(puntajes[key][usuario])/len(puntajes[key][usuario])
+            tupla = (usuario, prom)
+            lista_dif.append(tupla)
+        lista_dif.sort(key=lambda x: x[1], reverse=True)
+        listas_promedios.append(lista_dif[:20])
 
-    print(listas_puntajes)
-    return listas_puntajes
-    
+    return listas_puntajes, listas_promedios
