@@ -10,6 +10,11 @@ def iniciar_pantalla_puntajes():
 
     # Se hace una variable a modo de ejemplo para visualizar en la primera entrega
     tabla_top_usuarios = [["Usuario 1","112154"],["Usuario 2","45468"]]
+    puntajes = manejar_datos.obtener_mejores_puntajes()
+    """ tabla_facil = 
+    tabla_normal = 
+    tabla_dificil =
+    tabla_einstein =  """
 
     # Varias tablas para las distintas dificultades
     elem_tabla_1 = sg.Frame(title='Fácil', title_location='n', layout=[[sg.Table(headings=["Usuario","Puntos"], values=tabla_top_usuarios, auto_size_columns=True, font="Helvetica 13", hide_vertical_scroll=True, num_rows=20, justification="center")]])

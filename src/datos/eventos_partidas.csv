@@ -90,3 +90,38 @@ timestamp,id,evento,usuarie,estado,texto_ingresado,respuesta,nivel
 1655770184.04462,13,intento,usuarieUWU,error,Lago Moquehue,Lago Moquehue,Facil
 1655770184.484881,13,intento,usuarieUWU,ok,Lago Buenos Aires,Lago Buenos Aires,Facil
 1655770184.484881,13,fin,usuarieUWU,finalizado,-,-,Facil
+1655772468.396433,14,inicio_partida,otro_Usuarie,nueva,-,-,Facil
+1655772468.819527,14,intento,otro_Usuarie,error,Lago La Plata,Lago Moquehue,Facil
+1655772469.283673,14,intento,otro_Usuarie,error,Lago Perito Moreno,Lago Salitroso O Sucio,Facil
+1655772469.731321,14,intento,otro_Usuarie,ok,Lago Onelli,Lago Onelli,Facil
+1655772470.195022,14,intento,otro_Usuarie,ok,Lago Rivadavia,Lago Rivadavia,Facil
+1655772470.739529,14,intento,otro_Usuarie,error,Lago Azara,Lago Tromen,Facil
+1655772470.739529,14,fin,otro_Usuarie,finalizado,-,-,Facil
+1655772473.980868,15,inicio_partida,otro_Usuarie,nueva,-,-,Facil
+1655772474.355488,15,intento,otro_Usuarie,error,Lago Pellegrini,Lago Traful,Facil
+1655772474.971491,15,intento,otro_Usuarie,error,Lago Rosario,Lago Tromen,Facil
+1655772475.379747,15,intento,otro_Usuarie,error,Lago Posadas,Lago Yehuin,Facil
+1655772475.699498,15,intento,otro_Usuarie,error,Lago Correntoso,Lago Onelli,Facil
+1655772476.099029,15,intento,otro_Usuarie,error,Lago Asador O Guitarra,Lago Argentino,Facil
+1655772476.099029,15,fin,otro_Usuarie,finalizado,-,-,Facil
+1655772481.226472,16,inicio_partida,otro_Usuarie,nueva,-,-,Facil
+1655772481.700084,16,intento,otro_Usuarie,error,Lago Río Bueno,Lago Menéndez,Facil
+1655772482.379489,16,intento,otro_Usuarie,ok,Lago Epecuén,Lago Epecuén,Facil
+1655772482.723612,16,intento,otro_Usuarie,error,Lago Gutiérrez,Lago La Plata,Facil
+1655772483.092064,16,intento,otro_Usuarie,error,Lago Pueyrredón,Lago Nansen,Facil
+1655772483.627474,16,intento,otro_Usuarie,error,Lago Buenos Aires,Lago Currhué,Facil
+1655772483.627474,16,fin,otro_Usuarie,finalizado,-,-,Facil
+1655772486.145974,17,inicio_partida,usuarieUWU,nueva,-,-,Facil
+1655772486.803583,17,intento,usuarieUWU,error,Lago Epuyén,Lago Rosario,Facil
+1655772487.668018,17,intento,usuarieUWU,error,Lago Buenos Aires,Lago Futalaufquen,Facil
+1655772487.99566,17,intento,usuarieUWU,error,Lago Meliquina,Lago Blanco,Facil
+1655772488.347549,17,intento,usuarieUWU,ok,Lago Aluminé,Lago Aluminé,Facil
+1655772488.780198,17,intento,usuarieUWU,error,Lago Ghío,Lago Belgrano,Facil
+1655772488.780198,17,fin,usuarieUWU,finalizado,-,-,Facil
+1655772491.116558,18,inicio_partida,usuarieUWU,nueva,-,-,Facil
+1655772491.475567,18,intento,usuarieUWU,error,Lago Quillén,Lago Epuyén,Facil
+1655772491.771638,18,intento,usuarieUWU,ok,Lago Tar,Lago Tar,Facil
+1655772491.932324,18,intento,usuarieUWU,error,Lago Lolog,Lago Falkner,Facil
+1655772492.116196,18,intento,usuarieUWU,error,Lago San Martín,Lago Aluminé,Facil
+1655772492.316189,18,intento,usuarieUWU,error,Lago Fontana,Lago Blanco,Facil
+1655772492.316189,18,fin,usuarieUWU,finalizado,-,-,Facil

@@ -144,3 +144,28 @@ def obtener_puntajes():
                         "Einstein": {}
                         }
     return puntajes
+
+def obtener_mejores_puntajes():
+    puntajes = obtener_puntajes()
+    lista_facil = [(usuario, puntaje) for usuario in puntajes["Facil"] for puntaje in puntajes["Facil"][usuario]]
+    lista_normal = [(usuario, puntaje) for usuario in puntajes["Normal"] for puntaje in puntajes["Normal"][usuario]]
+    lista_dificil = [(usuario, puntaje) for usuario in puntajes["Dificil"] for puntaje in puntajes["Dificil"][usuario]]
+    lista_einstein = [(usuario, puntaje) for usuario in puntajes["Einstein"] for puntaje in puntajes["Einstein"][usuario]]
+
+    listas= list()
+
+    lista_facil.sort(key= lambda x: x[1], reverse= True)
+    listas.append(lista_facil[:20])
+
+    lista_normal.sort(key=lambda x: x[1], reverse=True)
+    listas.append(lista_normal[:20])
+
+    lista_dificil.sort(key=lambda x: x[1], reverse=True)
+    listas.append(lista_dificil[:20])
+
+    lista_einstein.sort(key=lambda x: x[1], reverse=True)
+    listas.append(lista_einstein[:20])
+
+    print(listas)
+    return lista_facil,lista_normal,lista_dificil,lista_einstein
+    

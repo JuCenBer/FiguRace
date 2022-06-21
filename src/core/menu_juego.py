@@ -70,7 +70,6 @@ def generar_layout(config,dataset,encabezado):
 def pasar_ronda(cant_puntos,config,ronda_actual,cant_rondas,eventos,estado = "finalizado"):
     if ronda_actual == cant_rondas:
         generar_evento(config,eventos,"fin",estado,"-","-")
-        print("ESTADO:" + estado)
         if (estado == "finalizado"): 
             id = manejar_datos.obtener_id_ultima_partida()
             manejar_datos.guardar_partidas(eventos, id)
@@ -169,7 +168,7 @@ def iniciar_pantalla_juego():
             elemento_puntaje.update(cant_puntos)
             generar_evento(config,eventos,"intento","error",window[event].get_text(),window["-OPCION CORRECTA-"].get_text())
 
-            if pasar_ronda(cant_puntos,config,ronda_actual,cant_rondas,eventos,"error"): 
+            if pasar_ronda(cant_puntos,config,ronda_actual,cant_rondas,eventos): 
                 break
             else: 
                 ronda_actual += 1
