@@ -38,8 +38,6 @@ def iniciar_pantalla_puntajes():
 
     contenedor_promedios = sg.Frame(title="Top 20 promedios", title_location="n", vertical_alignment="center", border_width=0, element_justification="center", expand_x=True, expand_y=True, layout=[elem_tablas_prom])
 
-    #lista_contenedores = [contenedor_puntajes, contenedor_promedios]
-
     contenedor = [[sg.Col(vertical_alignment="center", element_justification="center", expand_x=True, expand_y=True, layout=[[contenedor_puntajes], [sg.HorizontalSeparator()], [contenedor_promedios], [elem_volver]])]]
     window = sg.Window("Puntajes",contenedor,size=(1000, 600))
 
