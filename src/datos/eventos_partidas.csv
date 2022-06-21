@@ -83,3 +83,10 @@ timestamp,id,evento,usuarie,estado,texto_ingresado,respuesta,nivel
 1655769686.291549,12,intento,usuarieUWU,error,Lago Aluminé,Lago Quiroga,Facil
 1655769688.507157,12,intento,usuarieUWU,pasar,-,Lago Nansen,Facil
 1655769688.507157,12,fin,usuarieUWU,finalizado,-,-,Facil
+1655770181.901672,13,inicio_partida,usuarieUWU,nueva,-,-,Facil
+1655770182.404775,13,intento,usuarieUWU,error,Lago Menéndez,Lago Viedma,Facil
+1655770182.836488,13,intento,usuarieUWU,error,Lago Moquehue,Lago Strobel,Facil
+1655770183.228174,13,intento,usuarieUWU,error,Lago Chepelmut,Lago Mascardi,Facil
+1655770184.04462,13,intento,usuarieUWU,error,Lago Moquehue,Lago Moquehue,Facil
+1655770184.484881,13,intento,usuarieUWU,ok,Lago Buenos Aires,Lago Buenos Aires,Facil
+1655770184.484881,13,fin,usuarieUWU,finalizado,-,-,Facil

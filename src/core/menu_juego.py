@@ -75,8 +75,7 @@ def pasar_ronda(cant_puntos,config,ronda_actual,cant_rondas,eventos,estado = "fi
             id = manejar_datos.obtener_id_ultima_partida()
             manejar_datos.guardar_partidas(eventos, id)
             puntajes = manejar_datos.obtener_puntajes()
-            puntaje = [id, cant_puntos]
-            manejar_datos.guardar_puntajes(puntajes, config["dificultad"], config["nick"], puntaje)
+            manejar_datos.guardar_puntajes(puntajes, config["dificultad"], config["nick"], cant_puntos)
             sg.Popup("Fin de partida","Puntaje logrado: "+str(cant_puntos))
         elif (estado == "cancelada"):
             sg.Popup("Partida abandonada... ", "Puntaje logrado: "+str(cant_puntos))

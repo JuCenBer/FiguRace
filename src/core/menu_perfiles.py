@@ -53,7 +53,7 @@ def crear_ventana_perfiles():
 def crear_perfil(datos, window):
     '''Recibe la información ingresada en la ventana de creacion de perfiles y verifica si el nickname ya existe o esta vacío. Modifica la visibilidad de textos de la ventana de creacion de perfiles para advertir al usuario si el nickname ya existe o es vacío. 
     De ser correcta la información, agrega el perfil al listado de jugadores y llama al metodo guardar_perfiles para almacenar la nueva lista en el archivo json de perfiles'''
-    jugador = {'nick': datos[0].strip(" "), 'edad': datos[1], 'genero': datos[2].strip(" ")}
+    jugador = {'nick': datos[0].strip(" "), 'edad': int(datos[1]), 'genero': datos[2].strip(" ")}
     if (len(jugador['nick']) != 0):
         jugadores = manejar_datos.obtener_perfiles()
         #Busco en la lista de jugadores el nick del jugador que modifique
@@ -73,7 +73,7 @@ def crear_perfil(datos, window):
 
 def modificar_perfil(datos):
     '''Recibe la informacion nueva del perfil editado, obtiene el listado de perfiles y busca la información del nickname del perfil editado para sobreescribirlo con la nueva información'''
-    jugador_editado = {'nick': datos[0], 'edad': datos[1], 'genero': datos[2]}
+    jugador_editado = {'nick': datos[0], 'edad': int(datos[1]), 'genero': datos[2]}
     jugadores = manejar_datos.obtener_perfiles()
     #Busco en la lista de jugadores el nick del jugador que modifique
     for i in range(len(jugadores)):
