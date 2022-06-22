@@ -1,227 +1,36 @@
 timestamp,id,evento,usuarie,estado,texto_ingresado,respuesta,nivel
-1655766416.358006,1,inicio_partida,algo,nueva,-,-,Facil
-1655766447.925606,1,intento,algo,timeout,-,-,Facil
-1655766479.490274,1,intento,algo,timeout,-,-,Facil
-1655766510.933001,1,intento,algo,timeout,-,-,Facil
-1655766542.376843,1,intento,algo,timeout,-,-,Facil
-1655766573.834176,1,intento,algo,timeout,-,-,Facil
-1655766573.834176,1,fin,algo,finalizado,-,-,Facil
-1655766607.398447,2,inicio_partida,algo,nueva,-,-,Facil
-1655766608.649441,2,intento,algo,ok,Kadovar (Papua New Guinea),Kadovar (Papua New Guinea),Facil
-1655766640.299755,2,intento,algo,timeout,-,-,Facil
-1655766671.746038,2,intento,algo,timeout,-,-,Facil
-1655766703.242583,2,intento,algo,timeout,-,-,Facil
-1655766734.733506,2,intento,algo,timeout,-,-,Facil
-1655766734.733506,2,fin,algo,finalizado,-,-,Facil
-1655766896.175746,3,inicio_partida,algo,nueva,-,-,Facil
-1655766899.161315,3,intento,algo,error,Pinatubo (Philippines),Krakatau (Indonesia),Facil
-1655766930.773633,3,intento,algo,timeout,-,-,Facil
-1655766959.273443,3,intento,algo,error,Kadovar (Papua New Guinea),Asama (Japan),Facil
-1655766964.520728,3,intento,algo,error,Tate-Yama (Japan),Sirung (Indonesia),Facil
-1655766965.985129,3,intento,algo,error,Furnas (Portugal),Vesuvius (Italy),Facil
-1655766965.985129,3,fin,algo,finalizado,-,-,Facil
-1655766977.731386,4,inicio_partida,algo,nueva,-,-,Facil
-1655766978.67323,4,intento,algo,error,Tangkubanparahu (Indonesia),Tokachi (Japan),Facil
-1655766979.529198,4,intento,algo,error,Oshima (Japan),Bezymianny (Russia),Facil
-1655767011.079003,4,intento,algo,timeout,-,-,Facil
-1655767015.441001,4,intento,algo,error,Karangetang [Api Siau] (Indonesia),Fuego (Guatemala),Facil
-1655767016.465162,4,intento,algo,error,Dieng Volc Complex (Indonesia),Iliwerung (Indonesia),Facil
-1655767016.465162,4,fin,algo,finalizado,-,-,Facil
-1655767019.270251,5,inicio_partida,algo,nueva,-,-,Facil
-1655767022.985224,5,intento,algo,error,Lago Asador O Guitarra,Lago Pueyrredón,Facil
-1655767054.530154,5,intento,algo,timeout,-,-,Facil
-1655767086.036068,5,intento,algo,timeout,-,-,Facil
-1655767117.477412,5,intento,algo,timeout,-,-,Facil
-1655767148.973737,5,intento,algo,timeout,-,-,Facil
-1655767148.973737,5,fin,algo,finalizado,-,-,Facil
-1655767191.630195,6,inicio_partida,algo,nueva,-,-,Facil
-1655767223.141425,6,intento,algo,timeout,-,-,Facil
-1655767254.700251,6,intento,algo,timeout,-,-,Facil
-1655767286.202124,6,intento,algo,timeout,-,-,Facil
-1655767318.017715,6,intento,algo,timeout,-,-,Facil
-1655767349.605323,6,intento,algo,timeout,-,-,Facil
-1655767349.605323,6,fin,algo,finalizado,-,-,Facil
-1655767902.989393,7,inicio_partida,,nueva,-,-,Facil
-1655767904.688002,7,intento,,error,Rabaul (Papua New Guinea),Santa Maria (Guatemala),Facil
-1655767905.648571,7,intento,,error,Shishaldin (United States),Novarupta (United States),Facil
-1655767906.734889,7,intento,,ok,Westdahl (United States),Westdahl (United States),Facil
-1655767907.484945,7,intento,,ok,Izalco (El Salvador),Izalco (El Salvador),Facil
-1655767908.387399,7,intento,,error,Ischia (Italy),Manam (Papua New Guinea),Facil
-1655767908.387399,7,fin,,finalizado,-,-,Facil
-1655768158.936439,8,inicio_partida,GON,nueva,-,-,Facil
-1655768160.182492,8,intento,GON,error,Lago Quillén,Lago Currhué,Facil
-1655768161.555462,8,intento,GON,error,Lago Epuyén,Lago Azara,Facil
-1655768162.327463,8,intento,GON,error,Lago Nahuel Huapi,Lago Meliquina,Facil
-1655768163.189642,8,intento,GON,error,Lago Rivadavia,Lago Salitroso O Sucio,Facil
-1655768164.010087,8,intento,GON,error,Lago Lolog,Lago Quiroga Chico,Facil
-1655768164.010087,8,fin,GON,finalizado,-,-,Facil
-1655768168.590498,9,inicio_partida,GON,nueva,-,-,Facil
-1655768169.570544,9,intento,GON,error,The Host,The Choice,Facil
-1655768170.080474,9,intento,GON,error,Beasts Clawing At Straws,Pokémon: Mewtwo Strikes Back - Evolution,Facil
-1655768170.62943,9,intento,GON,error,Safety Not Guaranteed,Mobile Suit Gundam Narrative,Facil
-1655768171.762459,9,intento,GON,error,Awake,Kidnapped,Facil
-1655768173.537627,9,intento,GON,error,The World'S Fastest Indian,Captain America,Facil
-1655768173.537627,9,fin,GON,finalizado,-,-,Facil
-1655768176.525903,10,inicio_partida,GON,nueva,-,-,Facil
-1655768177.121416,10,intento,GON,error,Who'S Harry Crumb?,Jack The Giant Slayer,Facil
-1655768177.469411,10,intento,GON,ok,Mean Machine,Mean Machine,Facil
-1655768177.705383,10,intento,GON,error,13 Assassins,Ooops! Noah Is Gone...,Facil
-1655768177.914573,10,intento,GON,ok,Taking Lives,Taking Lives,Facil
-1655768178.148469,10,intento,GON,error,Goon: Last Of The Enforcers,The Notebook,Facil
-1655768178.148469,10,fin,GON,finalizado,-,-,Facil
-1655768219.041488,11,inicio_partida,MAX,nueva,-,-,Facil
-1655768220.402947,11,intento,MAX,error,Oshima (Japan),Krakatau (Indonesia),Facil
-1655768220.938383,11,intento,MAX,error,Huaynaputina (Peru),Alayta (Ethiopia),Facil
-1655768221.072025,11,intento,MAX,error,Manam (Papua New Guinea),Semeru (Indonesia),Facil
-1655768221.208679,11,intento,MAX,error,Santorini (Greece),Oku Volc Field (Cameroon),Facil
-1655768221.535047,11,intento,MAX,error,Raung (Indonesia),Kilauea (United States),Facil
-1655768221.535047,11,fin,MAX,finalizado,-,-,Facil
-1655769649.603348,12,inicio_partida,usuarieUWU,nueva,-,-,Facil
-1655769650.297965,12,intento,usuarieUWU,error,Lago Chepelmut,Lago Currhué,Facil
-1655769681.697944,12,intento,usuarieUWU,timeout,-,-,Facil
-1655769685.026876,12,intento,usuarieUWU,error,Lago Fagnano,Lago Musters,Facil
-1655769686.291549,12,intento,usuarieUWU,error,Lago Aluminé,Lago Quiroga,Facil
-1655769688.507157,12,intento,usuarieUWU,pasar,-,Lago Nansen,Facil
-1655769688.507157,12,fin,usuarieUWU,finalizado,-,-,Facil
-1655770181.901672,13,inicio_partida,usuarieUWU,nueva,-,-,Facil
-1655770182.404775,13,intento,usuarieUWU,error,Lago Menéndez,Lago Viedma,Facil
-1655770182.836488,13,intento,usuarieUWU,error,Lago Moquehue,Lago Strobel,Facil
-1655770183.228174,13,intento,usuarieUWU,error,Lago Chepelmut,Lago Mascardi,Facil
-1655770184.04462,13,intento,usuarieUWU,error,Lago Moquehue,Lago Moquehue,Facil
-1655770184.484881,13,intento,usuarieUWU,ok,Lago Buenos Aires,Lago Buenos Aires,Facil
-1655770184.484881,13,fin,usuarieUWU,finalizado,-,-,Facil
-1655772468.396433,14,inicio_partida,otro_Usuarie,nueva,-,-,Facil
-1655772468.819527,14,intento,otro_Usuarie,error,Lago La Plata,Lago Moquehue,Facil
-1655772469.283673,14,intento,otro_Usuarie,error,Lago Perito Moreno,Lago Salitroso O Sucio,Facil
-1655772469.731321,14,intento,otro_Usuarie,ok,Lago Onelli,Lago Onelli,Facil
-1655772470.195022,14,intento,otro_Usuarie,ok,Lago Rivadavia,Lago Rivadavia,Facil
-1655772470.739529,14,intento,otro_Usuarie,error,Lago Azara,Lago Tromen,Facil
-1655772470.739529,14,fin,otro_Usuarie,finalizado,-,-,Facil
-1655772473.980868,15,inicio_partida,otro_Usuarie,nueva,-,-,Facil
-1655772474.355488,15,intento,otro_Usuarie,error,Lago Pellegrini,Lago Traful,Facil
-1655772474.971491,15,intento,otro_Usuarie,error,Lago Rosario,Lago Tromen,Facil
-1655772475.379747,15,intento,otro_Usuarie,error,Lago Posadas,Lago Yehuin,Facil
-1655772475.699498,15,intento,otro_Usuarie,error,Lago Correntoso,Lago Onelli,Facil
-1655772476.099029,15,intento,otro_Usuarie,error,Lago Asador O Guitarra,Lago Argentino,Facil
-1655772476.099029,15,fin,otro_Usuarie,finalizado,-,-,Facil
-1655772481.226472,16,inicio_partida,otro_Usuarie,nueva,-,-,Facil
-1655772481.700084,16,intento,otro_Usuarie,error,Lago Río Bueno,Lago Menéndez,Facil
-1655772482.379489,16,intento,otro_Usuarie,ok,Lago Epecuén,Lago Epecuén,Facil
-1655772482.723612,16,intento,otro_Usuarie,error,Lago Gutiérrez,Lago La Plata,Facil
-1655772483.092064,16,intento,otro_Usuarie,error,Lago Pueyrredón,Lago Nansen,Facil
-1655772483.627474,16,intento,otro_Usuarie,error,Lago Buenos Aires,Lago Currhué,Facil
-1655772483.627474,16,fin,otro_Usuarie,finalizado,-,-,Facil
-1655772486.145974,17,inicio_partida,usuarieUWU,nueva,-,-,Facil
-1655772486.803583,17,intento,usuarieUWU,error,Lago Epuyén,Lago Rosario,Facil
-1655772487.668018,17,intento,usuarieUWU,error,Lago Buenos Aires,Lago Futalaufquen,Facil
-1655772487.99566,17,intento,usuarieUWU,error,Lago Meliquina,Lago Blanco,Facil
-1655772488.347549,17,intento,usuarieUWU,ok,Lago Aluminé,Lago Aluminé,Facil
-1655772488.780198,17,intento,usuarieUWU,error,Lago Ghío,Lago Belgrano,Facil
-1655772488.780198,17,fin,usuarieUWU,finalizado,-,-,Facil
-1655772491.116558,18,inicio_partida,usuarieUWU,nueva,-,-,Facil
-1655772491.475567,18,intento,usuarieUWU,error,Lago Quillén,Lago Epuyén,Facil
-1655772491.771638,18,intento,usuarieUWU,ok,Lago Tar,Lago Tar,Facil
-1655772491.932324,18,intento,usuarieUWU,error,Lago Lolog,Lago Falkner,Facil
-1655772492.116196,18,intento,usuarieUWU,error,Lago San Martín,Lago Aluminé,Facil
-1655772492.316189,18,intento,usuarieUWU,error,Lago Fontana,Lago Blanco,Facil
-1655772492.316189,18,fin,usuarieUWU,finalizado,-,-,Facil
-1655815463.767147,19,inicio_partida,usuarieUWU,nueva,-,-,Facil
-1655815464.135221,19,intento,usuarieUWU,error,Lago Puelo,Lago Buenos Aires,Facil
-1655815464.447585,19,intento,usuarieUWU,error,Lago Pico Nº 1,Lago Pico Nº 1,Facil
-1655815464.767114,19,intento,usuarieUWU,error,Lago Lácar,Lago Belgrano,Facil
-1655815465.135365,19,intento,usuarieUWU,error,Lago Chepelmut,Lago Rosario,Facil
-1655815465.536108,19,intento,usuarieUWU,error,Lago Aluminé,Lago Fontana,Facil
-1655815465.536108,19,fin,usuarieUWU,finalizado,-,-,Facil
-1655815467.096168,20,inicio_partida,usuarieUWU,nueva,-,-,Facil
-1655815467.383699,20,intento,usuarieUWU,error,Lago Menéndez,Lago Belgrano,Facil
-1655815467.576537,20,intento,usuarieUWU,error,Lago Rivadavia,Lago Blanco,Facil
-1655815469.352163,20,intento,usuarieUWU,error,Lago Mascardi,Lago Yehuin,Facil
-1655815469.631286,20,intento,usuarieUWU,error,Lago Moquehue,Lago Quiroga,Facil
-1655815469.807363,20,intento,usuarieUWU,error,Lago Strobel,Lago Pueyrredón,Facil
-1655815469.807363,20,fin,usuarieUWU,finalizado,-,-,Facil
-1655815472.295828,21,inicio_partida,usuarieUWU,nueva,-,-,Facil
-1655815472.632361,21,intento,usuarieUWU,error,Lago Salitroso O Sucio,Lago Belgrano,Facil
-1655815472.928453,21,intento,usuarieUWU,error,Lago Currhué,Lago Tar,Facil
-1655815473.216257,21,intento,usuarieUWU,error,Lago Strobel,Lago Cardiel,Facil
-1655815474.15212,21,intento,usuarieUWU,error,Lago Viedma,Lago Río Chico,Facil
-1655815474.479415,21,intento,usuarieUWU,ok,Lago Río Bueno,Lago Río Bueno,Facil
-1655815474.479415,21,fin,usuarieUWU,finalizado,-,-,Facil
-1655815478.270369,22,inicio_partida,otro_Usuarie,nueva,-,-,Facil
-1655815479.20837,22,intento,otro_Usuarie,error,Lago Lolog,Lago Menéndez,Facil
-1655815479.511986,22,intento,otro_Usuarie,ok,Lago Cholila,Lago Cholila,Facil
-1655815479.872343,22,intento,otro_Usuarie,ok,Lago Salitroso O Sucio,Lago Salitroso O Sucio,Facil
-1655815480.512345,22,intento,otro_Usuarie,error,Lago Tromen,Lago Currhué,Facil
-1655815481.239765,22,intento,otro_Usuarie,error,Lago Mascardi,Lago Mascardi,Facil
-1655815481.239765,22,fin,otro_Usuarie,finalizado,-,-,Facil
-1655815482.503358,23,inicio_partida,otro_Usuarie,nueva,-,-,Facil
-1655815482.912469,23,intento,otro_Usuarie,ok,Lago Chepelmut,Lago Chepelmut,Facil
-1655815483.264722,23,intento,otro_Usuarie,cancelado,Lago Fontana,Lago Huechulafquen,Facil
-1655815483.632166,23,intento,otro_Usuarie,cancelado,Lago Belgrano,Lago Moquehue,Facil
-1655815484.280335,23,intento,otro_Usuarie,cancelado,Lago Falkner,Lago Salitroso O Sucio,Facil
-1655815484.608312,23,intento,otro_Usuarie,cancelado,Lago Cholila,Lago Argentino,Facil
-1655815484.608312,23,fin,otro_Usuarie,finalizado,-,-,Facil
-1655819442,24,inicio_partida,whatsername,nueva,-,-,Facil
-1655819443,24,intento,whatsername,cancelado,Izalco (El Salvador),Pinatubo (Philippines),Facil
-1655819443,24,intento,whatsername,cancelado,Semeru (Indonesia),Aso (Japan),Facil
-1655819444,24,intento,whatsername,cancelado,Kadovar (Papua New Guinea),Colima (Mexico),Facil
-1655819444,24,intento,whatsername,cancelado,Tinakula (Solomon Is.),Mayon (Philippines),Facil
-1655819444,24,intento,whatsername,cancelado,Vesuvius (Italy),Arenal (Costa Rica),Facil
-1655819444,24,fin,whatsername,finalizado,-,-,Facil
-1655819450,25,inicio_partida,whatsername,nueva,-,-,Dificil
-1655819451,25,intento,whatsername,error,Damian Oko,Paulo Da Silva,Dificil
-1655819451,25,intento,whatsername,error,Joe Abrigo,Yacine Bammou,Dificil
-1655819451,25,intento,whatsername,error,Camilo Mayada,Jack Hingert,Dificil
-1655819451,25,intento,whatsername,error,Vetle Dragsnes,Shi Ke,Dificil
-1655819452,25,intento,whatsername,error,Jorge Aguirre,Nicholas Allievi,Dificil
-1655819452,25,intento,whatsername,error,Joona Toivio,Robert Leipertz,Dificil
-1655819452,25,intento,whatsername,ok,Sebastián Sáez,Sebastián Sáez,Dificil
-1655819452,25,intento,whatsername,error,Cédric,Michael Schultz,Dificil
-1655819453,25,intento,whatsername,error,Frank Arhin,Niklas Dorsch,Dificil
-1655819453,25,intento,whatsername,error,Adam Gnezda Cerin,Ramalho,Dificil
-1655819453,25,intento,whatsername,error,Jason Mbock,Mathias Jensen,Dificil
-1655819453,25,intento,whatsername,error,Farid Díaz,Ibrahim Amadou,Dificil
-1655819454,25,intento,whatsername,ok,Wilson Mena,Wilson Mena,Dificil
-1655819454,25,intento,whatsername,error,Kevin Wimmer,Efrain Alvarez,Dificil
-1655819454,25,intento,whatsername,error,Alberto Benito,Razvan Marin,Dificil
-1655819454,25,intento,whatsername,error,Tomohiko Miyazaki,Florian Lejeune,Dificil
-1655819455,25,intento,whatsername,error,Birger Meling,Václav Drchal,Dificil
-1655819455,25,intento,whatsername,error,Sebastián Sosa,Juan Carlos,Dificil
-1655819456,25,intento,whatsername,error,John Yeboah,Nicke Kabamba,Dificil
-1655819456,25,intento,whatsername,error,Luke Waterfall,Filip Bednarek,Dificil
-1655819456,25,fin,whatsername,finalizado,-,-,Dificil
-1655819460,26,inicio_partida,whatsername,nueva,-,-,Normal
-1655819460,26,intento,whatsername,error,Lago Lácar,Lago Falkner,Normal
-1655819460,26,intento,whatsername,error,Lago Azara,Lago General Vintter,Normal
-1655819461,26,intento,whatsername,error,Lago Epecuén,Lago Correntoso,Normal
-1655819461,26,intento,whatsername,error,Lago Strobel,Lago Pueyrredón,Normal
-1655819462,26,intento,whatsername,error,Lago San Martín,Lago Cardiel,Normal
-1655819462,26,intento,whatsername,error,Lago Salitroso O Sucio,Lago Aluminé,Normal
-1655819462,26,intento,whatsername,error,Lago Nansen,Lago Lácar,Normal
-1655819463,26,intento,whatsername,error,Lago Musters,Lago Onelli,Normal
-1655819463,26,intento,whatsername,error,Lago Cholila,Lago Pellegrini,Normal
-1655819463,26,intento,whatsername,error,Lago Gutiérrez,Lago Meliquina,Normal
-1655819463,26,fin,whatsername,finalizado,-,-,Normal
-1655862496,27,inicio_partida,algo,nueva,-,-,Normal
-1655862497,27,intento,algo,error,"Azul, Cerro (Ecuador)",Banda Api (Pacific Ocean),Normal
-1655862498,27,intento,algo,error,Mahawu (Indonesia),Dieng Volc Complex (Indonesia),Normal
-1655862498,27,intento,algo,error,Makian (Indonesia),"Lengai, Ol Doinyo (Tanzania)",Normal
-1655862499,27,intento,algo,error,Colima (Mexico),Yasur (Vanuatu),Normal
-1655862499,27,intento,algo,error,Oku Volc Field (Cameroon),Myojun Knoll (Japan),Normal
-1655862500,27,intento,algo,error,Tungurahua (Ecuador),Cotopaxi (Ecuador),Normal
-1655862502,27,intento,algo,ok,Ambrym (Vanuatu),Ambrym (Vanuatu),Normal
-1655862502,27,intento,algo,error,Tseax River Cone (Canada),Fuego (Guatemala),Normal
-1655862503,27,intento,algo,error,Hakone (Japan),Aoba (Vanuatu),Normal
-1655862503,27,intento,algo,error,Tungurahua (Ecuador),Asama (Japan),Normal
-1655862503,27,fin,algo,finalizado,-,-,Normal
-1655862534,28,inicio_partida,algo,nueva,-,-,Normal
-1655862555,28,intento,algo,timeout,-,-,Normal
-1655862576,28,intento,algo,timeout,-,-,Normal
-1655862598,28,intento,algo,timeout,-,-,Normal
-1655862615,28,intento,algo,error,Boruto: Jump Festa Special,Kamikaze Girls,Normal
-1655862616,28,intento,algo,error,The Call Of Sex,Boruto: Jump Festa Special,Normal
-1655862616,28,intento,algo,error,Lost In Space,Into The Wind,Normal
-1655862617,28,intento,algo,error,The Fault In Our Stars,Fear Street: 1978,Normal
-1655862617,28,intento,algo,error,The Pink Panther 2,The Little Hours,Normal
-1655862618,28,intento,algo,error,The Losers,Bend It Like Beckham,Normal
-1655862619,28,intento,algo,error,Hooking Up,"Roman J. Israel, Esq.",Normal
-1655862619,28,fin,algo,finalizado,-,-,Normal
+1655905949,1,inicio_partida,UWU,nueva,-,-,Facil
+1655905950,1,intento,UWU,error,Leo Coelho,Lee Kwang Sun,Facil
+1655905950,1,intento,UWU,error,Michael Lema,Lee Chan Dong,Facil
+1655905951,1,intento,UWU,error,Felix Götze,Ohi Omoijuanfo,Facil
+1655905952,1,intento,UWU,error,Irvin Cardona,Lúcio Corteijo,Facil
+1655905952,1,intento,UWU,ok,Mario Saldívar,Mario Saldívar,Facil
+1655905952,1,fin,UWU,finalizado,-,-,Facil
+1655905955,2,inicio_partida,UWU,nueva,-,-,Facil
+1655905955,2,intento,UWU,error,Lago Epecuén,Lago Pellegrini,Facil
+1655905956,2,intento,UWU,error,Lago Río Chico,Lago Cholila,Facil
+1655905957,2,intento,UWU,error,Lago Azara,Lago Epuyén,Facil
+1655905957,2,intento,UWU,error,Lago Fontana,Lago Paimún,Facil
+1655905958,2,intento,UWU,ok,Lago Asador O Guitarra,Lago Asador O Guitarra,Facil
+1655905958,2,fin,UWU,finalizado,-,-,Facil
+1655905968,3,inicio_partida,UWU,nueva,-,-,Facil
+1655905969,3,intento,UWU,error,Lago Río Bueno,Lago Onelli,Facil
+1655905970,3,intento,UWU,error,Lago Yehuin,Lago Buenos Aires,Facil
+1655905970,3,intento,UWU,error,Lago Correntoso,Lago Burmeister,Facil
+1655905971,3,intento,UWU,error,Lago Viedma,Lago Rivadavia,Facil
+1655905971,3,intento,UWU,error,Lago Currhué,Lago Tromen,Facil
+1655905971,3,fin,UWU,finalizado,-,-,Facil
+1655906629,4,inicio_partida,UWU,nueva,-,-,Facil
+1655906631,4,fin,UWU,cancelada,-,-,Facil
+1655906663,5,inicio_partida,UWU,nueva,-,-,Facil
+1655906665,5,intento,UWU,error,Macauley Island (New Zealand),Krakatau (Indonesia),Facil
+1655906665,5,intento,UWU,error,Kirishima (Japan),Kelut (Indonesia),Facil
+1655906666,5,intento,UWU,error,Raung (Indonesia),Merapi (Indonesia),Facil
+1655906668,5,fin,UWU,cancelada,-,-,Facil
+1655906745,6,inicio_partida,algo,nueva,-,-,Facil
+1655906746,6,intento,algo,error,Dieng Volc Complex (Indonesia),Kilauea (United States),Facil
+1655906746,6,intento,algo,error,Askja (Iceland),Mayon (Philippines),Facil
+1655906747,6,intento,algo,error,Shikotsu (Japan),Cleveland (United States),Facil
+1655906748,6,intento,algo,ok,Krakatau (Indonesia),Krakatau (Indonesia),Facil
+1655906748,6,intento,algo,ok,Pacaya (Guatemala),Pacaya (Guatemala),Facil
+1655906748,6,fin,algo,finalizado,-,-,Facil

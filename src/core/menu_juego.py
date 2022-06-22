@@ -71,12 +71,13 @@ def pasar_ronda(cant_puntos,config,ronda_actual,cant_rondas,eventos,estado = "fi
     if ronda_actual == cant_rondas:
         generar_evento(config,eventos,"fin",estado,"-","-")
         
+        id = manejar_datos.obtener_id_ultima_partida()
+        manejar_datos.guardar_partidas(eventos, id)
+        
         if (estado == "finalizado"): 
-            id = manejar_datos.obtener_id_ultima_partida()
-            manejar_datos.guardar_partidas(eventos, id)
             puntajes = manejar_datos.obtener_puntajes()
             manejar_datos.guardar_puntajes(puntajes, config["dificultad"], config["nick"], cant_puntos)
-            
+
             #Al finalizar guardo ultima partida
             manejar_datos.guardar_ultima_partida({"nick": config["nick"],"dificultad": config["dificultad"],
             "fecha": datetime.datetime.now().strftime('%d/%m/%Y'),"puntaje": cant_puntos})
