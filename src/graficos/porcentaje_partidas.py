@@ -29,7 +29,7 @@ estado_cancelado = cantidad_estados["cancelado"]
 etiquetas = ["Partidas finalizadas", "Timeout", "Partidas abandonadas", "Cierre del programa"]
 
 data_dibujo = [estado_finalizado, estado_timeout, estado_cancelado, estado_error]
-explode = (0, 0, 0, 0)
+explode = (0.1, 0.1, 0.1, 0.1)
 
 plt.pie(data_dibujo, explode=explode, labels=etiquetas, autopct='%1.2f%%', shadow=True, startangle=120, labeldistance= 1.2)
 plt.axis('equal') 
