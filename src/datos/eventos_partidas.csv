@@ -155,17 +155,17 @@ timestamp,id,evento,usuarie,estado,texto_ingresado,respuesta,nivel
 1655815481.239765,22,fin,otro_Usuarie,finalizado,-,-,Facil
 1655815482.503358,23,inicio_partida,otro_Usuarie,nueva,-,-,Facil
 1655815482.912469,23,intento,otro_Usuarie,ok,Lago Chepelmut,Lago Chepelmut,Facil
-1655815483.264722,23,intento,otro_Usuarie,error,Lago Fontana,Lago Huechulafquen,Facil
-1655815483.632166,23,intento,otro_Usuarie,error,Lago Belgrano,Lago Moquehue,Facil
-1655815484.280335,23,intento,otro_Usuarie,error,Lago Falkner,Lago Salitroso O Sucio,Facil
-1655815484.608312,23,intento,otro_Usuarie,error,Lago Cholila,Lago Argentino,Facil
+1655815483.264722,23,intento,otro_Usuarie,cancelado,Lago Fontana,Lago Huechulafquen,Facil
+1655815483.632166,23,intento,otro_Usuarie,cancelado,Lago Belgrano,Lago Moquehue,Facil
+1655815484.280335,23,intento,otro_Usuarie,cancelado,Lago Falkner,Lago Salitroso O Sucio,Facil
+1655815484.608312,23,intento,otro_Usuarie,cancelado,Lago Cholila,Lago Argentino,Facil
 1655815484.608312,23,fin,otro_Usuarie,finalizado,-,-,Facil
 1655819442,24,inicio_partida,whatsername,nueva,-,-,Facil
-1655819443,24,intento,whatsername,error,Izalco (El Salvador),Pinatubo (Philippines),Facil
-1655819443,24,intento,whatsername,error,Semeru (Indonesia),Aso (Japan),Facil
-1655819444,24,intento,whatsername,error,Kadovar (Papua New Guinea),Colima (Mexico),Facil
-1655819444,24,intento,whatsername,error,Tinakula (Solomon Is.),Mayon (Philippines),Facil
-1655819444,24,intento,whatsername,error,Vesuvius (Italy),Arenal (Costa Rica),Facil
+1655819443,24,intento,whatsername,cancelado,Izalco (El Salvador),Pinatubo (Philippines),Facil
+1655819443,24,intento,whatsername,cancelado,Semeru (Indonesia),Aso (Japan),Facil
+1655819444,24,intento,whatsername,cancelado,Kadovar (Papua New Guinea),Colima (Mexico),Facil
+1655819444,24,intento,whatsername,cancelado,Tinakula (Solomon Is.),Mayon (Philippines),Facil
+1655819444,24,intento,whatsername,cancelado,Vesuvius (Italy),Arenal (Costa Rica),Facil
 1655819444,24,fin,whatsername,finalizado,-,-,Facil
 1655819450,25,inicio_partida,whatsername,nueva,-,-,Dificil
 1655819451,25,intento,whatsername,error,Damian Oko,Paulo Da Silva,Dificil
@@ -201,3 +201,27 @@ timestamp,id,evento,usuarie,estado,texto_ingresado,respuesta,nivel
 1655819463,26,intento,whatsername,error,Lago Cholila,Lago Pellegrini,Normal
 1655819463,26,intento,whatsername,error,Lago Gutiérrez,Lago Meliquina,Normal
 1655819463,26,fin,whatsername,finalizado,-,-,Normal
+1655862496,27,inicio_partida,algo,nueva,-,-,Normal
+1655862497,27,intento,algo,error,"Azul, Cerro (Ecuador)",Banda Api (Pacific Ocean),Normal
+1655862498,27,intento,algo,error,Mahawu (Indonesia),Dieng Volc Complex (Indonesia),Normal
+1655862498,27,intento,algo,error,Makian (Indonesia),"Lengai, Ol Doinyo (Tanzania)",Normal
+1655862499,27,intento,algo,error,Colima (Mexico),Yasur (Vanuatu),Normal
+1655862499,27,intento,algo,error,Oku Volc Field (Cameroon),Myojun Knoll (Japan),Normal
+1655862500,27,intento,algo,error,Tungurahua (Ecuador),Cotopaxi (Ecuador),Normal
+1655862502,27,intento,algo,ok,Ambrym (Vanuatu),Ambrym (Vanuatu),Normal
+1655862502,27,intento,algo,error,Tseax River Cone (Canada),Fuego (Guatemala),Normal
+1655862503,27,intento,algo,error,Hakone (Japan),Aoba (Vanuatu),Normal
+1655862503,27,intento,algo,error,Tungurahua (Ecuador),Asama (Japan),Normal
+1655862503,27,fin,algo,finalizado,-,-,Normal
+1655862534,28,inicio_partida,algo,nueva,-,-,Normal
+1655862555,28,intento,algo,timeout,-,-,Normal
+1655862576,28,intento,algo,timeout,-,-,Normal
+1655862598,28,intento,algo,timeout,-,-,Normal
+1655862615,28,intento,algo,error,Boruto: Jump Festa Special,Kamikaze Girls,Normal
+1655862616,28,intento,algo,error,The Call Of Sex,Boruto: Jump Festa Special,Normal
+1655862616,28,intento,algo,error,Lost In Space,Into The Wind,Normal
+1655862617,28,intento,algo,error,The Fault In Our Stars,Fear Street: 1978,Normal
+1655862617,28,intento,algo,error,The Pink Panther 2,The Little Hours,Normal
+1655862618,28,intento,algo,error,The Losers,Bend It Like Beckham,Normal
+1655862619,28,intento,algo,error,Hooking Up,"Roman J. Israel, Esq.",Normal
+1655862619,28,fin,algo,finalizado,-,-,Normal

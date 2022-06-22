@@ -51,7 +51,6 @@ def guardar_perfiles(jugadores):
     with open(os.path.join(os.getcwd(), "src", "datos", "perfiles.json"), "w", encoding='utf-8') as perfiles:
         json.dump(jugadores, perfiles)
 
-
 def obtener_config():
     '''Abre el archivo json del config y retorna un diccionario con los valores de la configuracion. Si no existe, crea uno y retorna un diccionario con valores por defecto equivalentes a la dificultad Facil y con dataset Aleatorio.'''
     ruta = os.path.join(os.getcwd(), "src", "datos", "config.json")
