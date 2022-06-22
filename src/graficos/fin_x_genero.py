@@ -3,18 +3,20 @@ import pandas as pd
 import os
 import json
 
-
+#Abro los eventos
 ruta = os.path.join(os.getcwd(), '..', 'datos', 'eventos_partidas.csv')
 data_set = pd.read_csv(ruta, encoding='utf-8')
 
-
+#Abro los perfiles
 with open(os.path.join(os.getcwd(), "..", "datos", "perfiles.json"), "r", encoding='utf-8') as perfiles:
     jugadores = json.load(perfiles)
 
-
+#Obtengo los eventos finalizados por usuario
 usuarios_fin = data_set.groupby(["estado", "usuarie"])["usuarie"].count()
 usuarios_fin = usuarios_fin["finalizado"]
+#print(usuarios_fin)
 
+#Obtengo los usuarios y sus generos
 usuarios = {}
 for usuario in usuarios_fin.keys():
     usuarios.update({usuario:""})
@@ -24,6 +26,7 @@ for jugador in jugadores:
         if(jugador["nick"] == usuario):
             usuarios[usuario] = jugador["genero"]
 
+#Actualizo la cantidad de cada genero
 cant_hombres = 0
 cant_mujeres = 0
 cant_nobinario = 0
