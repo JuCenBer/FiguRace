@@ -145,3 +145,36 @@ timestamp,id,evento,usuarie,estado,texto_ingresado,respuesta,nivel
 1656002551,18,intento,un_nick,error,Ruben Aguilar,Nikola Jakimovski,Dificil
 1656002552,18,intento,un_nick,error,Gu Chao,Javi Galán,Dificil
 1656002553,18,fin,un_nick,cancelada,-,-,Dificil
+1656007951,19,inicio_partida,un_nick,nueva,-,-,Dificil
+1656007962,19,intento,un_nick,timeout,-,-,Dificil
+1656007973,19,intento,un_nick,timeout,-,-,Dificil
+1656007974,19,intento,un_nick,pasar,-,The Tree Of Life,Dificil
+1656007975,19,intento,un_nick,pasar,-,The Greatest Showman,Dificil
+1656007975,19,intento,un_nick,pasar,-,A Nightmare On Elm Street,Dificil
+1656007976,19,intento,un_nick,pasar,-,Adventures Of Arsène Lupin,Dificil
+1656007976,19,intento,un_nick,pasar,-,The Gendarme And The Creatures From Outer Space,Dificil
+1656007977,19,intento,un_nick,pasar,-,Heks,Dificil
+1656007978,19,intento,un_nick,pasar,-,The Assistant,Dificil
+1656007978,19,fin,un_nick,cancelada,-,-,Dificil
+1656008226,20,inicio_partida,un_nick,nueva,-,-,Dificil
+1656008226,20,intento,un_nick,ok,Rubens Sambueza,Rubens Sambueza,Dificil
+1656008226,20,intento,un_nick,error,Cameron Brannagan,Aidi Fulangxisi,Dificil
+1656008226,20,intento,un_nick,error,George Maris,Jung Seok Hwa,Dificil
+1656008227,20,intento,un_nick,ok,Jürgen Heil,Jürgen Heil,Dificil
+1656008227,20,intento,un_nick,error,Mohamed Ezzarfani,Phil Ofosu-Ayeh,Dificil
+1656008228,20,intento,un_nick,error,Bryan Figueroa,Walter Clar,Dificil
+1656008228,20,intento,un_nick,error,José Moya,Sander Svendsen,Dificil
+1656008228,20,intento,un_nick,error,Diego Moreno,Lautaro Comas,Dificil
+1656008229,20,intento,un_nick,error,Oskar Buur Rasmussen,Darío Lezcano,Dificil
+1656008229,20,intento,un_nick,error,Mauriçio Clerez,Lucas Villalba,Dificil
+1656008230,20,intento,un_nick,ok,Mitchell Weiser,Mitchell Weiser,Dificil
+1656008230,20,intento,un_nick,ok,Christian Gauseth,Christian Gauseth,Dificil
+1656008231,20,intento,un_nick,error,Mario Ebenhofer,Andriy Pyatov,Dificil
+1656008231,20,intento,un_nick,error,Bartra,Gustav Jarl,Dificil
+1656008231,20,intento,un_nick,error,Sam Vokes,Reeve Frosler,Dificil
+1656008231,20,intento,un_nick,error,Pierre Sagna,Buenacasa,Dificil
+1656008232,20,intento,un_nick,ok,Eddie Nketiah,Eddie Nketiah,Dificil
+1656008232,20,intento,un_nick,ok,Cláudio Ramos,Cláudio Ramos,Dificil
+1656008232,20,intento,un_nick,ok,Ferhat Kaplan,Ferhat Kaplan,Dificil
+1656008233,20,intento,un_nick,ok,Lóránt Kovács,Lóránt Kovács,Dificil
+1656008233,20,fin,un_nick,finalizado,-,-,Dificil
