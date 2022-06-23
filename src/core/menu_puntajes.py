@@ -5,10 +5,6 @@ from . import manejar_datos
 
 def iniciar_pantalla_puntajes():
     ''' Crea la ventana de la pantalla de puntajes para visualizar los mejores 20 puntajes por cada dificultad '''
-    # Se obtendran los historiales de partidas con el modulo manejar_datos
-    #tabla_top_usuarios = manejar_datos.obtener_top_puntajes()
-
-    # Se hace una variable a modo de ejemplo para visualizar en la primera entrega
     puntajes, promedios = manejar_datos.obtener_mejores_puntajes()
 
     for linea in puntajes: 

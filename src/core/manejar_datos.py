@@ -96,6 +96,8 @@ def obtener_dataset(nombre_dataset):
     return lista
 
 def guardar_partidas(eventos, id):
+    '''Recibe la lista con diccionarios correspondientes a cada evento de la partida que acaba de terminar. Le asigna la id de la partida
+    a cada evento y lo almacena en el archivo csv de eventos de las partidas'''
     with open(os.path.join(os.getcwd(), "src", "datos", "eventos_partidas.csv"), "a", encoding='utf-8') as archivo:
         writer = csv.DictWriter(archivo, fieldnames=["timestamp","id","evento","usuarie","estado","texto_ingresado","respuesta","nivel"], lineterminator='\n')
         for evento in eventos:
@@ -103,6 +105,9 @@ def guardar_partidas(eventos, id):
             writer.writerow(evento)
                 
 def obtener_id_ultima_partida():
+    '''Accede al registro de eventos de las partidas, y obtiene la ultima id. A esta le suma 1 y lo retorna para ser utilizado para identificar
+    a la nueva partida cuyos eventos se almacenarán. En caso de que no exista el archivo csv de los eventos, lo crea con su respectivo encabezado y 
+    retorna la id = 1'''
     ruta = os.path.join(os.getcwd(), "src", "datos", "eventos_partidas.csv")
     try:
         with open(ruta, "r") as archivo:
@@ -118,6 +123,8 @@ def obtener_id_ultima_partida():
     return id
 
 def guardar_puntajes(puntajes, dificultad, nick, puntaje):
+    '''Recibe el puntaje de la partida finalizada e intenta almacenarla. Si no puede, agrega el nuevo nickname al diccionario segun la 
+    dificultad correspondiente y lo almacena en un json'''
     try:
         puntajes[dificultad][nick].append(puntaje)
     except:
@@ -127,6 +134,9 @@ def guardar_puntajes(puntajes, dificultad, nick, puntaje):
         json.dump(puntajes, archivo)
 
 def obtener_puntajes():
+    '''Accede al archivo de puntajes y retorna el diccionario con los puntajes segun dificultad, los cuales, dentro, tienen diccionarios por cada
+    usuario, los cuales tienen una lista con los puntajes logrados. En caso de que el archivo no exista, lo crea y retorna un diccionario con diccionarios
+    vacios'''
     try:
         with open(os.path.join(os.getcwd(), "src", "datos", "puntajes.json"), "r", encoding='utf-8') as archivo:
             puntajes = json.load(archivo)
@@ -140,6 +150,9 @@ def obtener_puntajes():
     return puntajes
 
 def obtener_mejores_puntajes():
+    '''Accede al archivo de puntajes y retorna 2 listas. La primera contiene los 20 mejores puntajes logrados por nivel. La segunda,
+    los mejores 20 promedios de puntaje por nivel. Cada lista contiene tuplas en las que se encuentra el valor del puntaje junto al nombre del usuario
+    asociado'''
     puntajes = obtener_puntajes()
     lista_facil = [(usuario, puntaje) for usuario in puntajes["Facil"] for puntaje in puntajes["Facil"][usuario]]
     lista_normal = [(usuario, puntaje) for usuario in puntajes["Normal"] for puntaje in puntajes["Normal"][usuario]]
