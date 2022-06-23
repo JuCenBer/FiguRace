@@ -178,3 +178,29 @@ timestamp,id,evento,usuarie,estado,texto_ingresado,respuesta,nivel
 1656008232,20,intento,un_nick,ok,Ferhat Kaplan,Ferhat Kaplan,Dificil
 1656008233,20,intento,un_nick,ok,Lóránt Kovács,Lóránt Kovács,Dificil
 1656008233,20,fin,un_nick,finalizado,-,-,Dificil
+1656019155,21,inicio_partida,un_nick,nueva,-,-,Dificil
+1656019156,21,fin,un_nick,cancelada,-,-,Dificil
+1656019173,22,inicio_partida,un_nick,nueva,-,-,Dificil
+1656019173,22,intento,un_nick,error,Hakkoda Group (Japan),Soufriere St. Vincent (St. Vincent & The Grenadines),Dificil
+1656019174,22,intento,un_nick,error,Macauley Island (New Zealand),Semeru (Indonesia),Dificil
+1656019174,22,intento,un_nick,error,Cotopaxi (Ecuador),Yasur (Vanuatu),Dificil
+1656019175,22,intento,un_nick,error,Pacaya (Guatemala),Makian (Indonesia),Dificil
+1656019175,22,intento,un_nick,error,Hekla (Iceland),Semeru (Indonesia),Dificil
+1656019175,22,intento,un_nick,error,Mauna Loa (United States),Okataina (New Zealand),Dificil
+1656019176,22,intento,un_nick,error,Narugo (Japan),Lokon-Empung (Indonesia),Dificil
+1656019176,22,intento,un_nick,error,Kelut (Indonesia),Karangetang [Api Siau] (Indonesia),Dificil
+1656019176,22,intento,un_nick,error,Banda Api (Pacific Ocean),Kirishima (Japan),Dificil
+1656019177,22,intento,un_nick,error,Mayon (Philippines),Merapi (Indonesia),Dificil
+1656019177,22,intento,un_nick,ok,Unnamed (Chile),Unnamed (Chile),Dificil
+1656019178,22,intento,un_nick,error,Fuego (Guatemala),Kelut (Indonesia),Dificil
+1656019178,22,intento,un_nick,error,Aoba (Vanuatu),Kelut (Indonesia),Dificil
+1656019178,22,intento,un_nick,error,Sabancaya (Peru),Semeru (Indonesia),Dificil
+1656019179,22,intento,un_nick,error,Pinatubo (Philippines),Makian (Indonesia),Dificil
+1656019179,22,intento,un_nick,error,Sinabung (Indonesia),Bardarbunga (Iceland),Dificil
+1656019179,22,intento,un_nick,error,Pico (Portugal),Ruiz (Colombia),Dificil
+1656019180,22,intento,un_nick,error,Hekla (Iceland),Black Peak (United States),Dificil
+1656019180,22,intento,un_nick,error,Puyehue (Chile),Bona-Churchill (United States),Dificil
+1656019181,22,intento,un_nick,error,Irazu (Costa Rica),Gamalama (Indonesia),Dificil
+1656019181,22,fin,un_nick,finalizado,-,-,Dificil
+1656019183,23,inicio_partida,un_nick,nueva,-,-,Dificil
+1656019185,23,fin,un_nick,cancelada,-,-,Dificil
