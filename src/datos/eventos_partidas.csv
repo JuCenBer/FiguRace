@@ -71,3 +71,77 @@ timestamp,id,evento,usuarie,estado,texto_ingresado,respuesta,nivel
 1655992241,11,intento,whatsername,ok,"Hudson, Cerro (Chile)","Hudson, Cerro (Chile)",Facil
 1655992241,11,intento,whatsername,error,Semeru (Indonesia),Semeru (Indonesia),Facil
 1655992241,11,fin,whatsername,finalizado,-,-,Facil
+1656002507,12,inicio_partida,un_nick,nueva,-,-,Facil
+1656002507,12,intento,un_nick,error,Quini,Enrico Alfonso,Facil
+1656002508,12,intento,un_nick,error,Jairsinho González,Adrien Silva,Facil
+1656002508,12,intento,un_nick,error,Li Xuepeng,Bruno Fornaroli,Facil
+1656002509,12,intento,un_nick,error,Cho Ji Hun,Djordje Mihailovic,Facil
+1656002509,12,intento,un_nick,error,Siphesihle Ndlovu,Jader Valencia,Facil
+1656002509,12,fin,un_nick,finalizado,-,-,Facil
+1656002512,13,inicio_partida,un_nick,nueva,-,-,Facil
+1656002512,13,intento,un_nick,error,Taal (Philippines),Kick-'Em-Jenny (Netherlands),Facil
+1656002513,13,intento,un_nick,error,Soufriere Hills (Montserrat),Huila (Colombia),Facil
+1656002513,13,intento,un_nick,error,Tokachi (Japan),Hekla (Iceland),Facil
+1656002513,13,intento,un_nick,error,Papandayan (Indonesia),Daisetsu (Japan),Facil
+1656002513,13,intento,un_nick,error,Kirishima (Japan),Etna (Italy),Facil
+1656002513,13,fin,un_nick,finalizado,-,-,Facil
+1656002518,14,inicio_partida,un_nick,nueva,-,-,Dificil
+1656002519,14,intento,un_nick,error,Ricochet,Self/Less,Dificil
+1656002519,14,intento,un_nick,ok,Pacific Rim: Uprising,Pacific Rim: Uprising,Dificil
+1656002520,14,intento,un_nick,error,Transcendence,Mercury Rising,Dificil
+1656002520,14,intento,un_nick,ok,Escape From The Planet Of The Apes,Escape From The Planet Of The Apes,Dificil
+1656002520,14,intento,un_nick,error,Blue My Mind,Lion,Dificil
+1656002520,14,intento,un_nick,error,The Mexican,The Lego Star Wars Holiday Special,Dificil
+1656002521,14,intento,un_nick,error,Ouija: Origin Of Evil,Grave Of The Fireflies,Dificil
+1656002521,14,intento,un_nick,error,The Do-Over,Amadeus,Dificil
+1656002521,14,intento,un_nick,error,X-Cross,Perfect Strangers,Dificil
+1656002522,14,intento,un_nick,ok,Columbus,Columbus,Dificil
+1656002522,14,intento,un_nick,ok,Chloe,Chloe,Dificil
+1656002522,14,intento,un_nick,error,Lionheart,The Little Mermaid,Dificil
+1656002523,14,intento,un_nick,ok,P.S. I Love You,P.S. I Love You,Dificil
+1656002523,14,intento,un_nick,ok,211,211,Dificil
+1656002524,14,intento,un_nick,ok,The Wandering Earth,The Wandering Earth,Dificil
+1656002524,14,intento,un_nick,error,Biker Boyz,Stand By Me Doraemon 2,Dificil
+1656002525,14,intento,un_nick,ok,Pearl Harbor,Pearl Harbor,Dificil
+1656002525,14,intento,un_nick,error,A Secret Love,Jla Adventures: Trapped In Time,Dificil
+1656002526,14,intento,un_nick,ok,The Day The Earth Stood Still,The Day The Earth Stood Still,Dificil
+1656002526,14,intento,un_nick,error,Blue Spring Ride,Chances Are,Dificil
+1656002526,14,fin,un_nick,finalizado,-,-,Dificil
+1656002528,15,inicio_partida,un_nick,nueva,-,-,Dificil
+1656002529,15,intento,un_nick,ok,Lago Lácar,Lago Lácar,Dificil
+1656002529,15,intento,un_nick,error,Lago Tar,Lago Argentino,Dificil
+1656002530,15,intento,un_nick,error,Lago Cholila,Lago Puelo,Dificil
+1656002530,15,intento,un_nick,ok,Lago Correntoso,Lago Correntoso,Dificil
+1656002530,15,intento,un_nick,error,Lago Tromen,Lago Quiroga,Dificil
+1656002531,15,intento,un_nick,error,Lago Salitroso O Sucio,Lago Yehuin,Dificil
+1656002531,15,intento,un_nick,error,Lago Currhué,Lago Futalaufquen,Dificil
+1656002532,15,intento,un_nick,error,Lago Rosario,Lago Currhué,Dificil
+1656002532,15,intento,un_nick,error,Lago Fagnano,Lago Ghío,Dificil
+1656002532,15,intento,un_nick,error,Lago Buenos Aires,Lago Strobel,Dificil
+1656002533,15,intento,un_nick,error,Lago Gutiérrez,Lago Epecuén,Dificil
+1656002533,15,intento,un_nick,ok,Lago Buenos Aires,Lago Buenos Aires,Dificil
+1656002533,15,intento,un_nick,error,Lago San Martín,Lago Nansen,Dificil
+1656002534,15,intento,un_nick,error,Lago Quillén,Lago Gutiérrez,Dificil
+1656002535,15,intento,un_nick,ok,Lago San Martín,Lago San Martín,Dificil
+1656002535,15,intento,un_nick,ok,Lago Rosario,Lago Rosario,Dificil
+1656002536,15,intento,un_nick,error,Lago Fontana,Lago Falkner,Dificil
+1656002536,15,intento,un_nick,error,Lago Lolog,Lago Posadas,Dificil
+1656002536,15,intento,un_nick,error,Lago La Plata,Lago Nahuel Huapi,Dificil
+1656002537,15,intento,un_nick,error,Lago Menéndez,Lago Belgrano,Dificil
+1656002537,15,fin,un_nick,finalizado,-,-,Dificil
+1656002541,16,inicio_partida,un_nick,nueva,-,-,Dificil
+1656002541,16,intento,un_nick,error,Christmas Inheritance,Once Upon A Time In China,Dificil
+1656002542,16,intento,un_nick,error,The Jack In The Box: Awakening,Robots,Dificil
+1656002542,16,intento,un_nick,error,The Nativity Story,"Roman J. Israel, Esq.",Dificil
+1656002542,16,intento,un_nick,error,Little,Spoiled Brats,Dificil
+1656002543,16,fin,un_nick,cancelada,-,-,Dificil
+1656002545,17,inicio_partida,un_nick,nueva,-,-,Dificil
+1656002546,17,intento,un_nick,error,The Fly,Bait,Dificil
+1656002546,17,intento,un_nick,error,The Last House On The Left,Poltergeist Iii,Dificil
+1656002547,17,fin,un_nick,cancelada,-,-,Dificil
+1656002549,18,inicio_partida,un_nick,nueva,-,-,Dificil
+1656002550,18,intento,un_nick,error,Jesper Isaksen,Filip Marchwinski,Dificil
+1656002551,18,intento,un_nick,error,Milan Škoda,Lukáš Zima,Dificil
+1656002551,18,intento,un_nick,error,Ruben Aguilar,Nikola Jakimovski,Dificil
+1656002552,18,intento,un_nick,error,Gu Chao,Javi Galán,Dificil
+1656002553,18,fin,un_nick,cancelada,-,-,Dificil
