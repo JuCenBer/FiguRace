@@ -1,4 +1,6 @@
+from ntpath import join
 import PySimpleGUI as sg
+import os
 from . import manejar_datos
 from . import menu_perfiles
 from . import menu_config
@@ -10,6 +12,7 @@ sg.theme('DarkAmber')
 
 def crear_ventana_nuevo_jugador():
     """Por si por primera vez, no hay perfiles creados, crea y retorna la ventana de creación de perfiles"""
+
     lista_generos = ['Hombre', 'Mujer', 'No Binario']
     layout = [[[sg.Text(text='Ingrese los datos del nuevo perfil: ', size=50)], [sg.Text(text='Nickname '), sg.Input()],
                [sg.Text(text='Ya existe un perfil con ese Nickname. Pruebe ingresando otro distinto.',
@@ -26,6 +29,9 @@ def crear_ventana_nuevo_jugador():
 
 
 def crear_ventana_principal():
+    carpeta_datos = (os.path.join(os.getcwd(),"src", "datos"))
+    if not(os.path.isdir(carpeta_datos)):
+        os.mkdir(carpeta_datos)
     '''Crea y retona la ventana principal, con los perfiles ya creados para seleccionar y las dificultades '''
     menu = [
         [sg.Text("FIGURACE", justification="center",
