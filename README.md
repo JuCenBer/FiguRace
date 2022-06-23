@@ -8,7 +8,11 @@
 * [Bertón, Julián](https://github.com/Chuliann)
 * [De La Vega, Gonzalo](https://github.com/Gonzaloned)
 ---
-### **Librerías usadas en el programa:** PySimpleGUI 4.60.0 
+### **Librerías usadas en el programa:** 
+* PySimpleGUI 4.60.0 
+* Pandas 1.4.2
+* matplotlib 3.5.2
+
 ### **Versión de Python utilizada:** Python 3.10.4
 ### **Se requiere Tkinter** 
 * Para Windows, se instala incluido en el setup de Python
