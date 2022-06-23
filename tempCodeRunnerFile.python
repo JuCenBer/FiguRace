@@ -1,5 +1,0 @@
-from curses import keyname
-
-
-P = {"Facil": {"MAX": [[13, 70.0]]}, "Normal": {}, "Dificil": {}, "Einstein": {}}
-print([x for x in P['Facil']])
