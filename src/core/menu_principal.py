@@ -23,7 +23,6 @@ def crear_ventana_nuevo_jugador():
               [sg.Button(button_text='Crear', key='-CONFIRMAR CREAR PRIMER JUGADOR-')],
               ]
 
-    
     return sg.Window('Nuevo Perfil', layout, finalize=True)
 
 
