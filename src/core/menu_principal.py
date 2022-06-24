@@ -56,17 +56,19 @@ def crear_ventana_principal():
 
     #Usuario, configuracion y ultima sesion con su puntaje(a resolver)
     layout_configs = [
+        
+
         [sg.Frame(title="Usuario", element_justification="center", title_location="n", pad=((50, 0), (0, 150)), border_width=0,
                   layout=[[sg.Combo(perfiles, key="-USER-", font="Helvetica 11", size=(20, 1), enable_events=True, readonly=True, default_value=config["nick"])]])],
 
         [sg.Frame(title="Dificultad", element_justification="center", title_location="n", pad=((50, 0), (0, 150)), border_width=0,
                   layout=[[sg.Combo(["Facil", "Normal", "Dificil", "Einstein"], size=(20, 1), font="Helvetica 11", key="-DIFICULTAD-", enable_events=True, readonly=True, default_value=config["dificultad"])]])],
         
-        [sg.Frame(title="Última partida", title_location="n", border_width=1,
-                                 layout=[[sg.Text(ultima_partida["nick"], font="Helvetica 11")]])]
     ]
 
     layout = [
+        [sg.Frame(title="Última partida", title_location="n", border_width=1,
+                                 layout=[[sg.Text(ultima_partida["nick"], font="Helvetica 11")]])],
         [sg.Col(menu, element_justification='center',  pad=(
             (190, 0), (100, 100))), sg.Col(layout_configs)]
     ]
