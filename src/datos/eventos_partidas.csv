@@ -204,3 +204,83 @@ timestamp,id,evento,usuarie,estado,texto_ingresado,respuesta,nivel
 1656019181,22,fin,un_nick,finalizado,-,-,Dificil
 1656019183,23,inicio_partida,un_nick,nueva,-,-,Dificil
 1656019185,23,fin,un_nick,cancelada,-,-,Dificil
+1656024035,24,inicio_partida,hombre2,nueva,-,-,Facil
+1656024038,24,fin,hombre2,cancelada,-,-,Facil
+1656024044,25,inicio_partida,hombre2,nueva,-,-,Einstein
+1656024045,25,intento,hombre2,ok,Lago Musters,Lago Musters,Einstein
+1656024046,25,intento,hombre2,error,Lago Rivadavia,Lago Azara,Einstein
+1656024046,25,intento,hombre2,error,Lago Viedma,Lago Chepelmut,Einstein
+1656024047,25,intento,hombre2,ok,Lago Rivadavia,Lago Rivadavia,Einstein
+1656024047,25,intento,hombre2,ok,Lago La Plata,Lago La Plata,Einstein
+1656024048,25,intento,hombre2,error,Lago Lolog,Lago Strobel,Einstein
+1656024049,25,intento,hombre2,error,Lago Nansen,Lago Epecuén,Einstein
+1656024049,25,intento,hombre2,ok,Lago Burmeister,Lago Burmeister,Einstein
+1656024050,25,intento,hombre2,error,Lago Río Bueno,Lago Tar,Einstein
+1656024050,25,intento,hombre2,error,Lago Mascardi,Lago Falkner,Einstein
+1656024057,25,intento,hombre2,timeout,-,-,Einstein
+1656024063,25,intento,hombre2,timeout,-,-,Einstein
+1656024069,25,intento,hombre2,timeout,-,-,Einstein
+1656024075,25,intento,hombre2,timeout,-,-,Einstein
+1656024081,25,intento,hombre2,timeout,-,-,Einstein
+1656024088,25,intento,hombre2,timeout,-,-,Einstein
+1656024094,25,intento,hombre2,timeout,-,-,Einstein
+1656024100,25,intento,hombre2,timeout,-,-,Einstein
+1656024106,25,intento,hombre2,timeout,-,-,Einstein
+1656024112,25,intento,hombre2,timeout,-,-,Einstein
+1656024119,25,intento,hombre2,timeout,-,-,Einstein
+1656024125,25,intento,hombre2,timeout,-,-,Einstein
+1656024131,25,intento,hombre2,error,Lago Gutiérrez,Lago Gutiérrez,Einstein
+1656024132,25,intento,hombre2,error,Lago Meliquina,Lago Rosario,Einstein
+1656024132,25,intento,hombre2,error,Lago Quillén,Lago Meliquina,Einstein
+1656024133,25,intento,hombre2,error,Lago Blanco,Lago Futalaufquen,Einstein
+1656024133,25,intento,hombre2,error,Lago Tromen,Lago Puelo,Einstein
+1656024133,25,intento,hombre2,ok,Lago Lácar,Lago Lácar,Einstein
+1656024134,25,intento,hombre2,error,Lago Cardiel,Lago Quiroga Chico,Einstein
+1656024134,25,intento,hombre2,ok,Lago Huechulafquen,Lago Huechulafquen,Einstein
+1656024134,25,fin,hombre2,finalizado,-,-,Einstein
+1656024249,26,inicio_partida,anita,nueva,-,-,Einstein
+1656024250,26,intento,anita,error,Lago Ghío,Lago Quiroga Chico,Einstein
+1656024250,26,intento,anita,ok,Lago Perito Moreno,Lago Perito Moreno,Einstein
+1656024250,26,intento,anita,error,Lago Correntoso,Lago Nahuel Huapi,Einstein
+1656024251,26,intento,anita,ok,Lago Epuyén,Lago Epuyén,Einstein
+1656024251,26,intento,anita,error,Lago Buenos Aires,Lago Meliquina,Einstein
+1656024252,26,intento,anita,error,Lago Paimún,Lago Aluminé,Einstein
+1656024252,26,intento,anita,error,Lago Azara,Lago Río Bueno,Einstein
+1656024252,26,intento,anita,ok,Lago Asador O Guitarra,Lago Asador O Guitarra,Einstein
+1656024253,26,intento,anita,ok,Lago Ghío,Lago Ghío,Einstein
+1656024253,26,intento,anita,error,Lago Azara,Lago Puelo,Einstein
+1656024253,26,intento,anita,error,Lago Mascardi,Lago Futalaufquen,Einstein
+1656024254,26,intento,anita,error,Lago Menéndez,Lago Rosario,Einstein
+1656024254,26,intento,anita,error,Lago Nansen,Lago Gutiérrez,Einstein
+1656024255,26,intento,anita,error,Lago Fagnano,Lago Fagnano,Einstein
+1656024255,26,intento,anita,error,Lago Salitroso O Sucio,Lago Cardiel,Einstein
+1656024255,26,intento,anita,error,Lago Nansen,Lago Onelli,Einstein
+1656024256,26,intento,anita,error,Lago Strobel,Lago Lácar,Einstein
+1656024256,26,intento,anita,error,Lago Correntoso,Lago Epecuén,Einstein
+1656024256,26,intento,anita,error,Lago Río Chico,Lago Quiroga,Einstein
+1656024257,26,intento,anita,ok,Lago Fontana,Lago Fontana,Einstein
+1656024257,26,intento,anita,error,Lago Quillén,Lago Salitroso O Sucio,Einstein
+1656024257,26,intento,anita,error,Lago Pueyrredón,Lago Blanco,Einstein
+1656024258,26,intento,anita,error,Lago Paimún,Lago Tar,Einstein
+1656024258,26,intento,anita,error,Lago General Vintter,Lago Strobel,Einstein
+1656024259,26,intento,anita,error,Lago Quillén,Lago Pico Nº 1,Einstein
+1656024259,26,intento,anita,error,Lago Rivadavia,Lago Moquehue,Einstein
+1656024259,26,intento,anita,error,Lago Pellegrini,Lago Currhué,Einstein
+1656024260,26,intento,anita,error,Lago Lolog,Lago Tromen,Einstein
+1656024260,26,intento,anita,error,Lago Traful,Lago Rivadavia,Einstein
+1656024261,26,intento,anita,ok,Lago Yehuin,Lago Yehuin,Einstein
+1656024261,26,fin,anita,finalizado,-,-,Einstein
+1656024265,27,inicio_partida,anita,nueva,-,-,Facil
+1656024266,27,intento,anita,ok,The Vikings,The Vikings,Facil
+1656024266,27,intento,anita,ok,Diary Of A Sex Addict,Diary Of A Sex Addict,Facil
+1656024267,27,intento,anita,error,The Penitent Thief,Clown,Facil
+1656024267,27,intento,anita,ok,Haikyuu!! Movie 2: Winners And Losers,Haikyuu!! Movie 2: Winners And Losers,Facil
+1656024268,27,intento,anita,error,Tears Of The Sun,Undisputed Iii: Redemption,Facil
+1656024268,27,fin,anita,finalizado,-,-,Facil
+1656024270,28,inicio_partida,anita,nueva,-,-,Facil
+1656024270,28,intento,anita,ok,Lago San Martín,Lago San Martín,Facil
+1656024271,28,intento,anita,error,Lago Argentino,Lago Blanco,Facil
+1656024271,28,intento,anita,error,Lago General Vintter,Lago Argentino,Facil
+1656024272,28,intento,anita,error,Lago Strobel,Lago Buenos Aires,Facil
+1656024272,28,intento,anita,ok,Lago Ghío,Lago Ghío,Facil
+1656024272,28,fin,anita,finalizado,-,-,Facil
